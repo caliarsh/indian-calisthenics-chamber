@@ -8,7 +8,6 @@ import {
   MoveUpRight,
   Sparkles,
 } from 'lucide-react';
-import Image from 'next/image';
 import { TrialForm } from '@/components/trial-form';
 import { siteConfig } from '@/lib/site-config';
 
@@ -60,7 +59,8 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <Image className="hero-image" src="/icc-hero.png" alt="Two calisthenics athletes practising an assisted pull-up on outdoor bars" fill sizes="100vw" priority />
+        {/* oxlint-disable-next-line next/no-img-element -- static export uses a local, dimensioned hero asset */}
+        <img className="hero-image" src="/icc-hero.png" alt="Two calisthenics athletes practising an assisted pull-up on outdoor bars" width="1672" height="941" fetchPriority="high" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-content">
