@@ -115,7 +115,7 @@ button, input, select, textarea { font: inherit; }
 .section-heading > p { max-width: 480px; margin: 0 0 .4rem; color: #aaa69d; font-size: 1.05rem; line-height: 1.75; }
 .programs-section { background: #10100f; }
 .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
-.program-card { position: relative; min-height: 510px; padding: clamp(1.6rem, 3vw, 2.5rem); overflow: hidden; border-right: 1px solid var(--border); background: #151513; transition: transform .28s ease, background .28s ease; }
+.program-card { position: relative; display: flex; flex-direction: column; min-height: 510px; padding: clamp(1.6rem, 3vw, 2.5rem); overflow: hidden; border-right: 1px solid var(--border); background: #151513; transition: transform .28s ease, background .28s ease; }
 .program-card:last-child { border-right: 0; }
 .program-card::after { content: ''; position: absolute; inset: auto -20% -50% 40%; height: 70%; background: radial-gradient(circle, rgba(158,27,50,.18), transparent 66%); pointer-events: none; }
 .program-card:hover { z-index: 2; transform: translateY(-8px); background: #1b1b18; }
@@ -126,7 +126,7 @@ button, input, select, textarea { font: inherit; }
 .program-card ul { list-style: none; margin: 2rem 0 0; padding: 1.5rem 0; border-top: 1px solid var(--border); }
 .program-card li { display: flex; align-items: center; gap: .7rem; margin: .72rem 0; color: #d4d0c7; font-size: .83rem; }
 .program-card li svg { width: 15px; color: var(--primary); }
-.program-card > a { position: absolute; bottom: 2.4rem; display: inline-flex; align-items: center; gap: .55rem; color: var(--primary); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.program-card > a { position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: .55rem; margin-top: auto; padding-top: 2rem; color: var(--primary); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .program-card > a svg { width: 16px; transition: transform .2s ease; }
 .program-card > a:hover svg { transform: translateX(5px); }
 .program-tabs { gap: 0; }
@@ -142,7 +142,7 @@ button, input, select, textarea { font: inherit; }
 .program-grid-online { grid-template-columns: repeat(2, 1fr); }
 .program-grid-online .program-card { min-height: 470px; }
 .program-type { min-height: 0; margin: 3rem 0 0; color: #d7546a; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.level-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.level-badges { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .level-badges span { display: inline-grid; place-items: center; min-width: 42px; height: 30px; padding: 0 .65rem; border: 1px solid rgba(158,27,50,.68); color: #e0687d; font-size: .7rem; font-weight: 800; letter-spacing: .08em; }
 
 .method-section { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(4rem, 10vw, 10rem); padding: clamp(5.5rem, 9vw, 9rem) clamp(1.25rem, 6.5vw, 7rem); background: #e9e3d8; color: #171714; }
