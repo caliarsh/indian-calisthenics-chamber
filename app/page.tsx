@@ -1,39 +1,14 @@
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  CircleDot,
-  MapPin,
-  MoveUpRight,
-  Sparkles,
-} from 'lucide-react';
-import { TrialForm } from '@/components/trial-form';
-import { siteConfig } from '@/lib/site-config';
+/* oxlint-disable next/no-html-link-for-pages -- static-export anchors preserve fragment navigation */
 
-const programs = [
-  {
-    number: '01',
-    title: 'Foundations',
-    icon: CircleDot,
-    copy: 'Start with movement quality. Learn the positions, joint preparation, and body awareness behind lasting strength.',
-    skills: ['Push-ups & rows', 'Core control', 'Mobility basics'],
-  },
-  {
-    number: '02',
-    title: 'Strength',
-    icon: MoveUpRight,
-    copy: 'Build pulling, pushing, and lower-body strength through progressions matched to where you are today.',
-    skills: ['Pull-ups & dips', 'Handstand strength', 'Weighted basics'],
-  },
-  {
-    number: '03',
-    title: 'Skills',
-    icon: Sparkles,
-    copy: 'Turn your strength into skill with patient, technical practice for balance, leverage, and control.',
-    skills: ['Handstands', 'Muscle-ups', 'Levers & holds'],
-  },
-];
+import {
+  AtSign,
+  ArrowDown,
+  ArrowUpRight,
+  MapPin,
+} from 'lucide-react';
+import { ProgramExplorer } from '@/components/program-explorer';
+import { TrialForm } from '@/components/trial-form';
+import { coaches, siteConfig } from '@/lib/site-config';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -53,7 +28,8 @@ export default function Home() {
         <nav className="main-nav" aria-label="Primary navigation">
           <a href="#programs">Programs</a>
           <a href="#method">Our method</a>
-          <a href="#schedule">Schedule</a>
+          <a href="#coaches">Coaches</a>
+          <a href="/assessment">Assessment</a>
         </nav>
         <a className="button button-small" href="#trial">Book a trial <ArrowUpRight size={16} /></a>
       </header>
@@ -90,22 +66,9 @@ export default function Home() {
             <p className="section-kicker">Choose your path</p>
             <h2>Train where<br />you are. <em>Grow.</em></h2>
           </div>
-          <p>Every athlete starts differently. Our three training paths meet you at your current level and build the capacity for what comes next.</p>
+          <p>Choose live online coaching or train with us in person. Every program is matched to your current level and next goal.</p>
         </div>
-        <div className="program-grid">
-          {programs.map((program) => {
-            const Icon = program.icon;
-            return (
-              <article className="program-card" key={program.title}>
-                <div className="program-top"><span>{program.number}</span><Icon aria-hidden="true" /></div>
-                <h3>{program.title}</h3>
-                <p>{program.copy}</p>
-                <ul>{program.skills.map((skill) => <li key={skill}><Check aria-hidden="true" />{skill}</li>)}</ul>
-                <a href="#trial">Start here <ArrowRight aria-hidden="true" /></a>
-              </article>
-            );
-          })}
-        </div>
+        <ProgramExplorer />
       </section>
 
       <section className="method-section" id="method">
@@ -124,6 +87,29 @@ export default function Home() {
         </ol>
       </section>
 
+      <section className="section coaches-section" id="coaches">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Meet the coaches</p>
+            <h2>Guidance that<br /><em>moves you.</em></h2>
+          </div>
+          <p>Clear feedback, patient progressions, and coaching that respects where every athlete begins.</p>
+        </div>
+        <div className="coach-grid">
+          {coaches.map((coach) => (
+            <article className={`coach-card ${coach.sample ? 'is-sample' : ''}`} key={coach.name}>
+              <div className="coach-portrait" aria-hidden="true"><span>{coach.initials}</span></div>
+              <div className="coach-card-body">
+                <div className="coach-meta"><span>{coach.role}</span>{coach.sample && <small>Sample profile</small>}</div>
+                <h3>{coach.name}</h3>
+                <p>{coach.description}</p>
+                {coach.instagramUrl && <a href={coach.instagramUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> {coach.instagram}</a>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section schedule-section" id="schedule">
         <div className="schedule-heading">
           <div>
@@ -138,7 +124,7 @@ export default function Home() {
         <div className="schedule-list">
           {siteConfig.schedule.map((session) => (
             <div className="schedule-row" key={`${session.days}-${session.time}`}>
-              <span className="schedule-days">{session.days}</span>
+              <span className="schedule-days">{session.days}<small>{session.mode}</small></span>
               <strong>{session.time}</strong>
               <span className="schedule-level">{session.level}</span>
             </div>

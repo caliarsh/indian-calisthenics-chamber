@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ArrowUpRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import { Textarea } from '@/components/ui/textarea';
-import { siteConfig } from '@/lib/site-config';
+import { programs, siteConfig, type Level, type TrainingMode } from '@/lib/site-config';
 
-type FieldName = 'name' | 'experience' | 'goal' | 'session';
+type FieldName = 'name' | 'experience' | 'goal' | 'mode' | 'program' | 'session';
 type FormErrors = Partial<Record<FieldName, string>>;
 
 function readText(form: FormData, field: FieldName) {
@@ -16,9 +16,32 @@ function readText(form: FormData, field: FieldName) {
   return typeof value === 'string' ? value.trim() : '';
 }
 
+function isLevel(value: string): value is Level {
+  return value === 'L1' || value === 'L2' || value === 'L3';
+}
+
 export function TrialForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [sent, setSent] = useState(false);
+  const [experience, setExperience] = useState('');
+  const [mode, setMode] = useState<TrainingMode | ''>('');
+  const [program, setProgram] = useState('');
+  const [assessed, setAssessed] = useState(false);
+
+  useEffect(() => {
+    const level = new URLSearchParams(window.location.search).get('level') ?? '';
+    if (isLevel(level)) {
+      queueMicrotask(() => {
+        setExperience(level);
+        setAssessed(true);
+      });
+    }
+  }, []);
+
+  const availablePrograms = useMemo(() => programs.filter((item) => {
+    if (!mode || item.mode !== mode) return false;
+    return !isLevel(experience) || item.levels.includes(experience);
+  }), [experience, mode]);
 
   function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -27,6 +50,8 @@ export function TrialForm() {
       name: readText(form, 'name'),
       experience: readText(form, 'experience'),
       goal: readText(form, 'goal'),
+      mode: readText(form, 'mode'),
+      program: readText(form, 'program'),
       session: readText(form, 'session'),
     };
 
@@ -34,6 +59,8 @@ export function TrialForm() {
     if (!values.name) nextErrors.name = 'Please tell us your name.';
     if (!values.experience) nextErrors.experience = 'Choose your current level.';
     if (!values.goal) nextErrors.goal = 'Tell us what you want to work towards.';
+    if (!values.mode) nextErrors.mode = 'Choose online or offline training.';
+    if (!values.program) nextErrors.program = 'Choose a training program.';
     if (!values.session) nextErrors.session = 'Choose a preferred session.';
     setErrors(nextErrors);
     setSent(false);
@@ -43,7 +70,9 @@ export function TrialForm() {
       `Hi ${siteConfig.name}, I’d like to book a trial.`,
       '',
       `Name: ${values.name}`,
-      `Experience: ${values.experience}`,
+      `Level: ${values.experience}${assessed ? ' (website assessment)' : ''}`,
+      `Training mode: ${values.mode}`,
+      `Program: ${values.program}`,
       `Training goal: ${values.goal}`,
       `Preferred session: ${values.session}`,
     ].join('\n');
@@ -54,6 +83,7 @@ export function TrialForm() {
 
   return (
     <form className="trial-form" onSubmit={handleSubmit} noValidate>
+      {assessed && <p className="assessed-badge">Assessment result applied: {experience}</p>}
       <div className="field-grid">
         <div className="field">
           <label htmlFor="name">Your name</label>
@@ -61,15 +91,34 @@ export function TrialForm() {
           {errors.name && <p className="field-error" id="name-error">{errors.name}</p>}
         </div>
         <div className="field">
-          <label htmlFor="experience">Experience level</label>
-          <NativeSelect className="form-select" id="experience" name="experience" aria-invalid={Boolean(errors.experience)} aria-describedby={errors.experience ? 'experience-error' : undefined} defaultValue="">
+          <label htmlFor="experience">Current level</label>
+          <NativeSelect className="form-select" id="experience" name="experience" aria-invalid={Boolean(errors.experience)} aria-describedby={errors.experience ? 'experience-error' : undefined} value={experience} onChange={(event) => { setExperience(event.target.value); setProgram(''); }}>
             <NativeSelectOption value="" disabled>Select your level</NativeSelectOption>
-            <NativeSelectOption value="Complete beginner">Complete beginner</NativeSelectOption>
-            <NativeSelectOption value="Some training experience">Some training experience</NativeSelectOption>
-            <NativeSelectOption value="Intermediate athlete">Intermediate athlete</NativeSelectOption>
-            <NativeSelectOption value="Advanced athlete">Advanced athlete</NativeSelectOption>
+            <NativeSelectOption value="Not sure">Not sure yet</NativeSelectOption>
+            <NativeSelectOption value="L1">L1 · Foundations</NativeSelectOption>
+            <NativeSelectOption value="L2">L2 · Strength</NativeSelectOption>
+            <NativeSelectOption value="L3">L3 · Performance</NativeSelectOption>
           </NativeSelect>
           {errors.experience && <p className="field-error" id="experience-error">{errors.experience}</p>}
+        </div>
+      </div>
+      <div className="field-grid">
+        <div className="field">
+          <label htmlFor="mode">Training mode</label>
+          <NativeSelect className="form-select" id="mode" name="mode" aria-invalid={Boolean(errors.mode)} aria-describedby={errors.mode ? 'mode-error' : undefined} value={mode} onChange={(event) => { setMode(event.target.value as TrainingMode); setProgram(''); }}>
+            <NativeSelectOption value="" disabled>Online or offline</NativeSelectOption>
+            <NativeSelectOption value="Online">Online</NativeSelectOption>
+            <NativeSelectOption value="Offline">Offline</NativeSelectOption>
+          </NativeSelect>
+          {errors.mode && <p className="field-error" id="mode-error">{errors.mode}</p>}
+        </div>
+        <div className="field">
+          <label htmlFor="program">Program</label>
+          <NativeSelect className="form-select" id="program" name="program" aria-invalid={Boolean(errors.program)} aria-describedby={errors.program ? 'program-error' : undefined} value={program} disabled={!mode} onChange={(event) => setProgram(event.target.value)}>
+            <NativeSelectOption value="" disabled>{mode ? 'Choose a program' : 'Choose mode first'}</NativeSelectOption>
+            {availablePrograms.map((item) => <NativeSelectOption value={item.name} key={item.id}>{item.name} · {item.levels.join(', ')}</NativeSelectOption>)}
+          </NativeSelect>
+          {errors.program && <p className="field-error" id="program-error">{errors.program}</p>}
         </div>
       </div>
       <div className="field">
@@ -84,12 +133,11 @@ export function TrialForm() {
           <NativeSelectOption value="Weekday morning">Weekday morning</NativeSelectOption>
           <NativeSelectOption value="Weekday evening">Weekday evening</NativeSelectOption>
           <NativeSelectOption value="Saturday morning">Saturday morning</NativeSelectOption>
+          <NativeSelectOption value="By appointment">By appointment</NativeSelectOption>
         </NativeSelect>
         {errors.session && <p className="field-error" id="session-error">{errors.session}</p>}
       </div>
-      <Button className="form-button" type="submit">
-        <MessageCircle aria-hidden="true" /> Continue on WhatsApp <ArrowUpRight aria-hidden="true" />
-      </Button>
+      <Button className="form-button" type="submit"><MessageCircle aria-hidden="true" /> Continue on WhatsApp <ArrowUpRight aria-hidden="true" /></Button>
       <p className="form-note">We’ll prepare your message and open WhatsApp. No payment required.</p>
       {sent && <output className="form-success" aria-live="polite">Your trial request is ready in WhatsApp.</output>}
     </form>

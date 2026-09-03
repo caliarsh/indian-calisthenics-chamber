@@ -47,7 +47,7 @@ export default defineConfig(async () => {
   return {
     css: { postcss: { plugins: [tailwindcss()] } },
     optimizeDeps: {
-      exclude: ['@base-ui/react/input', '@base-ui/react/button', 'lucide-react'],
+      exclude: ['@base-ui/react/input', '@base-ui/react/button', '@base-ui/react/tabs', 'lucide-react'],
     },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
