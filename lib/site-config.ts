@@ -21,6 +21,12 @@ export interface Coach {
   sample?: boolean;
 }
 
+export interface Review {
+  author: string;
+  rating: 5;
+  quote: string;
+}
+
 export interface AssessmentMetric {
   id: 'pushUps' | 'pullUps' | 'deadHang' | 'hollowHold' | 'squats';
   label: string;
@@ -78,18 +84,55 @@ export const coaches: readonly Coach[] = [
   },
 ];
 
+export const reviews: readonly Review[] = [
+  {
+    author: 'Kushal Gowda',
+    rating: 5,
+    quote: 'I’ve been training at the Indian Calisthenics Chamber for the past 3 months, and the experience has been outstanding.',
+  },
+  {
+    author: 'RAHUL Ilango',
+    rating: 5,
+    quote: 'The people I workout with here are insanely fun and hardworking.',
+  },
+  {
+    author: 'Vishal I',
+    rating: 5,
+    quote: 'Coach Arsh is very knowledgeable, gives specific workouts based on your strength levels, and monitors your progress.',
+  },
+  {
+    author: 'Terrell Gonsalves',
+    rating: 5,
+    quote: 'Probably one of the coolest calisthenics communities to learn and grow.',
+  },
+  {
+    author: 'Alpna Sah',
+    rating: 5,
+    quote: 'The energy here is too good. The team made me do new skills which I had never thought of doing.',
+  },
+  {
+    author: 'Faisal Khan',
+    rating: 5,
+    quote: 'The way Arsh mentors and guides each individual shows his true dedication as a coach.',
+  },
+];
+
 export const siteConfig = {
   name: 'Indian Calisthenics Chamber',
   shortName: 'ICC',
-  location: 'Bengaluru, Karnataka',
-  locationNote: 'Sample training location',
-  whatsappNumber: '910000000000',
-  whatsappDisplay: '+91 00000 00000',
+  location: 'Bilekahalli, Bengaluru',
+  locationNote: '98, 4th Cross, Nagappa Layout, Bannerghatta Road · 560076',
+  mapsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
+  googleRating: '4.9',
+  googleReviewCount: 27,
+  whatsappNumber: '919902828888',
+  whatsappDisplay: '+91 99028 28888',
   schedule: [
-    { days: 'Monday · Wednesday · Friday', time: '6:30 AM', level: 'L1 Group', mode: 'Offline' },
-    { days: 'Monday · Wednesday · Friday', time: '7:30 PM', level: 'L2 · L3 Group', mode: 'Offline' },
-    { days: 'Tuesday · Thursday', time: '7:00 AM', level: 'L1 Group', mode: 'Online' },
-    { days: 'Tuesday · Thursday', time: 'By appointment', level: 'L1 · L2 · L3 PT', mode: 'Online' },
-    { days: 'Saturday', time: '7:00 AM', level: 'Athlete Batch', mode: 'Offline' },
+    { days: 'Monday to Friday', time: '6:30 AM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
+    { days: 'Monday to Friday', time: '7:30 AM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
+    { days: 'Monday to Friday', time: '5:00 PM', level: 'Athlete Batch', mode: 'Offline' },
+    { days: 'Monday to Friday', time: '6:00 PM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
+    { days: 'Monday to Friday', time: '7:00 PM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
+    { days: 'Monday to Friday', time: 'By appointment', level: 'Personal Training', mode: 'Online · Offline' },
   ],
 } as const;

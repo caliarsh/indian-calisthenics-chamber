@@ -5,10 +5,12 @@ import {
   ArrowDown,
   ArrowUpRight,
   MapPin,
+  Quote,
+  Star,
 } from 'lucide-react';
 import { ProgramExplorer } from '@/components/program-explorer';
 import { TrialForm } from '@/components/trial-form';
-import { coaches, siteConfig } from '@/lib/site-config';
+import { coaches, reviews, siteConfig } from '@/lib/site-config';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -29,6 +31,7 @@ export default function Home() {
           <a href="#programs">Programs</a>
           <a href="#method">Our method</a>
           <a href="#coaches">Coaches</a>
+          <a href="#reviews">Reviews</a>
           <a href="/assessment">Assessment</a>
         </nav>
         <a className="button button-small" href="#trial">Book a trial <ArrowUpRight size={16} /></a>
@@ -113,13 +116,14 @@ export default function Home() {
       <section className="section schedule-section" id="schedule">
         <div className="schedule-heading">
           <div>
-            <p className="section-kicker">Sample weekly schedule</p>
+            <p className="section-kicker">Weekly batch schedule</p>
             <h2>Find your<br /><em>training window.</em></h2>
           </div>
-          <div className="location-card">
+          <a className="location-card" href={siteConfig.mapsUrl} target="_blank" rel="noreferrer" aria-label="Open the ICC training base in Google Maps">
             <MapPin aria-hidden="true" />
             <div><span>Training base</span><strong>{siteConfig.location}</strong><small>{siteConfig.locationNote}</small></div>
-          </div>
+            <ArrowUpRight className="location-arrow" aria-hidden="true" />
+          </a>
         </div>
         <div className="schedule-list">
           {siteConfig.schedule.map((session) => (
@@ -130,7 +134,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="placeholder-note">Schedule and location are editable sample details for the academy’s first version.</p>
+        <p className="placeholder-note">Group batches run Monday to Friday. Personal Training sessions are scheduled by appointment.</p>
       </section>
 
       <section className="trial-section" id="trial">
@@ -148,10 +152,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section reviews-section" id="reviews">
+        <div className="reviews-heading">
+          <div>
+            <p className="section-kicker">Google Maps reviews</p>
+            <h2>Built together.<br /><em>Rated by athletes.</em></h2>
+          </div>
+          <div className="rating-summary" aria-label={`${siteConfig.googleRating} out of 5 from ${siteConfig.googleReviewCount} Google reviews`}>
+            <strong>{siteConfig.googleRating}</strong>
+            <div>
+              <span className="rating-stars" aria-hidden="true">{Array.from({ length: 5 }).map((_, index) => <Star key={index} />)}</span>
+              <small>{siteConfig.googleReviewCount} reviews on Google</small>
+            </div>
+          </div>
+        </div>
+        <div className="review-grid">
+          {reviews.map((review) => (
+            <article className="review-card" key={review.author}>
+              <Quote aria-hidden="true" />
+              <div className="review-stars" aria-label={`${review.rating} out of 5 stars`}>{Array.from({ length: review.rating }).map((_, index) => <Star key={index} aria-hidden="true" />)}</div>
+              <blockquote>“{review.quote}”</blockquote>
+              <p>{review.author}<span>Google review</span></p>
+            </article>
+          ))}
+        </div>
+        <a className="button reviews-button" href={siteConfig.mapsUrl} target="_blank" rel="noreferrer">Read all {siteConfig.googleReviewCount} reviews on Google <ArrowUpRight aria-hidden="true" /></a>
+      </section>
+
       <footer>
         <a className="brand footer-brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
         <p>Strength is a skill. Learn it well.</p>
-        <div className="footer-contact"><span>{siteConfig.location}</span><span>{siteConfig.whatsappDisplay}</span></div>
+        <div className="footer-contact"><a href={siteConfig.mapsUrl} target="_blank" rel="noreferrer">{siteConfig.location}</a><a href={`tel:+${siteConfig.whatsappNumber}`}>{siteConfig.whatsappDisplay}</a></div>
       </footer>
     </main>
   );
