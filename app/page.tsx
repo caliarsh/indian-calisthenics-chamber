@@ -39,7 +39,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         {/* oxlint-disable-next-line next/no-img-element -- static export uses a local, dimensioned hero asset */}
-        <img className="hero-image" src="/icc-hero.png" alt="Two calisthenics athletes practising an assisted pull-up on outdoor bars" width="1672" height="941" fetchPriority="high" />
+        <img className="hero-image" src="/icc-hero-v2.png" alt="An AI-created scene of an Indian calisthenics coach guiding trainees inside a gym inspired by ICC Bengaluru" width="1672" height="941" fetchPriority="high" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-content">
