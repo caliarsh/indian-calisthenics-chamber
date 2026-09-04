@@ -39,7 +39,7 @@ export default function AssessmentPage() {
 
       <section className="rubric-note">
         <span>About this assessment</span>
-        <p>This is a sample placement tool, not a medical assessment or certification. A coach may recommend a different starting level after seeing you move.</p>
+        <p>This is an indicative placement tool, not a medical assessment or certification. A coach may recommend a different starting level after seeing you move.</p>
       </section>
     </main>
   );

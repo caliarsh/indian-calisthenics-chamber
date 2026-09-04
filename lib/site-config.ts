@@ -18,7 +18,6 @@ export interface Coach {
   description: string;
   instagram?: string;
   instagramUrl?: string;
-  sample?: boolean;
 }
 
 export interface Review {
@@ -64,23 +63,9 @@ export const coaches: readonly Coach[] = [
     name: 'Cali Arsh',
     initials: 'CA',
     role: 'Head Coach',
-    description: 'Cali leads with a progression-first approach to calisthenics—building clean technique, body awareness, and strength that supports long-term skill development.',
+    description: 'Cali Arsh is an Indian calisthenics athlete, coach, entrepreneur, and founder of the Indian Calisthenics Chamber in Bengaluru. As Head Coach, he combines advanced static and dynamic strength practice with progression-led coaching that develops technique, body awareness, and sustainable strength. Beyond day-to-day training, Arsh organizes the Indian Calisthenics Chamber Championship and works to connect Indian athletes with WSWCF competition structures, helping create stronger national pathways for street workout and weighted endurance.',
     instagram: '@cali.arsh',
     instagramUrl: 'https://www.instagram.com/cali.arsh/',
-  },
-  {
-    name: 'Ananya Rao',
-    initials: 'AR',
-    role: 'Foundations Coach',
-    description: 'An approachable sample profile focused on movement confidence, fundamentals, and sustainable training habits.',
-    sample: true,
-  },
-  {
-    name: 'Dev Malhotra',
-    initials: 'DM',
-    role: 'Strength & Skills Coach',
-    description: 'A sample profile representing focused coaching for intermediate strength, handstands, and skill preparation.',
-    sample: true,
   },
 ];
 

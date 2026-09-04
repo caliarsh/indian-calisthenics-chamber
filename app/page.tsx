@@ -100,10 +100,10 @@ export default function Home() {
         </div>
         <div className="coach-grid">
           {coaches.map((coach) => (
-            <article className={`coach-card ${coach.sample ? 'is-sample' : ''}`} key={coach.name}>
+            <article className="coach-card" key={coach.name}>
               <div className="coach-portrait" aria-hidden="true"><span>{coach.initials}</span></div>
               <div className="coach-card-body">
-                <div className="coach-meta"><span>{coach.role}</span>{coach.sample && <small>Sample profile</small>}</div>
+                <div className="coach-meta"><span>{coach.role}</span></div>
                 <h3>{coach.name}</h3>
                 <p>{coach.description}</p>
                 {coach.instagramUrl && <a href={coach.instagramUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> {coach.instagram}</a>}
