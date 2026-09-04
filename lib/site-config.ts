@@ -60,10 +60,10 @@ export const assessmentMetrics: readonly AssessmentMetric[] = [
 
 export const coaches: readonly Coach[] = [
   {
-    name: 'Cali Arsh',
-    initials: 'CA',
+    name: 'Arsh',
+    initials: 'A',
     role: 'Head Coach',
-    description: 'Cali Arsh is an Indian calisthenics athlete, coach, entrepreneur, and founder of the Indian Calisthenics Chamber in Bengaluru. As Head Coach, he combines advanced static and dynamic strength practice with progression-led coaching that develops technique, body awareness, and sustainable strength. Beyond day-to-day training, Arsh organizes the Indian Calisthenics Chamber Championship and works to connect Indian athletes with WSWCF competition structures, helping create stronger national pathways for street workout and weighted endurance.',
+    description: 'Arsh is a national-level calisthenics athlete and Head Coach who has trained more than 500 athletes. He represented India at the 2025 WSWCF in Weighted Endurance and has won multiple national-level competitions across Static, Streetlifting, and Weighted Endurance.',
     instagram: '@cali.arsh',
     instagramUrl: 'https://www.instagram.com/cali.arsh/',
   },
