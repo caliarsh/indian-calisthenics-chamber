@@ -26,14 +26,20 @@ export interface Review {
   quote: string;
 }
 
-export interface AssessmentMetric {
-  id: 'pushUps' | 'pullUps' | 'deadHang' | 'hollowHold' | 'squats';
+export type FormQuality = 'Poor' | 'Average' | 'Good' | 'Excellent';
+export type MobilityRating = 'Restricted' | 'Average' | 'Good';
+export type FlexibilityRating = 'Poor' | 'Average' | 'Good';
+
+export interface StrengthTestOption {
+  id: string;
   label: string;
-  instruction: string;
-  unit: 'reps' | 'sec';
-  max: number;
   tier2Min: number;
   tier3Min: number;
+}
+
+export interface MovementCheck {
+  id: string;
+  label: string;
 }
 
 export const levelDescriptions: Record<Level, { name: string; description: string }> = {
@@ -50,13 +56,53 @@ export const programs: readonly Program[] = [
   { id: 'athlete-batch', name: 'Athlete Batch', mode: 'Offline', kind: 'Athlete', levels: ['L3'], description: 'Performance-focused training for L3 athletes and members placed by a coach.' },
 ];
 
-export const assessmentMetrics: readonly AssessmentMetric[] = [
-  { id: 'pushUps', label: 'Strict push-ups', instruction: 'Maximum clean repetitions without resting.', unit: 'reps', max: 200, tier2Min: 10, tier3Min: 25 },
-  { id: 'pullUps', label: 'Strict pull-ups', instruction: 'Full hang to chin over bar, without swinging.', unit: 'reps', max: 200, tier2Min: 2, tier3Min: 8 },
-  { id: 'deadHang', label: 'Dead hang', instruction: 'Longest comfortable two-hand hang from a bar.', unit: 'sec', max: 600, tier2Min: 20, tier3Min: 45 },
-  { id: 'hollowHold', label: 'Hollow-body hold', instruction: 'Longest hold with lower back pressed down.', unit: 'sec', max: 600, tier2Min: 15, tier3Min: 40 },
-  { id: 'squats', label: 'Bodyweight squats', instruction: 'Clean controlled repetitions through comfortable depth.', unit: 'reps', max: 200, tier2Min: 20, tier3Min: 40 },
-];
+export const assessmentConfig = {
+  strength: {
+    pull: [
+      { id: 'pull-ups', label: 'Pull-ups', tier2Min: 2, tier3Min: 8 },
+      { id: 'chin-ups', label: 'Chin-ups', tier2Min: 2, tier3Min: 8 },
+      { id: 'australian-pull-ups', label: 'Australian pull-ups', tier2Min: 8, tier3Min: 15 },
+      { id: 'australian-rows', label: 'Australian rows', tier2Min: 8, tier3Min: 15 },
+    ] satisfies readonly StrengthTestOption[],
+    push: [
+      { id: 'push-ups', label: 'Push-ups', tier2Min: 10, tier3Min: 25 },
+      { id: 'dips', label: 'Dips', tier2Min: 4, tier3Min: 12 },
+      { id: 'elevated-push-ups', label: 'Elevated push-ups', tier2Min: 12, tier3Min: 25 },
+      { id: 'ring-push-ups', label: 'Ring push-ups', tier2Min: 10, tier3Min: 25 },
+    ] satisfies readonly StrengthTestOption[],
+  },
+  endurance: {
+    repetitions: 12,
+    holdSeconds: 30,
+    benchmarkSeconds: 180,
+    circuits: [
+      {
+        id: 'circuitA',
+        label: 'Circuit 1 · Lower body',
+        movements: ['Jump squats', 'Jump lunges', 'Sumo squats', 'Side-to-side squats'],
+        hold: 'Squat hold',
+      },
+      {
+        id: 'circuitB',
+        label: 'Circuit 2 · Core',
+        movements: ['Leg raises', 'Leg touches', 'Bicycle crunches', 'Crunches', 'Mountain climbers'],
+        hold: 'Plank hold',
+      },
+    ],
+  },
+  mobility: [
+    { id: 'shoulderMobility', label: "Shoulder mobility · Apley's scratch test" },
+    { id: 'hipMobility', label: 'Hip mobility · 90/90 hip rotation' },
+    { id: 'ankleMobility', label: 'Ankle mobility · Knee-to-wall test' },
+    { id: 'thoracicMobility', label: 'Thoracic spine · Seated rotation test' },
+    { id: 'wristMobility', label: 'Wrist mobility · Extension and flexion' },
+  ] satisfies readonly MovementCheck[],
+  flexibility: [
+    { id: 'hamstringFlexibility', label: 'Hamstrings · Sit-and-reach or toe touch' },
+    { id: 'hipFlexorFlexibility', label: 'Hip flexors · Thomas or half-kneeling test' },
+    { id: 'shoulderFlexibility', label: 'Shoulders · Overhead or behind-the-back reach' },
+  ] satisfies readonly MovementCheck[],
+} as const;
 
 export const coaches: readonly Coach[] = [
   {
