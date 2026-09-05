@@ -57,17 +57,19 @@ export function TrialForm() {
       session: readText(form, 'session'),
     };
 
+    const selectedLocation = siteConfig.locations.find((item) => item.name === values.location);
     const nextErrors: FormErrors = {};
     if (!values.name) nextErrors.name = 'Please tell us your name.';
     if (!values.experience) nextErrors.experience = 'Choose your current level.';
     if (!values.goal) nextErrors.goal = 'Tell us what you want to work towards.';
     if (!values.mode) nextErrors.mode = 'Choose online or offline training.';
-    if (values.mode === 'Offline' && !values.location) nextErrors.location = 'Choose your training location.';
+    if (!selectedLocation) nextErrors.location = 'Choose the city you are booking for.';
     if (!values.program) nextErrors.program = 'Choose a training program.';
     if (!values.session) nextErrors.session = 'Choose a preferred session.';
     setErrors(nextErrors);
     setSent(false);
     if (Object.keys(nextErrors).length) return;
+    if (!selectedLocation) return;
 
     const message = [
       `Hi ${siteConfig.name}, I’d like to book a trial.`,
@@ -75,12 +77,12 @@ export function TrialForm() {
       `Name: ${values.name}`,
       `Level: ${values.experience}${assessed ? ' (website assessment)' : ''}`,
       `Training mode: ${values.mode}`,
-      ...(values.location ? [`Location: ${values.location}`] : []),
+      `Booking city: ${selectedLocation.name}`,
       `Program: ${values.program}`,
       `Training goal: ${values.goal}`,
       `Preferred session: ${values.session}`,
     ].join('\n');
-    const url = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${selectedLocation.whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
     setSent(true);
   }
@@ -109,7 +111,7 @@ export function TrialForm() {
       <div className="field-grid">
         <div className="field">
           <label htmlFor="mode">Training mode</label>
-          <NativeSelect className="form-select" id="mode" name="mode" aria-invalid={Boolean(errors.mode)} aria-describedby={errors.mode ? 'mode-error' : undefined} value={mode} onChange={(event) => { const nextMode = event.target.value as TrainingMode; setMode(nextMode); setProgram(''); if (nextMode !== 'Offline') setLocation(''); }}>
+          <NativeSelect className="form-select" id="mode" name="mode" aria-invalid={Boolean(errors.mode)} aria-describedby={errors.mode ? 'mode-error' : undefined} value={mode} onChange={(event) => { setMode(event.target.value as TrainingMode); setProgram(''); }}>
             <NativeSelectOption value="" disabled>Online or offline</NativeSelectOption>
             <NativeSelectOption value="Online">Online</NativeSelectOption>
             <NativeSelectOption value="Offline">Offline</NativeSelectOption>
@@ -125,16 +127,14 @@ export function TrialForm() {
           {errors.program && <p className="field-error" id="program-error">{errors.program}</p>}
         </div>
       </div>
-      {mode === 'Offline' && (
-        <div className="field">
-          <label htmlFor="location">Training location</label>
-          <NativeSelect className="form-select" id="location" name="location" aria-invalid={Boolean(errors.location)} aria-describedby={errors.location ? 'location-error' : undefined} value={location} onChange={(event) => setLocation(event.target.value)}>
-            <NativeSelectOption value="" disabled>Choose a location</NativeSelectOption>
-            {siteConfig.locations.map((item) => <NativeSelectOption value={item.name} key={item.id}>{item.area}</NativeSelectOption>)}
-          </NativeSelect>
-          {errors.location && <p className="field-error" id="location-error">{errors.location}</p>}
-        </div>
-      )}
+      <div className="field">
+        <label htmlFor="location">Booking city</label>
+        <NativeSelect className="form-select" id="location" name="location" aria-invalid={Boolean(errors.location)} aria-describedby={errors.location ? 'location-error' : undefined} value={location} onChange={(event) => setLocation(event.target.value)}>
+          <NativeSelectOption value="" disabled>Choose Bengaluru or Hyderabad</NativeSelectOption>
+          {siteConfig.locations.map((item) => <NativeSelectOption value={item.name} key={item.id}>{item.area}</NativeSelectOption>)}
+        </NativeSelect>
+        {errors.location && <p className="field-error" id="location-error">{errors.location}</p>}
+      </div>
       <div className="field">
         <label htmlFor="goal">What would you like to achieve?</label>
         <Textarea id="goal" name="goal" placeholder="For example: my first pull-up, a stronger handstand, or better movement control" aria-invalid={Boolean(errors.goal)} aria-describedby={errors.goal ? 'goal-error' : undefined} />

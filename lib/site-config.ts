@@ -29,6 +29,8 @@ export interface Location {
   area: string;
   address: string;
   mapsUrl: string;
+  whatsappNumber: string;
+  whatsappDisplay: string;
   schedule: readonly ScheduleGroup[];
 }
 
@@ -184,8 +186,6 @@ export const siteConfig = {
   reviewsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
   googleRating: '4.9',
   googleReviewCount: 27,
-  whatsappNumber: '919902828888',
-  whatsappDisplay: '+91 99028 28888',
   locations: [
     {
       id: 'bengaluru',
@@ -193,6 +193,8 @@ export const siteConfig = {
       area: 'Bilekahalli, Bengaluru',
       address: '98, 4th Cross, Nagappa Layout, Bannerghatta Road · 560076',
       mapsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
+      whatsappNumber: '919902828888',
+      whatsappDisplay: '+91 99028 28888',
       schedule: [
         {
           category: 'Group Classes',
@@ -235,6 +237,8 @@ export const siteConfig = {
       area: 'Madhapur, Hyderabad',
       address: 'Madhapur, Hyderabad',
       mapsUrl: 'https://maps.app.goo.gl/uj1bSeAqvxp2uNNz7',
+      whatsappNumber: '919319045223',
+      whatsappDisplay: '+91 93190 45223',
       schedule: [
         {
           category: 'Group Classes',
