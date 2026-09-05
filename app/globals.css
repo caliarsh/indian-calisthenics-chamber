@@ -250,9 +250,18 @@ button, input, select, textarea { font: inherit; }
 .assessed-badge { margin: 0 0 1rem; padding: .75rem 1rem; border-left: 3px solid #d7546a; background: rgba(158,27,50,.14); color: #f0c2ca; font-size: .78rem; font-weight: 700; }
 
 .reviews-section { background: #e9e3d8; color: #171714; }
-.reviews-heading { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 3rem; margin-bottom: 3.5rem; }
+.reviews-heading { margin-bottom: 3.5rem; }
 .reviews-heading h2 em { color: #8f1d2c; }
 .reviews-heading .section-kicker { color: #8f1d2c; }
+.reviews-tabs { gap: 1.5rem; }
+.reviews-tab-list { width: fit-content; height: auto; padding: 4px; border: 1px solid rgba(23,23,20,.22); border-radius: 0; background: rgba(255,255,255,.24); }
+.reviews-tab-trigger { min-width: 190px; min-height: 50px; border-radius: 0; color: #666159; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+.reviews-tab-trigger[data-active] { background: #8f1d2c; color: #fff7f7; }
+.reviews-tab-content { margin-top: 0; }
+.reviews-location-heading { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.reviews-location-heading > div:first-child { display: flex; flex-direction: column; gap: .4rem; }
+.reviews-location-heading > div:first-child span { color: #8f1d2c; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.reviews-location-heading > div:first-child strong { font: 600 clamp(1.8rem, 3vw, 2.6rem)/1 var(--font-display); text-transform: uppercase; }
 .rating-summary { display: flex; align-items: center; gap: 1.2rem; min-width: 290px; padding: 1.3rem 1.5rem; border: 1px solid rgba(23,23,20,.2); }
 .rating-summary > strong { font: 600 4.2rem/.8 var(--font-display); }
 .rating-summary > div { display: flex; flex-direction: column; gap: .5rem; }
@@ -395,6 +404,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .online-pt-card { grid-template-columns: 1fr; }
   .online-pt-card .schedule-level { grid-column: auto; }
   .rating-summary { min-width: 0; width: 100%; }
+  .reviews-tab-list { width: 100%; }
+  .reviews-tab-trigger { min-width: 0; }
+  .reviews-location-heading { align-items: flex-start; flex-direction: column; }
   .review-grid { grid-template-columns: 1fr; }
   .trial-section { grid-template-columns: 1fr; }
   .trial-copy, .form-wrap { padding: 5rem 1.25rem; }

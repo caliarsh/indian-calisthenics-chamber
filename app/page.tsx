@@ -4,13 +4,12 @@ import {
   AtSign,
   ArrowDown,
   ArrowUpRight,
-  Quote,
-  Star,
 } from 'lucide-react';
 import { ProgramExplorer } from '@/components/program-explorer';
+import { ReviewsExplorer } from '@/components/reviews-explorer';
 import { ScheduleExplorer } from '@/components/schedule-explorer';
 import { TrialForm } from '@/components/trial-form';
-import { coaches, reviews, siteConfig } from '@/lib/site-config';
+import { coaches, siteConfig } from '@/lib/site-config';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -144,25 +143,8 @@ export default function Home() {
             <p className="section-kicker">Google Maps reviews</p>
             <h2>Built together.<br /><em>Rated by athletes.</em></h2>
           </div>
-          <div className="rating-summary" aria-label={`${siteConfig.googleRating} out of 5 from ${siteConfig.googleReviewCount} Google reviews`}>
-            <strong>{siteConfig.googleRating}</strong>
-            <div>
-              <span className="rating-stars" aria-hidden="true">{Array.from({ length: 5 }).map((_, index) => <Star key={index} />)}</span>
-              <small>{siteConfig.googleReviewCount} reviews on Google</small>
-            </div>
-          </div>
         </div>
-        <div className="review-grid">
-          {reviews.map((review) => (
-            <article className="review-card" key={review.author}>
-              <Quote aria-hidden="true" />
-              <div className="review-stars" aria-label={`${review.rating} out of 5 stars`}>{Array.from({ length: review.rating }).map((_, index) => <Star key={index} aria-hidden="true" />)}</div>
-              <blockquote>“{review.quote}”</blockquote>
-              <p>{review.author}<span>Google review</span></p>
-            </article>
-          ))}
-        </div>
-        <a className="button reviews-button" href={siteConfig.reviewsUrl} target="_blank" rel="noreferrer">Read all {siteConfig.googleReviewCount} reviews on Google <ArrowUpRight aria-hidden="true" /></a>
+        <ReviewsExplorer />
       </section>
 
       <footer>

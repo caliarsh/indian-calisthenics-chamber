@@ -31,6 +31,9 @@ export interface Location {
   mapsUrl: string;
   whatsappNumber: string;
   whatsappDisplay: string;
+  googleRating: string;
+  googleReviewCount: number;
+  reviews: readonly Review[];
   schedule: readonly ScheduleGroup[];
 }
 
@@ -147,7 +150,7 @@ export const coaches: readonly Coach[] = [
   },
 ];
 
-export const reviews: readonly Review[] = [
+const bengaluruReviews: readonly Review[] = [
   {
     author: 'Kushal Gowda',
     rating: 5,
@@ -180,12 +183,42 @@ export const reviews: readonly Review[] = [
   },
 ];
 
+const hyderabadReviews: readonly Review[] = [
+  {
+    author: 'Chittiraju Yenni',
+    rating: 5,
+    quote: "Thanks to ICC(Indian Calisthenics Chamber) and coach Abhishek, I've achieved remarkable transformations, both physically and mentally.",
+  },
+  {
+    author: 'Jimmy Gupta',
+    rating: 5,
+    quote: 'I am seeing myself stronger with each sessions. Thanks Abhishek for helping me to learn skills from scratch.',
+  },
+  {
+    author: 'Konakanchi Gayathri',
+    rating: 5,
+    quote: 'His patience and clear instructions allowed me to learn new skills and progress at my own pace.',
+  },
+  {
+    author: 'Varsha Govenkar',
+    rating: 5,
+    quote: "Best calisthenics academy in Hyderabad! Abhishek's expertise and passion shine through in every session.",
+  },
+  {
+    author: 'Omkesh Molugu',
+    rating: 5,
+    quote: 'Would recommend this place. Thanks Team ICC',
+  },
+  {
+    author: 'Animesh Saraogi',
+    rating: 5,
+    quote: 'ICC is an authentic calisthenics academy with a great community!',
+  },
+];
+
 export const siteConfig = {
   name: 'Indian Calisthenics Chamber',
   shortName: 'ICC',
-  reviewsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
-  googleRating: '4.9',
-  googleReviewCount: 27,
   locations: [
     {
       id: 'bengaluru',
@@ -195,6 +228,9 @@ export const siteConfig = {
       mapsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
       whatsappNumber: '919902828888',
       whatsappDisplay: '+91 99028 28888',
+      googleRating: '4.9',
+      googleReviewCount: 27,
+      reviews: bengaluruReviews,
       schedule: [
         {
           category: 'Group Classes',
@@ -239,6 +275,9 @@ export const siteConfig = {
       mapsUrl: 'https://maps.app.goo.gl/uj1bSeAqvxp2uNNz7',
       whatsappNumber: '919319045223',
       whatsappDisplay: '+91 93190 45223',
+      googleRating: '4.9',
+      googleReviewCount: 38,
+      reviews: hyderabadReviews,
       schedule: [
         {
           category: 'Group Classes',
