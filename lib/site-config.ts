@@ -148,6 +148,14 @@ export const coaches: readonly Coach[] = [
     instagram: '@cali.arsh',
     instagramUrl: 'https://www.instagram.com/cali.arsh/',
   },
+  {
+    name: 'Abhishek',
+    initials: 'AB',
+    role: 'Head Coach',
+    description: 'Abhishek brings more than eight years of experience in calisthenics and has trained over 500 athletes and fitness enthusiasts, including more than 10 athletes who have competed and won at the national level. He specialises in freestyle, statics, weighted calisthenics, and endurance. His coaching builds strong foundations, develops advanced skills, and improves strength, control, endurance, and overall athletic performance through structured, personalised training.',
+    instagram: '@abhishek_icc',
+    instagramUrl: 'https://www.instagram.com/abhishek_icc/',
+  },
 ];
 
 const bengaluruReviews: readonly Review[] = [

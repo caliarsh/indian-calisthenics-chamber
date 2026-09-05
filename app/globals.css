@@ -172,7 +172,7 @@ button, input, select, textarea { font: inherit; }
 .coaches-section { background: #10100f; }
 .coach-grid { display: grid; grid-template-columns: 1fr; border: 1px solid var(--border); }
 .coach-card { display: grid; grid-template-columns: minmax(280px, .7fr) 1.3fr; min-width: 0; background: #151513; }
-.coach-card:last-child { border-right: 0; }
+.coach-card:not(:last-child) { border-bottom: 1px solid var(--border); }
 .coach-portrait { position: relative; display: grid; place-items: center; min-height: 420px; overflow: hidden; border-right: 1px solid var(--border); background: radial-gradient(circle at 70% 25%, rgba(158,27,50,.52), transparent 32%), linear-gradient(145deg, #292925, #11110f); }
 .coach-portrait::before { content: ''; position: absolute; inset: 15%; border: 1px solid rgba(255,255,255,.14); transform: rotate(8deg); }
 .coach-portrait span { position: relative; color: rgba(255,255,255,.92); font: 600 clamp(4rem, 8vw, 8rem)/1 var(--font-display); letter-spacing: -.04em; }
