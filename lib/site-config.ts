@@ -1,6 +1,27 @@
 export type Level = 'L1' | 'L2' | 'L3';
 export type TrainingMode = 'Online' | 'Offline';
 export type ProgramKind = 'PT' | 'Group' | 'Athlete';
+export type ScheduleCategory = 'Group Classes' | 'Personal Training';
+export type ScheduleTimeOfDay = 'Morning' | 'Evening' | 'By appointment';
+
+export interface ScheduleSession {
+  name: string;
+  mode: TrainingMode;
+  days: string;
+  time: string;
+  level: string;
+}
+
+export interface SchedulePeriod {
+  timeOfDay: ScheduleTimeOfDay;
+  sessions: readonly ScheduleSession[];
+}
+
+export interface ScheduleGroup {
+  category: ScheduleCategory;
+  modeLabel: string;
+  periods: readonly SchedulePeriod[];
+}
 
 export interface Program {
   id: string;
@@ -159,11 +180,39 @@ export const siteConfig = {
   whatsappNumber: '919902828888',
   whatsappDisplay: '+91 99028 28888',
   schedule: [
-    { days: 'Monday to Friday', time: '6:30 AM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
-    { days: 'Monday to Friday', time: '7:30 AM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
-    { days: 'Monday to Friday', time: '5:00 PM', level: 'Athlete Batch', mode: 'Offline' },
-    { days: 'Monday to Friday', time: '6:00 PM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
-    { days: 'Monday to Friday', time: '7:00 PM', level: 'L1 · L2 · L3 Group', mode: 'Offline' },
-    { days: 'Monday to Friday', time: 'By appointment', level: 'Personal Training', mode: 'Online · Offline' },
-  ],
+    {
+      category: 'Group Classes',
+      modeLabel: 'Offline',
+      periods: [
+        {
+          timeOfDay: 'Morning',
+          sessions: [
+            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:30 AM', level: 'L1 · L2 · L3' },
+            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:30 AM', level: 'L1 · L2 · L3' },
+          ],
+        },
+        {
+          timeOfDay: 'Evening',
+          sessions: [
+            { name: 'Athlete Batch', mode: 'Offline', days: 'Monday to Friday', time: '5:00 PM', level: 'Athlete Batch' },
+            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:00 PM', level: 'L1 · L2 · L3' },
+            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:00 PM', level: 'L1 · L2 · L3' },
+          ],
+        },
+      ],
+    },
+    {
+      category: 'Personal Training',
+      modeLabel: 'Online · Offline',
+      periods: [
+        {
+          timeOfDay: 'By appointment',
+          sessions: [
+            { name: 'Offline PT', mode: 'Offline', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
+            { name: 'Online PT', mode: 'Online', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
+          ],
+        },
+      ],
+    },
+  ] satisfies readonly ScheduleGroup[],
 } as const;

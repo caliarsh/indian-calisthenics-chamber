@@ -124,13 +124,28 @@ export default function Home() {
             <ArrowUpRight className="location-arrow" aria-hidden="true" />
           </a>
         </div>
-        <div className="schedule-list">
-          {siteConfig.schedule.map((session) => (
-            <div className="schedule-row" key={`${session.days}-${session.time}`}>
-              <span className="schedule-days">{session.days}<small>{session.mode}</small></span>
-              <strong>{session.time}</strong>
-              <span className="schedule-level">{session.level}</span>
-            </div>
+        <div className="schedule-groups">
+          {siteConfig.schedule.map((group) => (
+            <article className={`schedule-group schedule-group-${group.category.replaceAll(' ', '-').toLowerCase()}`} key={group.category}>
+              <header className="schedule-group-heading">
+                <h3>{group.category}</h3>
+                <span>{group.modeLabel}</span>
+              </header>
+              {group.periods.map((period) => (
+                <section className="schedule-period" key={period.timeOfDay} aria-labelledby={`${group.category}-${period.timeOfDay}`.replaceAll(' ', '-').toLowerCase()}>
+                  <h4 id={`${group.category}-${period.timeOfDay}`.replaceAll(' ', '-').toLowerCase()}>{period.timeOfDay}</h4>
+                  <div className="schedule-list">
+                    {period.sessions.map((session) => (
+                      <div className="schedule-row" key={`${session.mode}-${session.time}-${session.name}`}>
+                        <span className="schedule-days">{session.name}<small>{session.days} · {session.mode}</small></span>
+                        <strong>{session.time}</strong>
+                        <span className="schedule-level">{session.level}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </article>
           ))}
         </div>
         <p className="placeholder-note">Group batches run Monday to Friday. Personal Training sessions are scheduled by appointment.</p>
