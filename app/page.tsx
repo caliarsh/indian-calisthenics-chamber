@@ -4,11 +4,11 @@ import {
   AtSign,
   ArrowDown,
   ArrowUpRight,
-  MapPin,
   Quote,
   Star,
 } from 'lucide-react';
 import { ProgramExplorer } from '@/components/program-explorer';
+import { ScheduleExplorer } from '@/components/schedule-explorer';
 import { TrialForm } from '@/components/trial-form';
 import { coaches, reviews, siteConfig } from '@/lib/site-config';
 
@@ -118,36 +118,8 @@ export default function Home() {
             <p className="section-kicker">Weekly batch schedule</p>
             <h2>Find your<br /><em>training window.</em></h2>
           </div>
-          <a className="location-card" href={siteConfig.mapsUrl} target="_blank" rel="noreferrer" aria-label="Open the ICC training base in Google Maps">
-            <MapPin aria-hidden="true" />
-            <div><span>Training base</span><strong>{siteConfig.location}</strong><small>{siteConfig.locationNote}</small></div>
-            <ArrowUpRight className="location-arrow" aria-hidden="true" />
-          </a>
         </div>
-        <div className="schedule-groups">
-          {siteConfig.schedule.map((group) => (
-            <article className={`schedule-group schedule-group-${group.category.replaceAll(' ', '-').toLowerCase()}`} key={group.category}>
-              <header className="schedule-group-heading">
-                <h3>{group.category}</h3>
-                <span>{group.modeLabel}</span>
-              </header>
-              {group.periods.map((period) => (
-                <section className="schedule-period" key={period.timeOfDay} aria-labelledby={`${group.category}-${period.timeOfDay}`.replaceAll(' ', '-').toLowerCase()}>
-                  <h4 id={`${group.category}-${period.timeOfDay}`.replaceAll(' ', '-').toLowerCase()}>{period.timeOfDay}</h4>
-                  <div className="schedule-list">
-                    {period.sessions.map((session) => (
-                      <div className="schedule-row" key={`${session.mode}-${session.time}-${session.name}`}>
-                        <span className="schedule-days">{session.name}<small>{session.days} · {session.mode}</small></span>
-                        <strong>{session.time}</strong>
-                        <span className="schedule-level">{session.level}</span>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              ))}
-            </article>
-          ))}
-        </div>
+        <ScheduleExplorer />
         <p className="placeholder-note">Group batches run Monday to Friday. Personal Training sessions are scheduled by appointment.</p>
       </section>
 
@@ -190,13 +162,13 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <a className="button reviews-button" href={siteConfig.mapsUrl} target="_blank" rel="noreferrer">Read all {siteConfig.googleReviewCount} reviews on Google <ArrowUpRight aria-hidden="true" /></a>
+        <a className="button reviews-button" href={siteConfig.reviewsUrl} target="_blank" rel="noreferrer">Read all {siteConfig.googleReviewCount} reviews on Google <ArrowUpRight aria-hidden="true" /></a>
       </section>
 
       <footer>
         <a className="brand footer-brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
         <p>Strength is a skill. Learn it well.</p>
-        <div className="footer-contact"><a href={siteConfig.mapsUrl} target="_blank" rel="noreferrer">{siteConfig.location}</a><a href={`tel:+${siteConfig.whatsappNumber}`}>{siteConfig.whatsappDisplay}</a></div>
+        <div className="footer-contact">{siteConfig.locations.map((location) => <a href={location.mapsUrl} target="_blank" rel="noreferrer" key={location.id}>{location.area}</a>)}<a href={`tel:+${siteConfig.whatsappNumber}`}>{siteConfig.whatsappDisplay}</a></div>
       </footer>
     </main>
   );

@@ -8,7 +8,7 @@ import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select'
 import { Textarea } from '@/components/ui/textarea';
 import { programs, siteConfig, type Level, type TrainingMode } from '@/lib/site-config';
 
-type FieldName = 'name' | 'experience' | 'goal' | 'mode' | 'program' | 'session';
+type FieldName = 'name' | 'experience' | 'goal' | 'mode' | 'location' | 'program' | 'session';
 type FormErrors = Partial<Record<FieldName, string>>;
 
 function readText(form: FormData, field: FieldName) {
@@ -25,6 +25,7 @@ export function TrialForm() {
   const [sent, setSent] = useState(false);
   const [experience, setExperience] = useState('');
   const [mode, setMode] = useState<TrainingMode | ''>('');
+  const [location, setLocation] = useState('');
   const [program, setProgram] = useState('');
   const [assessed, setAssessed] = useState(false);
 
@@ -51,6 +52,7 @@ export function TrialForm() {
       experience: readText(form, 'experience'),
       goal: readText(form, 'goal'),
       mode: readText(form, 'mode'),
+      location: readText(form, 'location'),
       program: readText(form, 'program'),
       session: readText(form, 'session'),
     };
@@ -60,6 +62,7 @@ export function TrialForm() {
     if (!values.experience) nextErrors.experience = 'Choose your current level.';
     if (!values.goal) nextErrors.goal = 'Tell us what you want to work towards.';
     if (!values.mode) nextErrors.mode = 'Choose online or offline training.';
+    if (values.mode === 'Offline' && !values.location) nextErrors.location = 'Choose your training location.';
     if (!values.program) nextErrors.program = 'Choose a training program.';
     if (!values.session) nextErrors.session = 'Choose a preferred session.';
     setErrors(nextErrors);
@@ -72,6 +75,7 @@ export function TrialForm() {
       `Name: ${values.name}`,
       `Level: ${values.experience}${assessed ? ' (website assessment)' : ''}`,
       `Training mode: ${values.mode}`,
+      ...(values.location ? [`Location: ${values.location}`] : []),
       `Program: ${values.program}`,
       `Training goal: ${values.goal}`,
       `Preferred session: ${values.session}`,
@@ -105,7 +109,7 @@ export function TrialForm() {
       <div className="field-grid">
         <div className="field">
           <label htmlFor="mode">Training mode</label>
-          <NativeSelect className="form-select" id="mode" name="mode" aria-invalid={Boolean(errors.mode)} aria-describedby={errors.mode ? 'mode-error' : undefined} value={mode} onChange={(event) => { setMode(event.target.value as TrainingMode); setProgram(''); }}>
+          <NativeSelect className="form-select" id="mode" name="mode" aria-invalid={Boolean(errors.mode)} aria-describedby={errors.mode ? 'mode-error' : undefined} value={mode} onChange={(event) => { const nextMode = event.target.value as TrainingMode; setMode(nextMode); setProgram(''); if (nextMode !== 'Offline') setLocation(''); }}>
             <NativeSelectOption value="" disabled>Online or offline</NativeSelectOption>
             <NativeSelectOption value="Online">Online</NativeSelectOption>
             <NativeSelectOption value="Offline">Offline</NativeSelectOption>
@@ -121,6 +125,16 @@ export function TrialForm() {
           {errors.program && <p className="field-error" id="program-error">{errors.program}</p>}
         </div>
       </div>
+      {mode === 'Offline' && (
+        <div className="field">
+          <label htmlFor="location">Training location</label>
+          <NativeSelect className="form-select" id="location" name="location" aria-invalid={Boolean(errors.location)} aria-describedby={errors.location ? 'location-error' : undefined} value={location} onChange={(event) => setLocation(event.target.value)}>
+            <NativeSelectOption value="" disabled>Choose a location</NativeSelectOption>
+            {siteConfig.locations.map((item) => <NativeSelectOption value={item.name} key={item.id}>{item.area}</NativeSelectOption>)}
+          </NativeSelect>
+          {errors.location && <p className="field-error" id="location-error">{errors.location}</p>}
+        </div>
+      )}
       <div className="field">
         <label htmlFor="goal">What would you like to achieve?</label>
         <Textarea id="goal" name="goal" placeholder="For example: my first pull-up, a stronger handstand, or better movement control" aria-invalid={Boolean(errors.goal)} aria-describedby={errors.goal ? 'goal-error' : undefined} />

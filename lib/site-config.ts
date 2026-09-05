@@ -23,6 +23,15 @@ export interface ScheduleGroup {
   periods: readonly SchedulePeriod[];
 }
 
+export interface Location {
+  id: 'bengaluru' | 'hyderabad';
+  name: string;
+  area: string;
+  address: string;
+  mapsUrl: string;
+  schedule: readonly ScheduleGroup[];
+}
+
 export interface Program {
   id: string;
   name: string;
@@ -172,47 +181,101 @@ export const reviews: readonly Review[] = [
 export const siteConfig = {
   name: 'Indian Calisthenics Chamber',
   shortName: 'ICC',
-  location: 'Bilekahalli, Bengaluru',
-  locationNote: '98, 4th Cross, Nagappa Layout, Bannerghatta Road · 560076',
-  mapsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
+  reviewsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
   googleRating: '4.9',
   googleReviewCount: 27,
   whatsappNumber: '919902828888',
   whatsappDisplay: '+91 99028 28888',
-  schedule: [
+  locations: [
     {
-      category: 'Group Classes',
-      modeLabel: 'Offline',
-      periods: [
+      id: 'bengaluru',
+      name: 'Bengaluru',
+      area: 'Bilekahalli, Bengaluru',
+      address: '98, 4th Cross, Nagappa Layout, Bannerghatta Road · 560076',
+      mapsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
+      schedule: [
         {
-          timeOfDay: 'Morning',
-          sessions: [
-            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:30 AM', level: 'L1 · L2 · L3' },
-            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:30 AM', level: 'L1 · L2 · L3' },
+          category: 'Group Classes',
+          modeLabel: 'Offline',
+          periods: [
+            {
+              timeOfDay: 'Morning',
+              sessions: [
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:30 AM', level: 'L1 · L2 · L3' },
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:30 AM', level: 'L1 · L2 · L3' },
+              ],
+            },
+            {
+              timeOfDay: 'Evening',
+              sessions: [
+                { name: 'Athlete Batch', mode: 'Offline', days: 'Monday to Friday', time: '5:00 PM', level: 'Athlete Batch' },
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:00 PM', level: 'L1 · L2 · L3' },
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:00 PM', level: 'L1 · L2 · L3' },
+              ],
+            },
           ],
         },
         {
-          timeOfDay: 'Evening',
-          sessions: [
-            { name: 'Athlete Batch', mode: 'Offline', days: 'Monday to Friday', time: '5:00 PM', level: 'Athlete Batch' },
-            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:00 PM', level: 'L1 · L2 · L3' },
-            { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:00 PM', level: 'L1 · L2 · L3' },
+          category: 'Personal Training',
+          modeLabel: 'Offline',
+          periods: [
+            {
+              timeOfDay: 'By appointment',
+              sessions: [
+                { name: 'Offline PT', mode: 'Offline', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
+              ],
+            },
           ],
         },
       ],
     },
     {
-      category: 'Personal Training',
-      modeLabel: 'Online · Offline',
-      periods: [
+      id: 'hyderabad',
+      name: 'Hyderabad',
+      area: 'Madhapur, Hyderabad',
+      address: 'Madhapur, Hyderabad',
+      mapsUrl: 'https://maps.app.goo.gl/uj1bSeAqvxp2uNNz7',
+      schedule: [
         {
-          timeOfDay: 'By appointment',
-          sessions: [
-            { name: 'Offline PT', mode: 'Offline', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
-            { name: 'Online PT', mode: 'Online', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
+          category: 'Group Classes',
+          modeLabel: 'Offline',
+          periods: [
+            {
+              timeOfDay: 'Morning',
+              sessions: [
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:30 AM', level: 'L1 · L2 · L3' },
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:30 AM', level: 'L1 · L2 · L3' },
+              ],
+            },
+            {
+              timeOfDay: 'Evening',
+              sessions: [
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:30 PM', level: 'L1 · L2 · L3' },
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:30 PM', level: 'L1 · L2 · L3' },
+              ],
+            },
+          ],
+        },
+        {
+          category: 'Personal Training',
+          modeLabel: 'Offline',
+          periods: [
+            {
+              timeOfDay: 'By appointment',
+              sessions: [
+                { name: 'Offline PT', mode: 'Offline', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
+              ],
+            },
           ],
         },
       ],
     },
-  ] satisfies readonly ScheduleGroup[],
+  ] satisfies readonly Location[],
+  onlinePersonalTraining: {
+    name: 'Online PT',
+    mode: 'Online',
+    days: 'Monday to Friday',
+    time: 'Flexible timing',
+    level: 'L1 · L2 · L3',
+  } satisfies ScheduleSession,
 } as const;

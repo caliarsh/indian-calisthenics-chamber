@@ -184,8 +184,13 @@ button, input, select, textarea { font: inherit; }
 .coach-card a svg { width: 17px; color: #d7546a; }
 
 .schedule-section { background: #151513; }
-.schedule-heading { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: end; margin-bottom: 3.5rem; }
-.location-card { display: flex; align-items: flex-start; gap: 1rem; min-width: 310px; max-width: 480px; padding: 1.25rem; border: 1px solid var(--border); background: #1b1b18; transition: border-color .2s ease, transform .2s ease; }
+.schedule-heading { margin-bottom: 3.5rem; }
+.location-tabs { gap: 1.25rem; }
+.location-tab-list { width: fit-content; height: auto; padding: 4px; border: 1px solid var(--border); border-radius: 0; background: #10100f; }
+.location-tab-trigger { min-width: 190px; min-height: 50px; border-radius: 0; color: #aaa69d; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+.location-tab-trigger[data-active] { background: var(--primary); color: var(--primary-foreground); }
+.location-tab-content { margin-top: 0; }
+.location-card { display: flex; align-items: flex-start; gap: 1rem; width: 100%; margin-bottom: 1.25rem; padding: 1.25rem; border: 1px solid var(--border); background: #1b1b18; transition: border-color .2s ease, transform .2s ease; }
 .location-card:hover { border-color: rgba(158,27,50,.8); transform: translateY(-3px); }
 .location-card svg { flex: 0 0 auto; width: 21px; color: var(--primary); }
 .location-card div { display: flex; flex: 1; flex-direction: column; gap: .25rem; }
@@ -210,6 +215,11 @@ button, input, select, textarea { font: inherit; }
 .schedule-level { justify-self: end; padding: .45rem .75rem; border: 1px solid rgba(158,27,50,.65); color: #d7546a; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .schedule-group-personal-training .schedule-row { grid-template-columns: 1fr auto; }
 .schedule-group-personal-training .schedule-level { grid-column: 1 / -1; justify-self: start; }
+.online-pt-card { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 1.25rem; margin-top: 1.25rem; padding: 1.5rem; border: 1px solid rgba(158,27,50,.65); background: rgba(158,27,50,.1); }
+.online-pt-card > div { display: flex; flex-direction: column; gap: .3rem; }
+.online-pt-card > div span, .online-pt-card > div small { color: #8f8b84; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.online-pt-card > div strong { font: 600 1.6rem var(--font-display); text-transform: uppercase; }
+.online-pt-card > strong { white-space: nowrap; font: 600 1.4rem var(--font-display); }
 .placeholder-note { margin: 1.1rem 0 0; color: #75716b; font-size: .75rem; }
 
 .trial-section { display: grid; grid-template-columns: .86fr 1.14fr; min-height: 820px; background: var(--primary); color: #fff7f7; }
@@ -373,12 +383,15 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .coach-card:last-child { border-bottom: 0; }
   .coach-portrait { min-height: 330px; border-right: 0; border-bottom: 1px solid var(--border); }
   .coach-card-body { min-height: 0; }
-  .location-card { min-width: 0; width: 100%; }
+  .location-tab-list { width: 100%; }
+  .location-tab-trigger { min-width: 0; }
   .schedule-groups { grid-template-columns: 1fr; }
   .schedule-group-heading { align-items: flex-start; flex-direction: column; }
   .schedule-period { padding-inline: 1rem; }
   .schedule-row { grid-template-columns: 1fr auto; }
   .schedule-level { grid-column: 1 / -1; justify-self: start; }
+  .online-pt-card { grid-template-columns: 1fr; }
+  .online-pt-card .schedule-level { grid-column: auto; }
   .rating-summary { min-width: 0; width: 100%; }
   .review-grid { grid-template-columns: 1fr; }
   .trial-section { grid-template-columns: 1fr; }
