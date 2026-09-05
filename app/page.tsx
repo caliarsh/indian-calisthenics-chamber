@@ -150,7 +150,13 @@ export default function Home() {
       <footer>
         <a className="brand footer-brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
         <p>Strength is a skill. Learn it well.</p>
-        <div className="footer-contact">{siteConfig.locations.map((location) => <div className="footer-location" key={location.id}><a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.area}</a><a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a></div>)}</div>
+        <div className="footer-contact">
+          {siteConfig.locations.map((location) => (
+            <a href={location.mapsUrl} target="_blank" rel="noreferrer" key={location.id}>
+              {location.name}
+            </a>
+          ))}
+        </div>
       </footer>
     </main>
   );
