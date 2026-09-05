@@ -235,7 +235,7 @@ export const siteConfig = {
       id: 'hyderabad',
       name: 'Hyderabad',
       area: 'Madhapur, Hyderabad',
-      address: 'Madhapur, Hyderabad',
+      address: 'Plot No. 4, 13, 100 Feet Road, opposite The Street Drive, Siddhi Vinayak Nagar, Madhapur, Hyderabad, Telangana 500081',
       mapsUrl: 'https://maps.app.goo.gl/uj1bSeAqvxp2uNNz7',
       whatsappNumber: '919319045223',
       whatsappDisplay: '+91 93190 45223',
