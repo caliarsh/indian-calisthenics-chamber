@@ -62,6 +62,7 @@ export interface OnlineOffer {
   category: OnlineOfferCategory;
   name: string;
   price: string;
+  compareAtPrice?: string;
   description: string;
   inclusions: readonly string[];
   duration?: string;
@@ -182,7 +183,7 @@ export const onlineOffers: readonly OnlineOffer[] = [
     id: 'workout-plan',
     category: 'Custom Plans',
     name: 'Workout Plan',
-    price: '₹10,000',
+    price: '₹7,000',
     duration: '4 weeks',
     description: 'A personalised home or gym program built around your level, equipment, and goal.',
     inclusions: ['Custom four-week program', 'Weekly coach check-ins', 'Plan adjustments for four weeks'],
@@ -191,7 +192,7 @@ export const onlineOffers: readonly OnlineOffer[] = [
     id: 'diet-plan',
     category: 'Custom Plans',
     name: 'Diet Plan',
-    price: '₹10,000',
+    price: '₹7,000',
     duration: '4 weeks',
     description: 'General nutrition guidance shaped around your training goal, routine, and food preferences.',
     inclusions: ['Custom four-week diet plan', 'Weekly coach check-ins', 'Plan adjustments for four weeks'],
@@ -200,9 +201,10 @@ export const onlineOffers: readonly OnlineOffer[] = [
     id: 'workout-diet-bundle',
     category: 'Custom Plans',
     name: 'Workout + Diet',
-    price: '₹17,000',
+    price: '₹10,000',
+    compareAtPrice: '₹14,000',
     duration: '4 weeks',
-    badge: 'Save ₹3,000',
+    badge: 'Save ₹4,000',
     description: 'Bring your training and nutrition together in one coordinated four-week plan.',
     inclusions: ['Custom workout and diet plans', 'Weekly coach check-ins', 'Plan adjustments for four weeks'],
   },
@@ -251,7 +253,7 @@ export const onlineOffers: readonly OnlineOffer[] = [
     name: 'Full Transformation',
     price: '₹32,000',
     duration: '12 weeks',
-    badge: 'Save ₹5,000',
+    badge: 'Structured 12-week coaching',
     description: 'The complete ICC online coaching path for clients ready to align training, nutrition, and live guidance.',
     inclusions: ['Fitness assessment', 'Workout and diet plans', 'Twelve 60-minute PT sessions', 'Twelve weeks of structured support'],
   },

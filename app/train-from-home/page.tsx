@@ -37,7 +37,7 @@ function OfferCard({ offer }: { offer: (typeof onlineOffers)[number] }) {
         {offer.badge && <strong>{offer.badge}</strong>}
       </div>
       <h3>{offer.name}</h3>
-      <p className="online-price">{offer.price}</p>
+      <div className="online-price-row"><p className="online-price">{offer.price}</p>{offer.compareAtPrice && <s>{offer.compareAtPrice}</s>}</div>
       <p className="online-offer-description">{offer.description}</p>
       <ul>
         {offer.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}

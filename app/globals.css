@@ -433,6 +433,8 @@ button, input, select, textarea { font: inherit; }
 .online-offer-top strong { max-width: 155px; padding: .35rem .5rem; background: rgba(158,27,50,.18); color: #f0c2ca; font-size: .62rem; text-align: right; }
 .online-offer-card h3 { margin: 1.6rem 0 .7rem; font: 600 clamp(2rem, 3.3vw, 3.2rem)/.95 var(--font-display); text-transform: uppercase; }
 .online-price { margin: 0; color: #d7546a; font: 600 clamp(2.8rem, 4vw, 4.2rem)/1 var(--font-display); }
+.online-price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: .75rem; }
+.online-price-row s { color: #77736c; font: 500 1.25rem/1 var(--font-display); text-decoration-color: #d7546a; text-decoration-thickness: 2px; }
 .online-offer-description { min-height: 105px; margin: 1.4rem 0; color: #9a968e; font-size: .9rem; line-height: 1.65; }
 .online-offer-card ul, .transformation-offer ul { list-style: none; margin: 0; padding: 1.2rem 0 0; border-top: 1px solid var(--border); }
 .online-offer-card li, .transformation-offer li { display: flex; gap: .65rem; margin: .75rem 0; color: #cbc6bd; font-size: .8rem; line-height: 1.45; }
