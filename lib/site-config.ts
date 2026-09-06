@@ -174,9 +174,9 @@ export const onlineOffers: readonly OnlineOffer[] = [
     category: 'Free Consultation',
     name: 'Assessment + Consultation',
     price: 'Free',
-    duration: '20 minutes',
+    duration: '15 minutes',
     description: 'Start with your current level, training setup, and goal so an ICC coach can recommend the right path.',
-    inclusions: ['ICC fitness assessment', '20-minute online consultation', 'Personalised offer recommendation'],
+    inclusions: ['ICC fitness assessment', '15-minute online consultation', 'Personalised offer recommendation'],
   },
   {
     id: 'workout-plan',

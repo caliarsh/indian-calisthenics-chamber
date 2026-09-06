@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const steps = [
   { number: '01', title: 'Assess', copy: 'Complete the free ICC fitness assessment to understand your current level.' },
-  { number: '02', title: 'Consult', copy: 'Talk with an ICC coach for 20 minutes about your setup, goal, and schedule.' },
+  { number: '02', title: 'Consult', copy: 'Talk with an ICC coach for 15 minutes about your setup, goal, and schedule.' },
   { number: '03', title: 'Match', copy: 'Get a clear recommendation instead of paying for more coaching than you need.' },
   { number: '04', title: 'Train', copy: 'Follow your plan at home or in your gym with the agreed level of coach support.' },
 ];
@@ -69,7 +69,7 @@ export default function TrainFromHomePage() {
         </div>
         <aside className="online-hero-summary" aria-label="How online coaching begins">
           <span>Start free</span>
-          <strong>Assessment +<br />20-minute call</strong>
+          <strong>Assessment +<br />15-minute call</strong>
           <p>No purchase before your coach recommendation.</p>
         </aside>
       </section>
@@ -137,7 +137,7 @@ export default function TrainFromHomePage() {
         </section>
       )}
 
-      <section className="online-final-cta section"><div><p className="section-kicker">Free assessment + consultation</p><h2>Find your<br /><em>next step.</em></h2><p>Tell us your level, setup, and goal on the dedicated booking page. We’ll arrange a free 20-minute consultation before recommending an offer.</p></div><div className="hero-actions"><a className="button" href="/book-trial?mode=Online">Book a free consultation <ArrowUpRight /></a><a className="text-link" href="/assessment?path=online">Take the assessment first</a></div></section>
+      <section className="online-final-cta section"><div><p className="section-kicker">Free assessment + consultation</p><h2>Find your<br /><em>next step.</em></h2><p>Tell us your level, setup, and goal on the dedicated booking page. Select a date and time for a free 15-minute call before we recommend an offer.</p></div><div className="hero-actions"><a className="button" href="/book-trial?mode=Online">Book a free consultation <ArrowUpRight /></a><a className="text-link" href="/assessment?path=online">Take the assessment first</a></div></section>
 
       <section className="online-disclaimer">
         <span>Before you begin</span>
