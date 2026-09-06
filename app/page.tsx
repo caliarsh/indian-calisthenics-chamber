@@ -152,9 +152,11 @@ export default function Home() {
         <p>Strength is a skill. Learn it well.</p>
         <div className="footer-contact">
           {siteConfig.locations.map((location) => (
-            <a href={location.mapsUrl} target="_blank" rel="noreferrer" key={location.id}>
-              {location.name}
-            </a>
+            <div className="footer-location" key={location.id}>
+              <a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.name}</a>
+              <span aria-hidden="true">·</span>
+              <a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a>
+            </div>
           ))}
         </div>
       </footer>
