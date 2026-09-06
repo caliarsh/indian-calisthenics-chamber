@@ -490,7 +490,10 @@ button, input, select, textarea { font: inherit; }
 .home-assessment .button, .offline-assessment .button, .online-final-cta .button { flex: 0 0 auto; }
 
 .offline-page, .booking-page { overflow: hidden; background: #10100f; }
-.offline-hero { position: relative; isolation: isolate; min-height: 820px; display: flex; align-items: flex-end; overflow: hidden; padding: 10rem clamp(1.25rem, 6.5vw, 7rem) 6rem; border-bottom: 1px solid var(--border); background: radial-gradient(circle at 78% 40%, rgba(158,27,50,.25), transparent 28%, transparent 48%), #0d0d0c; }
+.offline-hero { position: relative; isolation: isolate; min-height: 820px; display: flex; align-items: flex-end; overflow: hidden; padding: 10rem clamp(1.25rem, 6.5vw, 7rem) 6rem; border-bottom: 1px solid var(--border); background: #0d0d0c; }
+.offline-hero::before { position: absolute; inset: 0; z-index: -1; content: ''; background: linear-gradient(90deg, #0d0d0c 0%, rgba(13,13,12,.98) 29%, rgba(13,13,12,.72) 52%, rgba(13,13,12,.18) 82%), linear-gradient(0deg, rgba(13,13,12,.72), transparent 52%); pointer-events: none; }
+.offline-hero-media { position: absolute; inset: 0 0 0 34%; z-index: -2; overflow: hidden; background: #171714; }
+.offline-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 50%; }
 .offline-hero h1 { margin: 0; font: 600 clamp(5.2rem, 10.8vw, 11rem)/.78 var(--font-display); letter-spacing: -.045em; text-transform: uppercase; }
 .offline-hero h1 em { color: #d7546a; font-style: normal; }
 .offline-pricing { background: #10100f; }
@@ -669,6 +672,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .home-assessment, .offline-assessment, .online-final-cta { grid-template-columns: 1fr; align-items: flex-start; }
   .home-assessment > svg, .offline-assessment > svg { width: 38px; height: 38px; }
   .offline-hero { min-height: 790px; align-items: flex-end; padding-top: 8rem; }
+  .offline-hero::before { background: linear-gradient(0deg, #0d0d0c 0%, #0d0d0c 31%, rgba(13,13,12,.76) 52%, rgba(13,13,12,.08) 100%); }
+  .offline-hero-media { inset: 72px 0 auto; height: 57%; }
+  .offline-hero-media img { object-position: 50% 46%; }
   .offline-hero h1 { font-size: clamp(4.5rem, 22vw, 7rem); }
   .offline-price-grid, .offline-contacts, .group-campaign { grid-template-columns: 1fr; }
   .pricing-tab-list { width: 100%; }
