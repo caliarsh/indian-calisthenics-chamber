@@ -108,6 +108,19 @@ export interface CompetitionEvent {
   }[];
 }
 
+export interface WorkshopEvent {
+  id: string;
+  name: string;
+  format: 'Workshop' | 'ICC showcase';
+  ledBy: string;
+  date: string;
+  time: string;
+  location: string;
+  description: string;
+  topics: readonly string[];
+  sourceUrl: string;
+}
+
 export type FormQuality = 'Poor' | 'Average' | 'Good' | 'Excellent';
 export type MobilityRating = 'Restricted' | 'Average' | 'Good';
 export type FlexibilityRating = 'Poor' | 'Average' | 'Good';
@@ -401,6 +414,44 @@ export const siteConfig = {
       ],
     },
   ] satisfies readonly CompetitionEvent[],
+  workshops: [
+    {
+      id: 'weighted-calisthenics-hyderabad-2025',
+      name: 'Weighted Calisthenics Workshop',
+      format: 'Workshop',
+      ledBy: 'Sheik',
+      date: '1 June 2025',
+      time: '11:00 AM',
+      location: 'ICC Hyderabad · 100 Feet Road, Madhapur',
+      description: 'A focused introduction to weighted calisthenics, led by Sheik and built for athletes ready to understand how to begin, progress, and develop strength with added load.',
+      topics: ['Starting weighted calisthenics', 'Progression and strength development', 'Technique-led training'],
+      sourceUrl: 'https://www.instagram.com/reel/DKRjnKIiiFL/',
+    },
+    {
+      id: 'freestyle-calisthenics-hyderabad-2025',
+      name: 'Freestyle Calisthenics Workshop',
+      format: 'Workshop',
+      ledBy: 'Krishna Mishra',
+      date: '27 April 2025',
+      time: '5:00 PM onwards',
+      location: 'ICC Hyderabad',
+      description: 'A beginner-friendly freestyle session designed to build the city’s calisthenics scene, followed by a jam session with athletes from Hyderabad.',
+      topics: ['Starting freestyle from scratch', 'Foundation skills', 'Injury-prevention guidance'],
+      sourceUrl: 'https://www.instagram.com/reel/DIwJLqTiNJC/',
+    },
+    {
+      id: 'sportexpo-india-2025',
+      name: 'ICC at SportExpo India 2025',
+      format: 'ICC showcase',
+      ledBy: 'Team ICC',
+      date: '22–23 August 2025',
+      time: '5:00–6:00 PM',
+      location: 'HITEX, Hyderabad',
+      description: 'Team ICC presented calisthenics at SportExpo India 2025 through a live showcase of bodyweight strength, control, movement, and athletic discipline.',
+      topics: ['Bodyweight mastery', 'Strength and control', 'Live calisthenics demonstration'],
+      sourceUrl: 'https://www.instagram.com/reel/DNgHgaBTU8-/',
+    },
+  ] satisfies readonly WorkshopEvent[],
   locations: [
     {
       id: 'bengaluru',

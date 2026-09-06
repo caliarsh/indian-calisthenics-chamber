@@ -557,6 +557,26 @@ button, input, select, textarea { font: inherit; }
 .competition-links { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .competition-links a { display: inline-flex; align-items: center; gap: .5rem; color: #d7546a; font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 .competition-links svg { width: 16px; }
+.competition-body .competition-upcoming { margin-top: 2rem; padding: 1rem 1.15rem; border-left: 3px solid #d7546a; background: rgba(158,27,50,.14); color: #f0c2ca; font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.workshops-section { background: #10100f; }
+.workshops-section .section-heading h2 em { color: #d7546a; font-style: normal; }
+.workshop-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.workshop-card { display: flex; min-width: 0; min-height: 620px; flex-direction: column; padding: clamp(1.5rem, 3vw, 3rem); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #151513; }
+.workshop-card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.workshop-card-top span { color: #d7546a; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.workshop-card-top small { color: #77736c; font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.workshop-card h3 { margin: 2rem 0 .7rem; font: 600 clamp(2.6rem, 4vw, 4.2rem)/.88 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; }
+.workshop-card .workshop-lead { margin: 0; color: #8f8b84; font-size: .76rem; text-transform: uppercase; }
+.workshop-lead strong { color: #e0dbd1; }
+.workshop-meta { display: grid; gap: .6rem; margin: 1.6rem 0; padding-block: 1.2rem; border-block: 1px solid var(--border); }
+.workshop-meta span { display: flex; align-items: flex-start; gap: .55rem; color: #aaa69d; font-size: .7rem; font-weight: 700; line-height: 1.45; letter-spacing: .06em; text-transform: uppercase; }
+.workshop-meta svg { flex: 0 0 auto; width: 15px; color: #d7546a; }
+.workshop-card > p:not(.workshop-lead) { margin: 0; color: #aaa69d; font-size: .88rem; line-height: 1.7; }
+.workshop-card ul { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.workshop-card li { display: flex; gap: .6rem; margin: .65rem 0; color: #cbc6bd; font-size: .78rem; line-height: 1.45; }
+.workshop-card li svg { flex: 0 0 auto; width: 14px; color: #d7546a; }
+.workshop-card > a { display: inline-flex; align-items: center; gap: .5rem; align-self: flex-start; margin-top: auto; padding-top: 2rem; color: #d7546a; font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.workshop-card > a svg { width: 16px; }
 .offline-assessment { background: var(--primary); color: #fff7f7; }
 .offline-assessment > svg, .offline-assessment .section-kicker, .offline-assessment h2 em { color: #fff7f7; }
 .offline-assessment p:not(.section-kicker) { color: rgba(255,247,247,.76); }
@@ -704,6 +724,8 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .competition-mark { right: -1rem; bottom: 1rem; font-size: 10rem; }
   .competition-heading > svg { width: 34px; height: 34px; }
   .competition-body { padding: 1.5rem; }
+  .workshop-grid { grid-template-columns: 1fr; }
+  .workshop-card { min-height: 0; }
   .offline-contacts > article { min-height: 240px; }
   .booking-shell { grid-template-columns: 1fr; padding-top: 72px; }
   .booking-intro { padding: 4rem 1.25rem; }
