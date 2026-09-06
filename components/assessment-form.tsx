@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, CheckCircle2, Clock3, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -53,6 +53,12 @@ export function AssessmentForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<FormErrors>({});
   const [result, setResult] = useState<AssessmentResult | null>(null);
+  const [onlinePath, setOnlinePath] = useState(false);
+
+  useEffect(() => {
+    const isOnlinePath = new URLSearchParams(window.location.search).get('path') === 'online';
+    queueMicrotask(() => setOnlinePath(isOnlinePath));
+  }, []);
 
   function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -212,7 +218,9 @@ export function AssessmentForm() {
               <span>Available training options</span>
               <ul>{recommendations.map((program) => <li key={program.id}>{program.mode} · {program.name}</li>)}</ul>
             </div>
-            <a className="button result-button" href={`/?level=${result.level}#trial`}>Book a trial at {result.level} <ArrowRight aria-hidden="true" /></a>
+            <a className="button result-button" href={onlinePath ? `/train-from-home?level=${result.level}#consultation` : `/?level=${result.level}#trial`}>
+              {onlinePath ? `Book an online consultation at ${result.level}` : `Book a trial at ${result.level}`} <ArrowRight aria-hidden="true" />
+            </a>
             <button className="reset-button" onClick={reset} type="button"><RotateCcw aria-hidden="true" /> Retake assessment</button>
           </>
         ) : (

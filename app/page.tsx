@@ -28,6 +28,7 @@ export default function Home() {
         </a>
         <nav className="main-nav" aria-label="Primary navigation">
           <a href="#programs">Programs</a>
+          <a href="/train-from-home">Online coaching</a>
           <a href="#method">Our method</a>
           <a href="#coaches">Coaches</a>
           <a href="#reviews">Reviews</a>

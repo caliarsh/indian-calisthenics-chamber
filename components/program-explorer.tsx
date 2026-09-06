@@ -26,6 +26,7 @@ export function ProgramExplorer() {
         return (
           <TabsContent className="program-tab-content" key={mode} value={mode}>
             <p className="mode-intro"><span>{mode}</span>{modeCopy[mode]}</p>
+            {mode === 'Online' && <a className="online-coaching-link" href="/train-from-home">View online plans &amp; pricing <ArrowUpRight aria-hidden="true" /></a>}
             <div className={`program-grid program-grid-${mode.toLowerCase()}`}>
               {modePrograms.map((program, index) => {
                 const Icon = program.kind === 'PT' ? Dumbbell : program.kind === 'Group' ? Users : Trophy;

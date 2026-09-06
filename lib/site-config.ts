@@ -55,6 +55,20 @@ export interface Coach {
   instagramUrl?: string;
 }
 
+export type OnlineOfferCategory = 'Free Consultation' | 'Custom Plans' | 'Online PT' | 'Transformation';
+
+export interface OnlineOffer {
+  id: string;
+  category: OnlineOfferCategory;
+  name: string;
+  price: string;
+  description: string;
+  inclusions: readonly string[];
+  duration?: string;
+  badge?: string;
+  paymentUrl?: string;
+}
+
 export interface Review {
   author: string;
   rating: 5;
@@ -138,6 +152,95 @@ export const assessmentConfig = {
     { id: 'shoulderFlexibility', label: 'Shoulders · Overhead or behind-the-back reach' },
   ] satisfies readonly MovementCheck[],
 } as const;
+
+export const onlineOffers: readonly OnlineOffer[] = [
+  {
+    id: 'free-consultation',
+    category: 'Free Consultation',
+    name: 'Assessment + Consultation',
+    price: 'Free',
+    duration: '20 minutes',
+    description: 'Start with your current level, training setup, and goal so an ICC coach can recommend the right path.',
+    inclusions: ['ICC fitness assessment', '20-minute online consultation', 'Personalised offer recommendation'],
+  },
+  {
+    id: 'workout-plan',
+    category: 'Custom Plans',
+    name: 'Workout Plan',
+    price: '₹10,000',
+    duration: '4 weeks',
+    description: 'A personalised home or gym program built around your level, equipment, and goal.',
+    inclusions: ['Custom four-week program', 'Weekly coach check-ins', 'Plan adjustments for four weeks'],
+  },
+  {
+    id: 'diet-plan',
+    category: 'Custom Plans',
+    name: 'Diet Plan',
+    price: '₹10,000',
+    duration: '4 weeks',
+    description: 'General nutrition guidance shaped around your training goal, routine, and food preferences.',
+    inclusions: ['Custom four-week diet plan', 'Weekly coach check-ins', 'Plan adjustments for four weeks'],
+  },
+  {
+    id: 'workout-diet-bundle',
+    category: 'Custom Plans',
+    name: 'Workout + Diet',
+    price: '₹17,000',
+    duration: '4 weeks',
+    badge: 'Save ₹3,000',
+    description: 'Bring your training and nutrition together in one coordinated four-week plan.',
+    inclusions: ['Custom workout and diet plans', 'Weekly coach check-ins', 'Plan adjustments for four weeks'],
+  },
+  {
+    id: 'single-pt',
+    category: 'Online PT',
+    name: 'Single PT Session',
+    price: '₹2,000',
+    duration: '1 × 60 minutes',
+    description: 'A focused live session for technique, programming, or a specific skill.',
+    inclusions: ['One-to-one live coaching', 'Technique feedback', 'Session matched to your goal'],
+  },
+  {
+    id: 'pt-6',
+    category: 'Online PT',
+    name: 'PT Starter Pack',
+    price: '₹11,000',
+    duration: '6 × 60 minutes',
+    badge: 'Save ₹1,000',
+    description: 'A lower-commitment coaching block for building momentum and refining movement.',
+    inclusions: ['Six one-to-one sessions', 'Live technique feedback', 'Progressive session structure'],
+  },
+  {
+    id: 'pt-12',
+    category: 'Online PT',
+    name: 'PT Pack',
+    price: '₹20,000',
+    duration: '12 × 60 minutes',
+    badge: 'Save ₹4,000',
+    description: 'A sustained coaching block for strength, control, and skill progression.',
+    inclusions: ['Twelve one-to-one sessions', 'Live technique feedback', 'Progressive session structure'],
+  },
+  {
+    id: 'pt-15',
+    category: 'Online PT',
+    name: 'PT Performance Pack',
+    price: '₹24,000',
+    duration: '15 × 60 minutes',
+    badge: 'Best session rate · Save ₹6,000',
+    description: 'The strongest per-session value for athletes ready for a longer coaching block.',
+    inclusions: ['Fifteen one-to-one sessions', 'Live technique feedback', 'Progressive session structure'],
+  },
+  {
+    id: 'full-transformation',
+    category: 'Transformation',
+    name: 'Full Transformation',
+    price: '₹32,000',
+    duration: '12 weeks',
+    badge: 'Save ₹5,000',
+    description: 'The complete ICC online coaching path for clients ready to align training, nutrition, and live guidance.',
+    inclusions: ['Fitness assessment', 'Workout and diet plans', 'Twelve 60-minute PT sessions', 'Twelve weeks of structured support'],
+  },
+];
 
 export const coaches: readonly Coach[] = [
   {

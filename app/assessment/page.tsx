@@ -19,6 +19,7 @@ export default function AssessmentPage() {
         </a>
         <nav className="main-nav" aria-label="Assessment navigation">
           <a href="/#programs">Programs</a>
+          <a href="/train-from-home">Online coaching</a>
           <a href="/#coaches">Coaches</a>
           <a aria-current="page" href="/assessment">Assessment</a>
         </nav>
