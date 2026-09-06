@@ -18,6 +18,15 @@ const method = [
   { number: '04', title: 'Progress', copy: 'Clear benchmarks show when it is time to move forward—not guesswork.' },
 ];
 
+const arshTrainingImages = [
+  { src: '/arsh-training/arsh-coaching-01.jpeg', alt: 'Arsh coaching an athlete through a pulling exercise' },
+  { src: '/arsh-training/arsh-coaching-02.jpeg', alt: 'Arsh guiding an athlete during a parallel-bar core exercise' },
+  { src: '/arsh-training/arsh-coaching-03.jpeg', alt: 'Arsh spotting an athlete during a handstand drill' },
+  { src: '/arsh-training/arsh-coaching-04.jpeg', alt: 'Arsh coaching an athlete through a weighted dip' },
+  { src: '/arsh-training/arsh-coaching-05.jpeg', alt: 'Arsh giving technique feedback during a parallel-bar exercise' },
+  { src: '/arsh-training/arsh-coaching-06.jpeg', alt: 'Arsh observing an athlete during a pull-up drill' },
+] as const;
+
 export default function Home() {
   return (
     <main>
@@ -89,6 +98,12 @@ export default function Home() {
         <figure className="coach-team-photo">
           <Image src="/icc-coaches.jpeg" width={1280} height={900} alt="ICC coaches and athletes posing together inside the training facility" unoptimized sizes="(max-width: 760px) 100vw, 88vw" />
         </figure>
+        <div className="arsh-training-gallery" aria-labelledby="arsh-training-gallery-title">
+          <div className="arsh-training-gallery-heading"><span>Coach in action</span><h3 id="arsh-training-gallery-title">Training with Arsh</h3><p>Swipe or scroll to see Arsh guiding athletes through strength, control, and skill work.</p></div>
+          <div className="arsh-training-gallery-track">
+            {arshTrainingImages.map((image) => <figure key={image.src}><Image src={image.src} width={738} height={1312} alt={image.alt} unoptimized sizes="(max-width: 760px) 78vw, 28vw" /></figure>)}
+          </div>
+        </div>
         <CoachCarousel />
       </section>
 
