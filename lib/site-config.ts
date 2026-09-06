@@ -93,6 +93,21 @@ export interface Review {
   quote: string;
 }
 
+export interface CompetitionEvent {
+  id: string;
+  name: string;
+  discipline: string;
+  date: string;
+  location: string;
+  status: 'Past event';
+  description: string;
+  coverageNote: string;
+  sources: readonly {
+    label: string;
+    url: string;
+  }[];
+}
+
 export type FormQuality = 'Poor' | 'Average' | 'Good' | 'Excellent';
 export type MobilityRating = 'Restricted' | 'Average' | 'Good';
 export type FlexibilityRating = 'Poor' | 'Average' | 'Good';
@@ -370,6 +385,22 @@ export const siteConfig = {
   groupClassesCampaign: {
     reelUrl: 'https://www.instagram.com/reel/DScsPTkEm9j/',
   },
+  competitions: [
+    {
+      id: 'iccwe-26',
+      name: 'ICCWE 26',
+      discipline: 'WSWCF Weighted Endurance Qualifier',
+      date: '22 March 2026',
+      location: 'ICC Bengaluru',
+      status: 'Past event',
+      description: 'ICC created a competitive platform for Indian athletes seeking qualification for the WSWCF World Championship. The event brought strict standards, weighted strength, endurance, judged attempts, and community support onto one floor.',
+      coverageNote: 'Participant coverage described ICCWE 26 as India’s first WSWCF Weighted Endurance qualifier.',
+      sources: [
+        { label: 'Watch official announcement', url: 'https://www.instagram.com/reel/DVTALWgEiac/' },
+        { label: 'View competition recap', url: 'https://www.instagram.com/reel/DWQ_hbCAdOY/' },
+      ],
+    },
+  ] satisfies readonly CompetitionEvent[],
   locations: [
     {
       id: 'bengaluru',
