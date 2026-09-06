@@ -7,6 +7,7 @@ import {
   ClipboardCheck,
   Wifi,
 } from 'lucide-react';
+import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { CoachCarousel } from '@/components/coach-carousel';
 
@@ -23,9 +24,9 @@ export default function Home() {
       <SiteHeader />
 
       <section className="hero" id="top">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-monogram" aria-hidden="true">ICC</div>
-        <div className="hero-rig" aria-hidden="true"><span /><span /><span /></div>
+        <div className="hero-media">
+          <Image src="/icc-community-hero.jpeg" width={1280} height={1177} alt="Indian Calisthenics Chamber athletes and community members gathered inside the academy" priority unoptimized sizes="(max-width: 760px) 100vw, 62vw" />
+        </div>
         <div className="hero-content">
           <p className="eyebrow"><span /> Movement. Strength. Control.</p>
           <h1>Build a body<br />that can <em>move.</em></h1>
