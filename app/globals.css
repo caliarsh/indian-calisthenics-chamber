@@ -87,6 +87,26 @@ button, input, select, textarea { font: inherit; }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: .6rem; width: fit-content; min-height: 52px; padding: 0 1.25rem; border: 1px solid var(--primary); background: var(--primary); color: var(--primary-foreground); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s ease, background .2s ease; }
 .button:hover { transform: translateY(-2px); background: #b72a42; }
 .button-small { justify-self: end; min-height: 42px; padding-inline: 1rem; }
+.mobile-menu-trigger { display: none; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid rgba(246,242,233,.28); background: transparent; color: var(--foreground); cursor: pointer; }
+.mobile-menu-trigger:hover { border-color: var(--primary); color: #d7546a; }
+.mobile-menu-trigger svg { width: 21px; height: 21px; }
+.mobile-menu-sheet { z-index: 80; width: min(440px, 88vw) !important; max-width: none !important; gap: 0; padding: 0; border-left: 1px solid rgba(246,242,233,.18); background: #11110f; color: var(--foreground); box-shadow: -28px 0 80px rgba(0,0,0,.48); }
+.mobile-menu-sheet [data-slot="sheet-close"] { top: 1.25rem; right: 1.25rem; color: var(--foreground); }
+.mobile-menu-header { gap: .8rem; padding: 2rem clamp(1.5rem, 6vw, 2.5rem) 1.6rem; border-bottom: 1px solid var(--border); }
+.mobile-menu-header .brand-mark { margin-bottom: 1rem; }
+.mobile-menu-header [data-slot="sheet-title"] { max-width: 280px; color: var(--foreground); font: 600 1.65rem/1 var(--font-display); letter-spacing: .04em; text-transform: uppercase; }
+.mobile-menu-header [data-slot="sheet-description"] { color: #8f8b84; font-size: .78rem; }
+.mobile-menu-nav { display: flex; flex-direction: column; }
+.mobile-menu-nav > a { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 1rem; min-height: 82px; padding: 1rem clamp(1.5rem, 6vw, 2.5rem); border-bottom: 1px solid var(--border); transition: background .2s ease; }
+.mobile-menu-nav > a:hover { background: rgba(158,27,50,.12); }
+.mobile-menu-nav > a > span { color: #d7546a; font: 600 .78rem var(--font-display); }
+.mobile-menu-nav > a div { display: flex; min-width: 0; flex-direction: column; gap: .25rem; }
+.mobile-menu-nav > a strong { font: 600 1.45rem/1 var(--font-display); letter-spacing: .03em; text-transform: uppercase; }
+.mobile-menu-nav > a small { overflow: hidden; color: #85817a; font-size: .7rem; text-overflow: ellipsis; white-space: nowrap; }
+.mobile-menu-nav > a > svg { width: 17px; color: #77736c; }
+.mobile-menu-footer { gap: 1rem; padding: 1.5rem clamp(1.5rem, 6vw, 2.5rem) 2rem; }
+.mobile-menu-footer .button { width: 100%; }
+.mobile-menu-footer p { margin: 0; color: #77736c; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
 
 .hero {
   position: relative; isolation: isolate; min-height: 100svh; display: flex; align-items: center; overflow: hidden;
@@ -526,8 +546,11 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .footer-location a:last-child:hover { color: #d7546a; }
 
 @media (max-width: 760px) {
-  .site-header { height: 72px; grid-template-columns: 1fr auto; }
+  .site-header { height: 72px; grid-template-columns: 1fr auto auto; gap: .65rem; padding-inline: 1rem; }
   .main-nav, .brand-name { display: none; }
+  .mobile-menu-trigger { display: grid; }
+  .button-small { min-height: 40px; padding-inline: .8rem; font-size: .7rem; }
+  .button-small svg { display: none; }
   .hero { min-height: 860px; align-items: flex-end; padding-bottom: 7rem; background: radial-gradient(circle at 76% 28%, rgba(158,27,50,.28), transparent 30%, transparent 46%), #0d0d0c; }
   .hero-grid { opacity: .14; background-size: 62px 62px; mask-image: linear-gradient(180deg, black, rgba(0,0,0,.45) 72%, transparent); }
   .hero-monogram { top: 28%; right: -1rem; transform: translateY(-50%); font-size: clamp(13rem, 64vw, 20rem); }
@@ -650,8 +673,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 }
 
 @media (min-width: 761px) and (max-width: 1180px) {
-  .site-header { grid-template-columns: 1fr auto; }
+  .site-header { grid-template-columns: 1fr auto auto; gap: 1rem; }
   .main-nav { display: none; }
+  .mobile-menu-trigger { display: grid; }
 }
 
 @media (prefers-reduced-motion: reduce) {
