@@ -71,13 +71,14 @@ export interface OnlineOffer {
 
 export interface OfflineOffer {
   id: string;
+  category: 'Group Classes' | 'Personal Training' | 'Athlete Batch';
   name: string;
   price: string;
   billingPeriod: string;
   levels: string;
   locationIds: readonly Location['id'][];
   inclusions: readonly string[];
-  samplePrice: true;
+  trainer?: 'Arsh' | 'Abhishek' | 'Other ICC coach';
 }
 
 export interface Review {
@@ -254,11 +255,19 @@ export const onlineOffers: readonly OnlineOffer[] = [
 ];
 
 export const offlineOffers: readonly OfflineOffer[] = [
-  { id: 'offline-group-monthly', name: 'Group Classes', price: '₹5,000', billingPeriod: 'per month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Level-matched progressions', 'Monday to Friday batches'], samplePrice: true },
-  { id: 'offline-group-quarterly', name: 'Group Classes', price: '₹13,500', billingPeriod: 'for 3 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Three months of group training', 'Level-matched progressions', 'Monday to Friday batches'], samplePrice: true },
-  { id: 'offline-pt-single', name: 'Personal Training', price: '₹2,000', billingPeriod: 'per session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['One-to-one coaching', 'Flexible appointment', 'Personalised technique feedback'], samplePrice: true },
-  { id: 'offline-pt-12', name: 'Personal Training', price: '₹20,000', billingPeriod: 'for 12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Twelve one-to-one sessions', 'Flexible appointments', 'Progressive coaching'], samplePrice: true },
-  { id: 'athlete-batch-monthly', name: 'Athlete Batch', price: '₹6,000', billingPeriod: 'per month', levels: 'L3 or coach-approved', locationIds: ['bengaluru'], inclusions: ['Performance-focused training', 'Monday to Friday at 5:00 PM', 'Bengaluru only'], samplePrice: true },
+  { id: 'offline-group-monthly', category: 'Group Classes', name: '1 Month', price: '₹5,000', billingPeriod: '1 month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Level-matched progressions', 'Monday to Friday batches'] },
+  { id: 'offline-group-quarterly', category: 'Group Classes', name: '3 Months', price: '₹13,500', billingPeriod: '3 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Three months of group training', 'Level-matched progressions', 'Monday to Friday batches'] },
+  { id: 'offline-group-half-year', category: 'Group Classes', name: '6 Months', price: '₹24,000', billingPeriod: '6 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Six months of group training', 'Level-matched progressions', 'Monday to Friday batches'] },
+  { id: 'offline-group-yearly', category: 'Group Classes', name: '1 Year', price: '₹42,000', billingPeriod: '12 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Twelve months of group training', 'Level-matched progressions', 'Monday to Friday batches'] },
+  { id: 'athlete-batch-monthly', category: 'Athlete Batch', name: 'Athlete Batch', price: '₹6,000', billingPeriod: '1 month', levels: 'L3 or coach-approved', locationIds: ['bengaluru'], inclusions: ['Performance-focused training', 'Monday to Friday at 5:00 PM', 'Bengaluru only'] },
+  ...(['Arsh', 'Abhishek'] as const).flatMap((trainer) => [
+    { id: `offline-pt-${trainer.toLowerCase()}-single`, category: 'Personal Training' as const, name: 'Single Session', price: '₹3,000', billingPeriod: '1 session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['One-to-one coaching', 'Flexible appointment', `Train with ${trainer}`], trainer },
+    { id: `offline-pt-${trainer.toLowerCase()}-12`, category: 'Personal Training' as const, name: '12 Sessions', price: '₹36,000', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Twelve one-to-one sessions', 'Flexible appointments', `Train with ${trainer}`], trainer },
+    { id: `offline-pt-${trainer.toLowerCase()}-15`, category: 'Personal Training' as const, name: '15 Sessions', price: '₹45,000', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Fifteen one-to-one sessions', 'Flexible appointments', `Train with ${trainer}`], trainer },
+  ]),
+  { id: 'offline-pt-other-single', category: 'Personal Training', name: 'Single Session', price: '₹2,000', billingPeriod: '1 session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['One-to-one coaching', 'Flexible appointment', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
+  { id: 'offline-pt-other-12', category: 'Personal Training', name: '12 Sessions', price: '₹24,000', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Twelve one-to-one sessions', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
+  { id: 'offline-pt-other-15', category: 'Personal Training', name: '15 Sessions', price: '₹30,000', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Fifteen one-to-one sessions', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
 ];
 
 export const coaches: readonly Coach[] = [

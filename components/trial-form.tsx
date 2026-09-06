@@ -49,7 +49,7 @@ export function TrialForm() {
     }
     if (mode === 'Offline') return offlineOffers
       .filter(item => (!location || item.locationIds.includes(location as 'bengaluru' | 'hyderabad')) && (!isLevel(experience) || item.id !== 'athlete-batch-monthly' || experience === 'L3'))
-      .map(item => ({ id: item.id, label: `${item.name} · ${item.price} ${item.billingPeriod}` }));
+      .map(item => ({ id: item.id, label: `${item.category}${item.trainer ? ` · ${item.trainer}` : ''} · ${item.name} · ${item.price}` }));
     return [];
   }, [experience, location, mode]);
   const selectedOption = options.find(item => item.id === program);

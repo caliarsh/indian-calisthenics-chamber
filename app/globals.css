@@ -462,7 +462,13 @@ button, input, select, textarea { font: inherit; }
 .offline-hero h1 { margin: 0; font: 600 clamp(5.2rem, 10.8vw, 11rem)/.78 var(--font-display); letter-spacing: -.045em; text-transform: uppercase; }
 .offline-hero h1 em { color: #d7546a; font-style: normal; }
 .offline-pricing { background: #10100f; }
+.pricing-tabs { gap: 1.5rem; }
+.pricing-tab-list { width: fit-content; height: auto; margin-bottom: 1.5rem; padding: 4px; border: 1px solid var(--border); border-radius: 0; background: #181816; }
+.pricing-tab-trigger { min-width: 220px; min-height: 52px; border-radius: 0; color: #aaa69d; font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.pricing-tab-trigger[data-active] { background: var(--primary); color: var(--primary-foreground); }
+.pricing-tab-content { margin-top: 0; }
 .offline-price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.offline-price-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .offline-price-card { display: flex; min-width: 0; min-height: 540px; flex-direction: column; padding: clamp(1.5rem, 2.8vw, 2.8rem); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #151513; }
 .offline-price-card > div { display: flex; min-height: 38px; justify-content: space-between; gap: .75rem; color: #8f8b84; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .offline-price-card > div span { color: #f0c2ca; }
@@ -473,6 +479,17 @@ button, input, select, textarea { font: inherit; }
 .offline-price-card li svg { flex: 0 0 auto; width: 15px; color: #d7546a; }
 .offline-price-card > a { display: inline-flex; align-items: center; gap: .5rem; align-self: flex-start; margin-top: auto; padding-top: 2rem; color: #d7546a; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .offline-price-card > a svg { width: 16px; }
+.athlete-price-feature { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3rem; margin-top: 1.5rem; padding: clamp(2rem, 4vw, 4rem); border: 1px solid rgba(158,27,50,.72); background: linear-gradient(110deg, rgba(158,27,50,.2), rgba(158,27,50,.04)); }
+.athlete-price-feature span { color: #d7546a; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.athlete-price-feature h3 { margin: .8rem 0; font: 600 clamp(2.8rem, 5vw, 5rem)/.9 var(--font-display); text-transform: uppercase; }
+.athlete-price-feature p { max-width: 580px; margin: 0; color: #aaa69d; line-height: 1.65; }
+.athlete-price-feature > div:last-child { display: grid; justify-items: end; }
+.athlete-price-feature strong { color: #d7546a; font: 600 clamp(3.4rem, 6vw, 6rem)/1 var(--font-display); }
+.athlete-price-feature small { margin: .4rem 0 1.5rem; color: #8f8b84; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.trainer-picker { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .35fr); align-items: end; gap: 3rem; margin-bottom: 1.5rem; padding: clamp(1.5rem, 3vw, 3rem); border: 1px solid var(--border); background: #151513; }
+.trainer-picker h3 { margin: 0; font: 600 clamp(2.6rem, 4.5vw, 4.5rem)/.9 var(--font-display); text-transform: uppercase; }
+.trainer-picker p:not(.section-kicker) { max-width: 620px; margin: 1rem 0 0; color: #aaa69d; line-height: 1.65; }
+.trainer-picker label span { display: block; margin-bottom: .65rem; color: #aaa69d; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .offline-assessment { background: var(--primary); color: #fff7f7; }
 .offline-assessment > svg, .offline-assessment .section-kicker, .offline-assessment h2 em { color: #fff7f7; }
 .offline-assessment p:not(.section-kicker) { color: rgba(255,247,247,.76); }
@@ -596,7 +613,11 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .offline-hero { min-height: 790px; align-items: flex-end; padding-top: 8rem; }
   .offline-hero h1 { font-size: clamp(4.5rem, 22vw, 7rem); }
   .offline-price-grid, .offline-contacts { grid-template-columns: 1fr; }
+  .pricing-tab-list { width: 100%; }
+  .pricing-tab-trigger { min-width: 0; }
   .offline-price-card { min-height: 0; }
+  .athlete-price-feature, .trainer-picker { grid-template-columns: 1fr; gap: 2rem; }
+  .athlete-price-feature > div:last-child { justify-items: start; }
   .offline-contacts > a { min-height: 210px; }
   .booking-shell { grid-template-columns: 1fr; padding-top: 72px; }
   .booking-intro { padding: 4rem 1.25rem; }
@@ -623,7 +644,7 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .online-offer-grid-3, .online-offer-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .online-offer-card { min-height: 540px; }
   .online-consultation { grid-template-columns: .8fr 1.2fr; }
-  .offline-price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .offline-price-grid, .offline-price-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .booking-shell { grid-template-columns: .8fr 1.2fr; }
   .booking-intro, .booking-shell .form-wrap { padding: 5rem 2.5rem; }
 }
