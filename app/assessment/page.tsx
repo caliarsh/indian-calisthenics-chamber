@@ -1,8 +1,9 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export anchors preserve fragment navigation */
 
 import type { Metadata } from 'next';
-import { ArrowLeft, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ShieldCheck } from 'lucide-react';
 import { AssessmentForm } from '@/components/assessment-form';
+import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 
 export const metadata: Metadata = {
   title: 'Fitness Assessment | Indian Calisthenics Chamber',
@@ -12,19 +13,7 @@ export const metadata: Metadata = {
 export default function AssessmentPage() {
   return (
     <main className="assessment-page">
-      <header className="site-header">
-        <a className="brand" href="/" aria-label="Indian Calisthenics Chamber home">
-          <span className="brand-mark" aria-hidden="true">ICC</span>
-          <span className="brand-name">Indian Calisthenics<br />Chamber</span>
-        </a>
-        <nav className="main-nav" aria-label="Assessment navigation">
-          <a href="/#programs">Programs</a>
-          <a href="/train-from-home">Online coaching</a>
-          <a href="/#coaches">Coaches</a>
-          <a aria-current="page" href="/assessment">Assessment</a>
-        </nav>
-        <a className="button button-small" href="/#trial">Book a trial <ArrowUpRight size={16} /></a>
-      </header>
+      <SiteHeader />
 
       <section className="assessment-hero">
         <a className="back-link" href="/"><ArrowLeft aria-hidden="true" /> Back to the academy</a>
@@ -42,6 +31,7 @@ export default function AssessmentPage() {
         <span>About this assessment</span>
         <p>This digital assessment follows ICC’s academy assessment sheet. It is an indicative placement tool, not a medical assessment or certification. A coach may recommend a different starting level after seeing you move.</p>
       </section>
+      <SiteFooter />
     </main>
   );
 }

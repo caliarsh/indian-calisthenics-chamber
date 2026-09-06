@@ -6,14 +6,11 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Check,
-  ClipboardCheck,
   Dumbbell,
   Home,
-  MessageCircle,
-  Target,
 } from 'lucide-react';
-import { OnlineConsultationForm } from '@/components/online-consultation-form';
-import { onlineOffers, siteConfig, type OnlineOfferCategory } from '@/lib/site-config';
+import { SiteFooter, SiteHeader } from '@/components/site-chrome';
+import { onlineOffers, type OnlineOfferCategory } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Train From Home or Your Gym | Indian Calisthenics Chamber',
@@ -45,7 +42,7 @@ function OfferCard({ offer }: { offer: (typeof onlineOffers)[number] }) {
       <ul>
         {offer.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}
       </ul>
-      <a href={`/train-from-home?offer=${offer.id}#consultation`}>Discuss this plan <ArrowUpRight aria-hidden="true" /></a>
+      <a href={`/book-trial?mode=Online&offer=${offer.id}`}>Discuss this plan <ArrowUpRight aria-hidden="true" /></a>
     </article>
   );
 }
@@ -55,20 +52,7 @@ export default function TrainFromHomePage() {
 
   return (
     <main className="online-page">
-      <header className="site-header">
-        <a className="brand" href="/" aria-label="Indian Calisthenics Chamber home">
-          <span className="brand-mark" aria-hidden="true">ICC</span>
-          <span className="brand-name">Indian Calisthenics<br />Chamber</span>
-        </a>
-        <nav className="main-nav" aria-label="Online coaching navigation">
-          <a href="/">Academy</a>
-          <a href="#process">How it works</a>
-          <a href="#plans">Plans</a>
-          <a href="#pt">Online PT</a>
-          <a href="/assessment?path=online">Assessment</a>
-        </nav>
-        <a className="button button-small" href="#consultation">Free consultation <ArrowUpRight size={16} /></a>
-      </header>
+      <SiteHeader />
 
       <section className="online-hero" id="top">
         <div className="online-hero-grid" aria-hidden="true" />
@@ -148,45 +132,19 @@ export default function TrainFromHomePage() {
           <div className="transformation-offer">
             <div><span>Complete coaching path</span><strong>{transformation.price}</strong></div>
             <ul>{transformation.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}</ul>
-            <a className="button" href={`/train-from-home?offer=${transformation.id}#consultation`}>Discuss transformation <ArrowUpRight aria-hidden="true" /></a>
+            <a className="button" href={`/book-trial?mode=Online&offer=${transformation.id}`}>Discuss transformation <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </section>
       )}
 
-      <section className="online-consultation" id="consultation">
-        <div className="consultation-copy">
-          <p className="section-kicker">Free assessment + consultation</p>
-          <h2>Find your<br /><em>next step.</em></h2>
-          <p>Complete the form and continue on WhatsApp. An ICC coach will arrange your free 20-minute consultation before recommending an offer.</p>
-          <div className="consultation-points">
-            <span><ClipboardCheck aria-hidden="true" /> Assessment-led</span>
-            <span><Target aria-hidden="true" /> Matched to your goal</span>
-            <span><MessageCircle aria-hidden="true" /> Booked on WhatsApp</span>
-          </div>
-          <a className="text-link" href="/assessment?path=online">Take the assessment first <ArrowUpRight aria-hidden="true" /></a>
-        </div>
-        <div className="form-wrap">
-          <div className="form-heading"><span>Book your free call</span><small>Usually takes 1 minute</small></div>
-          <OnlineConsultationForm />
-        </div>
-      </section>
+      <section className="online-final-cta section"><div><p className="section-kicker">Free assessment + consultation</p><h2>Find your<br /><em>next step.</em></h2><p>Tell us your level, setup, and goal on the dedicated booking page. We’ll arrange a free 20-minute consultation before recommending an offer.</p></div><div className="hero-actions"><a className="button" href="/book-trial?mode=Online">Book a free consultation <ArrowUpRight /></a><a className="text-link" href="/assessment?path=online">Take the assessment first</a></div></section>
 
       <section className="online-disclaimer">
         <span>Before you begin</span>
         <p>The ICC assessment is an indicative training placement tool, not a medical assessment. Diet plans provide general coaching guidance and are not medical nutrition treatment. Speak with a qualified healthcare professional about medical conditions or dietary restrictions.</p>
       </section>
 
-      <footer>
-        <a className="brand footer-brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
-        <p>Strength is a skill. Learn it well.</p>
-        <div className="footer-contact">
-          {siteConfig.locations.map((location) => (
-            <div className="footer-location" key={location.id}>
-              <a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.name}</a><span aria-hidden="true">·</span><a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a>
-            </div>
-          ))}
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

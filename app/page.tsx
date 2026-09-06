@@ -4,12 +4,12 @@ import {
   AtSign,
   ArrowDown,
   ArrowUpRight,
+  Building2,
+  ClipboardCheck,
+  Wifi,
 } from 'lucide-react';
-import { ProgramExplorer } from '@/components/program-explorer';
-import { ReviewsExplorer } from '@/components/reviews-explorer';
-import { ScheduleExplorer } from '@/components/schedule-explorer';
-import { TrialForm } from '@/components/trial-form';
-import { coaches, siteConfig } from '@/lib/site-config';
+import { SiteFooter, SiteHeader } from '@/components/site-chrome';
+import { coaches } from '@/lib/site-config';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -21,21 +21,7 @@ const method = [
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Indian Calisthenics Chamber home">
-          <span className="brand-mark" aria-hidden="true">ICC</span>
-          <span className="brand-name">Indian Calisthenics<br />Chamber</span>
-        </a>
-        <nav className="main-nav" aria-label="Primary navigation">
-          <a href="#programs">Programs</a>
-          <a href="/train-from-home">Online coaching</a>
-          <a href="#method">Our method</a>
-          <a href="#coaches">Coaches</a>
-          <a href="#reviews">Reviews</a>
-          <a href="/assessment">Assessment</a>
-        </nav>
-        <a className="button button-small" href="#trial">Book a trial <ArrowUpRight size={16} /></a>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
@@ -46,7 +32,7 @@ export default function Home() {
           <h1>Build a body<br />that can <em>move.</em></h1>
           <p className="hero-copy">Structured calisthenics coaching for every level—from your first push-up to skills you once thought impossible.</p>
           <div className="hero-actions">
-            <a className="button" href="#trial">Book your trial <ArrowUpRight size={18} /></a>
+            <a className="button" href="/book-trial">Book your trial <ArrowUpRight size={18} /></a>
             <a className="text-link" href="#programs">Explore training <ArrowDown size={17} /></a>
           </div>
         </div>
@@ -70,7 +56,10 @@ export default function Home() {
           </div>
           <p>Choose live online coaching or train with us in person. Every program is matched to your current level and next goal.</p>
         </div>
-        <ProgramExplorer />
+        <div className="training-path-grid">
+          <a href="/train-from-home"><Wifi aria-hidden="true" /><span>01 · Anywhere in India</span><h3>Train Online</h3><p>Personalised plans, online PT, and transformation coaching for your home or gym.</p><strong>Explore online training <ArrowUpRight /></strong></a>
+          <a href="/offline-training"><Building2 aria-hidden="true" /><span>02 · Bengaluru &amp; Hyderabad</span><h3>Train at ICC</h3><p>Group classes, personal training, batch timings, locations, pricing, and reviews.</p><strong>Explore offline training <ArrowUpRight /></strong></a>
+        </div>
       </section>
 
       <section className="method-section" id="method">
@@ -112,55 +101,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section schedule-section" id="schedule">
-        <div className="schedule-heading">
-          <div>
-            <p className="section-kicker">Weekly batch schedule</p>
-            <h2>Find your<br /><em>training window.</em></h2>
-          </div>
-        </div>
-        <ScheduleExplorer />
-        <p className="placeholder-note">Group batches run Monday to Friday. Personal Training sessions are scheduled by appointment.</p>
-      </section>
-
-      <section className="trial-section" id="trial">
-        <div className="trial-copy">
-          <p className="section-kicker">Your first session</p>
-          <h2>Come as<br />you are.</h2>
-          <p>No prerequisites. Tell us where you are starting and what you want to achieve. We’ll help you choose the right first session.</p>
-          <div className="trial-promise">
-            <span>01</span><p>A coach-led introduction to movement, strength, and your next steps.</p>
-          </div>
-        </div>
-        <div className="form-wrap">
-          <div className="form-heading"><span>Book a trial</span><small>Usually takes 1 minute</small></div>
-          <TrialForm />
-        </div>
-      </section>
-
-      <section className="section reviews-section" id="reviews">
-        <div className="reviews-heading">
-          <div>
-            <p className="section-kicker">Google Maps reviews</p>
-            <h2>Built together.<br /><em>Rated by athletes.</em></h2>
-          </div>
-        </div>
-        <ReviewsExplorer />
-      </section>
-
-      <footer>
-        <a className="brand footer-brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
-        <p>Strength is a skill. Learn it well.</p>
-        <div className="footer-contact">
-          {siteConfig.locations.map((location) => (
-            <div className="footer-location" key={location.id}>
-              <a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.name}</a>
-              <span aria-hidden="true">·</span>
-              <a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a>
-            </div>
-          ))}
-        </div>
-      </footer>
+      <section className="home-assessment section"><ClipboardCheck aria-hidden="true" /><div><p className="section-kicker">ICC fitness assessment</p><h2>Know where<br /><em>to begin.</em></h2><p>Test strength, endurance, mobility, and flexibility to receive an indicative L1, L2, or L3 starting level.</p></div><a className="button" href="/assessment">Test your current level <ArrowUpRight /></a></section>
+      <SiteFooter />
     </main>
   );
 }

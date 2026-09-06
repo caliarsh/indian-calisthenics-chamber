@@ -69,6 +69,17 @@ export interface OnlineOffer {
   paymentUrl?: string;
 }
 
+export interface OfflineOffer {
+  id: string;
+  name: string;
+  price: string;
+  billingPeriod: string;
+  levels: string;
+  locationIds: readonly Location['id'][];
+  inclusions: readonly string[];
+  samplePrice: true;
+}
+
 export interface Review {
   author: string;
   rating: 5;
@@ -240,6 +251,14 @@ export const onlineOffers: readonly OnlineOffer[] = [
     description: 'The complete ICC online coaching path for clients ready to align training, nutrition, and live guidance.',
     inclusions: ['Fitness assessment', 'Workout and diet plans', 'Twelve 60-minute PT sessions', 'Twelve weeks of structured support'],
   },
+];
+
+export const offlineOffers: readonly OfflineOffer[] = [
+  { id: 'offline-group-monthly', name: 'Group Classes', price: '₹5,000', billingPeriod: 'per month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Level-matched progressions', 'Monday to Friday batches'], samplePrice: true },
+  { id: 'offline-group-quarterly', name: 'Group Classes', price: '₹13,500', billingPeriod: 'for 3 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Three months of group training', 'Level-matched progressions', 'Monday to Friday batches'], samplePrice: true },
+  { id: 'offline-pt-single', name: 'Personal Training', price: '₹2,000', billingPeriod: 'per session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['One-to-one coaching', 'Flexible appointment', 'Personalised technique feedback'], samplePrice: true },
+  { id: 'offline-pt-12', name: 'Personal Training', price: '₹20,000', billingPeriod: 'for 12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Twelve one-to-one sessions', 'Flexible appointments', 'Progressive coaching'], samplePrice: true },
+  { id: 'athlete-batch-monthly', name: 'Athlete Batch', price: '₹6,000', billingPeriod: 'per month', levels: 'L3 or coach-approved', locationIds: ['bengaluru'], inclusions: ['Performance-focused training', 'Monday to Friday at 5:00 PM', 'Bengaluru only'], samplePrice: true },
 ];
 
 export const coaches: readonly Coach[] = [

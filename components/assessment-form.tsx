@@ -53,11 +53,11 @@ export function AssessmentForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<FormErrors>({});
   const [result, setResult] = useState<AssessmentResult | null>(null);
-  const [onlinePath, setOnlinePath] = useState(false);
+  const [returnPath, setReturnPath] = useState<'online' | 'offline' | ''>('');
 
   useEffect(() => {
-    const isOnlinePath = new URLSearchParams(window.location.search).get('path') === 'online';
-    queueMicrotask(() => setOnlinePath(isOnlinePath));
+    const path = new URLSearchParams(window.location.search).get('path');
+    queueMicrotask(() => setReturnPath(path === 'online' || path === 'offline' ? path : ''));
   }, []);
 
   function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
@@ -218,8 +218,8 @@ export function AssessmentForm() {
               <span>Available training options</span>
               <ul>{recommendations.map((program) => <li key={program.id}>{program.mode} · {program.name}</li>)}</ul>
             </div>
-            <a className="button result-button" href={onlinePath ? `/train-from-home?level=${result.level}#consultation` : `/?level=${result.level}#trial`}>
-              {onlinePath ? `Book an online consultation at ${result.level}` : `Book a trial at ${result.level}`} <ArrowRight aria-hidden="true" />
+            <a className="button result-button" href={`/book-trial?${returnPath ? `mode=${returnPath === 'online' ? 'Online' : 'Offline'}&` : ''}level=${result.level}`}>
+              {returnPath === 'online' ? `Book an online consultation at ${result.level}` : `Book a trial at ${result.level}`} <ArrowRight aria-hidden="true" />
             </a>
             <button className="reset-button" onClick={reset} type="button"><RotateCcw aria-hidden="true" /> Retake assessment</button>
           </>
