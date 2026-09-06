@@ -576,7 +576,7 @@ button, input, select, textarea { font: inherit; }
 .competition-body .competition-upcoming { margin-top: 2rem; padding: 1rem 1.15rem; border-left: 3px solid #d7546a; background: rgba(158,27,50,.14); color: #f0c2ca; font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .workshops-section { background: #10100f; }
 .workshops-section .section-heading h2 em { color: #d7546a; font-style: normal; }
-.workshop-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.workshop-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
 .workshop-card { display: flex; min-width: 0; min-height: 620px; flex-direction: column; padding: clamp(1.5rem, 3vw, 3rem); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #151513; }
 .workshop-card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .workshop-card-top span { color: #d7546a; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }

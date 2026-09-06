@@ -416,6 +416,18 @@ export const siteConfig = {
   ] satisfies readonly CompetitionEvent[],
   workshops: [
     {
+      id: 'bengaluru-inauguration-workshop-2025',
+      name: 'Free Calisthenics Workshop + Grand Inauguration',
+      format: 'Workshop',
+      ledBy: 'Abhishek, Arsh & Skyotic',
+      date: '13 December 2025',
+      time: '8:30 AM',
+      location: 'ICC Bengaluru · Tenzee Multisports, Bannerghatta Road',
+      description: 'ICC marked its Bengaluru grand inauguration with a free community workshop combining coached calisthenics, athletic showcases, and open challenges.',
+      topics: ['Statics and freestyle showcase', 'Challenges and mini competitions', 'Community giveaways'],
+      sourceUrl: 'https://www.instagram.com/reel/DSCwGuCiDu0/',
+    },
+    {
       id: 'weighted-calisthenics-hyderabad-2025',
       name: 'Weighted Calisthenics Workshop',
       format: 'Workshop',
