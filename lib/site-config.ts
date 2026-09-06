@@ -361,6 +361,8 @@ const hyderabadReviews: readonly Review[] = [
 export const siteConfig = {
   name: 'Indian Calisthenics Chamber',
   shortName: 'ICC',
+  onlineWhatsappNumber: '919902828888',
+  onlineWhatsappDisplay: '+91 99028 28888',
   locations: [
     {
       id: 'bengaluru',
