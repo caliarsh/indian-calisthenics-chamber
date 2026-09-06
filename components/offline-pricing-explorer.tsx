@@ -46,7 +46,7 @@ export function OfflinePricingExplorer() {
 
     <TabsContent className="pricing-tab-content" value="pt">
       <div className="trainer-picker">
-        <div><p className="section-kicker">Choose your coach</p><h3>Personal Training</h3><p>Rates differ by each coach’s years of experience, training level, and the value they provide. Arsh and Abhishek are ₹3,000 per session; other ICC coaches are ₹2,000 per session.</p></div>
+        <div><p className="section-kicker">Choose your coach</p><h3>Personal Training</h3><p>Rates differ by each coach’s years of experience, training level, and the value they provide.</p></div>
         <label htmlFor="trainer"><span>Trainer</span><NativeSelect className="form-select" id="trainer" value={trainer} onChange={(event) => setTrainer(event.target.value as Trainer)}>{trainers.map((name) => <NativeSelectOption value={name} key={name}>{name}</NativeSelectOption>)}</NativeSelect></label>
       </div>
       <PriceCards offers={ptOffers} />
