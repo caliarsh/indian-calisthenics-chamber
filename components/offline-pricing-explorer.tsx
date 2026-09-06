@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowUpRight, Check } from 'lucide-react';
+import { ArrowUpRight, AtSign, Check } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { offlineOffers, type OfflineOffer } from '@/lib/site-config';
+import { offlineOffers, siteConfig, type OfflineOffer } from '@/lib/site-config';
 
 const trainers = ['Arsh', 'Abhishek', 'Other ICC coach'] as const;
 type Trainer = (typeof trainers)[number];
@@ -37,6 +37,10 @@ export function OfflinePricingExplorer() {
     </TabsList>
 
     <TabsContent className="pricing-tab-content" value="group">
+      <aside className="group-campaign">
+        <div><span>Official Group Classes campaign</span><h3>See the energy<br />before you join.</h3><p>Watch ICC Group Classes in action, then choose a membership or book your first trial.</p><a href={siteConfig.groupClassesCampaign.reelUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> View on Instagram <ArrowUpRight aria-hidden="true" /></a></div>
+        <div className="group-campaign-reel"><iframe src={siteConfig.groupClassesCampaign.embedUrl} title="Official ICC Group Classes Instagram Reel" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen /></div>
+      </aside>
       <PriceCards offers={groupOffers} />
       {athleteOffer && <div className="athlete-price-feature">
         <div><span>Bengaluru only · L3 or coach-approved</span><h3>Athlete Batch</h3><p>Performance-focused training, Monday to Friday at 5:00 PM.</p></div>

@@ -2,7 +2,7 @@
 
 /* oxlint-disable next/no-html-link-for-pages -- static-export links */
 
-import { ArrowUpRight, Menu } from 'lucide-react';
+import { ArrowUpRight, AtSign, Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { siteConfig } from '@/lib/site-config';
 
@@ -34,6 +34,6 @@ export function SiteFooter() {
   return <footer>
     <a className="brand footer-brand" href="/" aria-label="Indian Calisthenics Chamber home"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
     <p>Strength is a skill. Learn it well.</p>
-    <div className="footer-contact">{siteConfig.locations.map(location => <div className="footer-location" key={location.id}><a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.name}</a><span aria-hidden="true">·</span><a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a></div>)}</div>
+    <div className="footer-contact">{siteConfig.locations.map(location => <div className="footer-location" key={location.id}><div><a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.name}</a><span aria-hidden="true">·</span><a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a></div><a className="footer-instagram" href={location.instagramUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> {location.instagram}</a></div>)}</div>
   </footer>;
 }

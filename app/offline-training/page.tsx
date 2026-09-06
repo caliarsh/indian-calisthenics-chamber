@@ -1,6 +1,6 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export links */
 import type { Metadata } from 'next';
-import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, AtSign, MapPin } from 'lucide-react';
 import { OfflinePricingExplorer } from '@/components/offline-pricing-explorer';
 import { ReviewsExplorer } from '@/components/reviews-explorer';
 import { ScheduleExplorer } from '@/components/schedule-explorer';
@@ -16,7 +16,7 @@ export default function OfflineTrainingPage() {
     <section className="section schedule-section" id="locations"><div className="schedule-heading"><div><p className="section-kicker">Locations and batch timings</p><h2>Find your<br /><em>training base.</em></h2></div></div><ScheduleExplorer /><p className="placeholder-note">Group batches run Monday to Friday. Personal Training sessions are scheduled by appointment.</p></section>
     <section className="offline-assessment section"><MapPin aria-hidden="true" /><div><p className="section-kicker">Start at the right level</p><h2>Test yourself<br /><em>before your trial.</em></h2><p>Complete ICC’s strength, endurance, mobility, and flexibility checks to receive an indicative L1, L2, or L3 placement.</p></div><a className="button" href="/assessment?path=offline">Take the assessment <ArrowUpRight /></a></section>
     <section className="section reviews-section" id="reviews"><div className="reviews-heading"><div><p className="section-kicker">Google Maps reviews</p><h2>Two cities.<br /><em>One community.</em></h2></div></div><ReviewsExplorer /></section>
-    <section className="offline-contacts">{siteConfig.locations.map(location => <a href={location.mapsUrl} target="_blank" rel="noreferrer" key={location.id}><MapPin aria-hidden="true" /><span>{location.name}</span><strong>{location.address}</strong><small>{location.whatsappDisplay}</small></a>)}</section>
+    <section className="offline-contacts">{siteConfig.locations.map(location => <article key={location.id}><MapPin aria-hidden="true" /><span>{location.name}</span><strong>{location.address}</strong><small>{location.whatsappDisplay}</small><div><a href={location.mapsUrl} target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight aria-hidden="true" /></a><a href={location.instagramUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> {location.instagram}</a></div></article>)}</section>
     <SiteFooter />
   </main>;
 }

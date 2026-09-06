@@ -31,6 +31,8 @@ export interface Location {
   mapsUrl: string;
   whatsappNumber: string;
   whatsappDisplay: string;
+  instagram: string;
+  instagramUrl: string;
   googleRating: string;
   googleReviewCount: number;
   reviews: readonly Review[];
@@ -365,6 +367,10 @@ export const siteConfig = {
   shortName: 'ICC',
   onlineWhatsappNumber: '919902828888',
   onlineWhatsappDisplay: '+91 99028 28888',
+  groupClassesCampaign: {
+    reelUrl: 'https://www.instagram.com/reel/DScsPTkEm9j/',
+    embedUrl: 'https://www.instagram.com/reel/DScsPTkEm9j/embed',
+  },
   locations: [
     {
       id: 'bengaluru',
@@ -374,6 +380,8 @@ export const siteConfig = {
       mapsUrl: 'https://maps.app.goo.gl/eXkcgX6bdKWHeNVR6',
       whatsappNumber: '919902828888',
       whatsappDisplay: '+91 99028 28888',
+      instagram: '@icc.bangalore',
+      instagramUrl: 'https://www.instagram.com/icc.bangalore/',
       googleRating: '4.9',
       googleReviewCount: 27,
       reviews: bengaluruReviews,
@@ -421,6 +429,8 @@ export const siteConfig = {
       mapsUrl: 'https://maps.app.goo.gl/uj1bSeAqvxp2uNNz7',
       whatsappNumber: '919319045223',
       whatsappDisplay: '+91 93190 45223',
+      instagram: '@icc_hyderabad',
+      instagramUrl: 'https://www.instagram.com/icc_hyderabad/',
       googleRating: '4.9',
       googleReviewCount: 38,
       reviews: hyderabadReviews,
