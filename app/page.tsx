@@ -86,6 +86,9 @@ export default function Home() {
           </div>
           <p>Clear feedback, patient progressions, and coaching that respects where every athlete begins.</p>
         </div>
+        <figure className="coach-team-photo">
+          <Image src="/icc-coaches.jpeg" width={1280} height={900} alt="ICC coaches and athletes posing together inside the training facility" unoptimized sizes="(max-width: 760px) 100vw, 88vw" />
+        </figure>
         <CoachCarousel />
       </section>
 
