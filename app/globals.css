@@ -193,9 +193,16 @@ button, input, select, textarea { font: inherit; }
 .method-list p { max-width: 480px; margin: .8rem 0 0; color: #5d5a54; line-height: 1.65; }
 
 .coaches-section { background: #10100f; }
-.coach-grid { display: grid; grid-template-columns: 1fr; border: 1px solid var(--border); }
-.coach-card { display: grid; grid-template-columns: minmax(280px, .7fr) 1.3fr; min-width: 0; background: #151513; }
-.coach-card:not(:last-child) { border-bottom: 1px solid var(--border); }
+.coach-carousel { border: 1px solid var(--border); background: #151513; }
+.coach-carousel-controls { display: flex; align-items: center; justify-content: space-between; min-height: 64px; padding: .65rem .8rem .65rem 1.25rem; border-bottom: 1px solid var(--border); }
+.coach-carousel-controls p { margin: 0; color: #85817a; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.coach-carousel-controls > div { display: flex; gap: .5rem; }
+.coach-carousel-controls button { display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid var(--border); background: transparent; color: #f6f2e9; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+.coach-carousel-controls button:hover { border-color: var(--primary); background: rgba(158,27,50,.18); }
+.coach-carousel-controls button svg { width: 18px; }
+.coach-carousel-viewport { overflow: hidden; }
+.coach-carousel-track { display: flex; will-change: transform; transition: transform .75s cubic-bezier(.22,.8,.22,1); }
+.coach-card { display: grid; flex: 0 0 100%; grid-template-columns: minmax(280px, .7fr) 1.3fr; min-width: 0; background: #151513; }
 .coach-portrait { position: relative; display: grid; place-items: center; min-height: 420px; overflow: hidden; border-right: 1px solid var(--border); background: radial-gradient(circle at 70% 25%, rgba(158,27,50,.52), transparent 32%), linear-gradient(145deg, #292925, #11110f); }
 .coach-portrait::before { content: ''; position: absolute; inset: 15%; border: 1px solid rgba(255,255,255,.14); transform: rotate(8deg); }
 .coach-portrait span { position: relative; color: rgba(255,255,255,.92); font: 600 clamp(4rem, 8vw, 8rem)/1 var(--font-display); letter-spacing: -.04em; }
@@ -576,9 +583,8 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .method-section { grid-template-columns: 1fr; gap: 3rem; padding-block: 5rem; }
   .method-lead { position: static; }
   .method-list li { grid-template-columns: 44px 1fr; }
-  .coach-grid { grid-template-columns: 1fr; }
   .coach-card { display: block; border-right: 0; border-bottom: 1px solid var(--border); }
-  .coach-card:last-child { border-bottom: 0; }
+  .coach-carousel-controls { padding-left: 1rem; }
   .coach-portrait { min-height: 330px; border-right: 0; border-bottom: 1px solid var(--border); }
   .coach-card-body { min-height: 0; }
   .location-tab-list { width: 100%; }
@@ -685,4 +691,5 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .coach-carousel-track { will-change: auto; }
 }

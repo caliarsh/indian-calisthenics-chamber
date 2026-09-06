@@ -1,7 +1,6 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export anchors preserve fragment navigation */
 
 import {
-  AtSign,
   ArrowDown,
   ArrowUpRight,
   Building2,
@@ -9,7 +8,7 @@ import {
   Wifi,
 } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
-import { coaches } from '@/lib/site-config';
+import { CoachCarousel } from '@/components/coach-carousel';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -86,19 +85,7 @@ export default function Home() {
           </div>
           <p>Clear feedback, patient progressions, and coaching that respects where every athlete begins.</p>
         </div>
-        <div className="coach-grid">
-          {coaches.map((coach) => (
-            <article className="coach-card" key={coach.name}>
-              <div className="coach-portrait" aria-hidden="true"><span>{coach.initials}</span></div>
-              <div className="coach-card-body">
-                <div className="coach-meta"><span>{coach.role}</span></div>
-                <h3>{coach.name}</h3>
-                <p>{coach.description}</p>
-                {coach.instagramUrl && <a href={coach.instagramUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> {coach.instagram}</a>}
-              </div>
-            </article>
-          ))}
-        </div>
+        <CoachCarousel />
       </section>
 
       <section className="home-assessment section"><ClipboardCheck aria-hidden="true" /><div><p className="section-kicker">ICC fitness assessment</p><h2>Know where<br /><em>to begin.</em></h2><p>Test strength, endurance, mobility, and flexibility to receive an indicative L1, L2, or L3 starting level.</p></div><a className="button" href="/assessment">Test your current level <ArrowUpRight /></a></section>
