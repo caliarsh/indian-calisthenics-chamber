@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowUpRight, AtSign, Check } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { offlineOffers, siteConfig, type OfflineOffer } from '@/lib/site-config';
@@ -38,8 +38,13 @@ export function OfflinePricingExplorer() {
 
     <TabsContent className="pricing-tab-content" value="group">
       <aside className="group-campaign">
-        <div><span>Official Group Classes campaign</span><h3>See the energy<br />before you join.</h3><p>Watch ICC Group Classes in action, then choose a membership or book your first trial.</p><a href={siteConfig.groupClassesCampaign.reelUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> View on Instagram <ArrowUpRight aria-hidden="true" /></a></div>
-        <div className="group-campaign-reel"><iframe src={siteConfig.groupClassesCampaign.embedUrl} title="Official ICC Group Classes Instagram Reel" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen /></div>
+        <div><span>Official Group Classes campaign</span><h3>See the energy<br />before you join.</h3><p>Watch ICC Group Classes in action, then choose a membership or book your first trial.</p></div>
+        <a className="group-campaign-watch" href={siteConfig.groupClassesCampaign.reelUrl} target="_blank" rel="noreferrer" aria-label="Watch the official ICC Group Classes Reel on Instagram">
+          <span aria-hidden="true">ICC</span>
+          <strong>Group Classes</strong>
+          <small>Watch official Reel</small>
+          <ArrowUpRight aria-hidden="true" />
+        </a>
       </aside>
       <PriceCards offers={groupOffers} />
       {athleteOffer && <div className="athlete-price-feature">

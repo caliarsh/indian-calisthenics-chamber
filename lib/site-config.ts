@@ -369,7 +369,6 @@ export const siteConfig = {
   onlineWhatsappDisplay: '+91 99028 28888',
   groupClassesCampaign: {
     reelUrl: 'https://www.instagram.com/reel/DScsPTkEm9j/',
-    embedUrl: 'https://www.instagram.com/reel/DScsPTkEm9j/embed',
   },
   locations: [
     {

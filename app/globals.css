@@ -503,10 +503,13 @@ button, input, select, textarea { font: inherit; }
 .group-campaign > div:first-child > span { color: #d7546a; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .group-campaign h3 { margin: 1rem 0 1.5rem; font: 600 clamp(3rem, 6vw, 6rem)/.86 var(--font-display); text-transform: uppercase; }
 .group-campaign p { max-width: 560px; margin: 0; color: #aaa69d; line-height: 1.7; }
-.group-campaign a { display: inline-flex; align-items: center; gap: .55rem; margin-top: 2rem; color: #d7546a; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.group-campaign a svg { width: 17px; }
-.group-campaign-reel { width: min(100%, 390px); justify-self: end; overflow: hidden; border: 1px solid var(--border); background: #0d0d0c; }
-.group-campaign-reel iframe { display: block; width: 100%; height: 680px; border: 0; background: #fff; }
+.group-campaign-watch { position: relative; display: flex; width: min(100%, 390px); min-height: 420px; flex-direction: column; justify-content: flex-end; justify-self: end; padding: 2rem; overflow: hidden; border: 1px solid rgba(215,84,106,.55); background: linear-gradient(145deg, rgba(158,27,50,.8), rgba(25,8,11,.95) 68%), #151513; color: var(--text); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+.group-campaign-watch::before { position: absolute; top: -2.5rem; right: -1rem; content: "ICC"; color: rgba(255,255,255,.065); font: 600 11rem/.8 var(--font-display); letter-spacing: -.08em; }
+.group-campaign-watch:hover { border-color: #d7546a; transform: translateY(-3px); }
+.group-campaign-watch > span { position: relative; margin-bottom: auto; color: #f0a0ad; font-size: .68rem; font-weight: 800; letter-spacing: .18em; }
+.group-campaign-watch strong { position: relative; max-width: 8ch; font: 600 clamp(2.6rem, 5vw, 4.5rem)/.86 var(--font-display); text-transform: uppercase; }
+.group-campaign-watch small { position: relative; margin-top: 1.5rem; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.group-campaign-watch svg { position: absolute; right: 2rem; bottom: 1.85rem; width: 18px; }
 .offline-price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
 .offline-price-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .offline-price-card { display: flex; min-width: 0; min-height: 540px; flex-direction: column; padding: clamp(1.5rem, 2.8vw, 2.8rem); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #151513; }
@@ -673,8 +676,7 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .offline-price-card { min-height: 0; }
   .athlete-price-feature, .trainer-picker { grid-template-columns: 1fr; gap: 2rem; }
   .athlete-price-feature > div:last-child { justify-items: start; }
-  .group-campaign-reel { width: 100%; justify-self: stretch; }
-  .group-campaign-reel iframe { height: 640px; }
+  .group-campaign-watch { width: 100%; min-height: 320px; justify-self: stretch; }
   .offline-contacts > article { min-height: 240px; }
   .booking-shell { grid-template-columns: 1fr; padding-top: 72px; }
   .booking-intro { padding: 4rem 1.25rem; }
