@@ -493,6 +493,10 @@ button, input, select, textarea { font: inherit; }
 .offline-price-card > div { display: flex; min-height: 38px; justify-content: space-between; gap: .75rem; color: #8f8b84; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .offline-price-card > div span { color: #f0c2ca; }
 .offline-price-card h3 { margin: 1.6rem 0 .7rem; font: 600 clamp(2.2rem, 3.5vw, 3.5rem)/.95 var(--font-display); text-transform: uppercase; }
+.pt-bonus { width: fit-content; margin: 0 0 .85rem; padding: .4rem .6rem; background: rgba(158,27,50,.2); color: #f0c2ca; font-size: .68rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.pt-saving { display: flex; align-items: center; gap: .7rem; margin-top: .55rem; }
+.pt-saving s { color: #77736c; font: 600 1.1rem var(--font-display); }
+.pt-saving strong { padding: .3rem .5rem; border: 1px solid rgba(158,27,50,.65); color: #d7546a; font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }
 .offline-price-card > small { margin-top: .4rem; color: #8f8b84; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .offline-price-card ul { list-style: none; margin: 1.6rem 0 0; padding: 1.2rem 0 0; border-top: 1px solid var(--border); }
 .offline-price-card li { display: flex; gap: .65rem; margin: .75rem 0; color: #cbc6bd; font-size: .8rem; line-height: 1.45; }

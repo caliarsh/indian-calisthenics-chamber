@@ -79,6 +79,9 @@ export interface OfflineOffer {
   locationIds: readonly Location['id'][];
   inclusions: readonly string[];
   trainer?: 'Arsh' | 'Abhishek' | 'Other ICC coach';
+  compareAtPrice?: string;
+  discount?: string;
+  bonus?: string;
 }
 
 export interface Review {
@@ -262,12 +265,12 @@ export const offlineOffers: readonly OfflineOffer[] = [
   { id: 'athlete-batch-monthly', category: 'Athlete Batch', name: 'Athlete Batch', price: '₹6,000', billingPeriod: '1 month', levels: 'L3 or coach-approved', locationIds: ['bengaluru'], inclusions: ['Performance-focused training', 'Monday to Friday at 5:00 PM', 'Bengaluru only'] },
   ...(['Arsh', 'Abhishek'] as const).flatMap((trainer) => [
     { id: `offline-pt-${trainer.toLowerCase()}-single`, category: 'Personal Training' as const, name: 'Single Session', price: '₹3,000', billingPeriod: '1 session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['One-to-one coaching', 'Flexible appointment', `Train with ${trainer}`], trainer },
-    { id: `offline-pt-${trainer.toLowerCase()}-12`, category: 'Personal Training' as const, name: '12 Sessions', price: '₹36,000', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Twelve one-to-one sessions', 'Flexible appointments', `Train with ${trainer}`], trainer },
-    { id: `offline-pt-${trainer.toLowerCase()}-15`, category: 'Personal Training' as const, name: '15 Sessions', price: '₹45,000', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Fifteen one-to-one sessions', 'Flexible appointments', `Train with ${trainer}`], trainer },
+    { id: `offline-pt-${trainer.toLowerCase()}-12`, category: 'Personal Training' as const, name: '12 Sessions', price: '₹30,000', compareAtPrice: '₹36,000', discount: '16.7% off', bonus: '2 sessions free', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Pay for 10 sessions and train for 12', 'Flexible appointments', `Train with ${trainer}`], trainer },
+    { id: `offline-pt-${trainer.toLowerCase()}-15`, category: 'Personal Training' as const, name: '15 Sessions', price: '₹36,000', compareAtPrice: '₹45,000', discount: '20% off', bonus: '3 sessions free', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Pay for 12 sessions and train for 15', 'Flexible appointments', `Train with ${trainer}`], trainer },
   ]),
   { id: 'offline-pt-other-single', category: 'Personal Training', name: 'Single Session', price: '₹2,000', billingPeriod: '1 session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['One-to-one coaching', 'Flexible appointment', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
-  { id: 'offline-pt-other-12', category: 'Personal Training', name: '12 Sessions', price: '₹24,000', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Twelve one-to-one sessions', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
-  { id: 'offline-pt-other-15', category: 'Personal Training', name: '15 Sessions', price: '₹30,000', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Fifteen one-to-one sessions', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
+  { id: 'offline-pt-other-12', category: 'Personal Training', name: '12 Sessions', price: '₹20,000', compareAtPrice: '₹24,000', discount: '16.7% off', bonus: '2 sessions free', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Pay for 10 sessions and train for 12', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
+  { id: 'offline-pt-other-15', category: 'Personal Training', name: '15 Sessions', price: '₹24,000', compareAtPrice: '₹30,000', discount: '20% off', bonus: '3 sessions free', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Pay for 12 sessions and train for 15', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
 ];
 
 export const coaches: readonly Coach[] = [
