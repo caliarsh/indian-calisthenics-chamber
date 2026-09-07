@@ -1513,42 +1513,28 @@ footer > p,
   }
 }
 
-/* Homepage rhythm: black opening, followed by alternating red and cream. */
-.home-page > .site-header {
-  border-color: rgba(255, 255, 255, .16);
-  background: rgba(13, 13, 12, .94);
-  color: #fff7f7;
-  box-shadow: 0 10px 36px rgba(0, 0, 0, .2);
-}
-
-.home-page > .site-header .brand-mark,
-.home-page > .site-header .button-small {
-  border-color: #9e1b32;
-  background: #9e1b32;
-  color: #fff7f7;
-}
-
-.home-page > .site-header .main-nav a:hover,
-.home-page > .site-header .text-link:hover,
-.home-page > .site-header .mobile-menu-trigger:hover {
-  color: #d7546a;
-}
-
+/* Homepage rhythm: image-led opening, followed by alternating red and cream. */
 .home-page > .hero {
-  background: #0d0d0c;
+  background: transparent;
   color: #fff7f7;
 }
 
 .home-page > .hero::before {
-  background: linear-gradient(90deg, #0d0d0c 0%, rgba(13, 13, 12, .98) 30%, rgba(13, 13, 12, .72) 52%, rgba(13, 13, 12, .2) 78%), linear-gradient(0deg, rgba(13, 13, 12, .7), transparent 48%);
+  background: none;
 }
 
 .home-page > .hero .hero-media {
-  background: #171714;
+  inset: 0;
+  background: transparent;
 }
 
 .home-page > .hero .hero-media::after {
-  background: linear-gradient(90deg, rgba(13, 13, 12, .72), transparent 42%), linear-gradient(0deg, rgba(13, 13, 12, .38), transparent 38%);
+  background: none;
+}
+
+.home-page > .hero .hero-content,
+.home-page > .hero .hero-note {
+  text-shadow: 0 2px 16px rgba(13, 13, 12, .82);
 }
 
 .home-page > .hero h1 em,
@@ -1563,9 +1549,9 @@ footer > p,
 }
 
 .home-page > .principles {
-  border-color: rgba(255, 255, 255, .16);
-  background: #141412;
-  color: #f6f2e9;
+  border-color: rgba(23, 23, 20, .2);
+  background: #e9e3d8;
+  color: #171714;
 }
 
 .home-page > .principles i {
@@ -1667,14 +1653,14 @@ footer > p,
 
 @media (max-width: 760px) {
   .home-page > .hero {
-    background: #0d0d0c;
+    background: transparent;
   }
 
   .home-page > .hero::before {
-    background: linear-gradient(0deg, #0d0d0c 0%, #0d0d0c 34%, rgba(13, 13, 12, .72) 58%, rgba(13, 13, 12, .14) 100%);
+    background: none;
   }
 
   .home-page > .hero .hero-media::after {
-    background: linear-gradient(0deg, #0d0d0c 0%, transparent 42%), linear-gradient(90deg, rgba(13, 13, 12, .2), transparent 50%, rgba(13, 13, 12, .15));
+    background: none;
   }
 }
