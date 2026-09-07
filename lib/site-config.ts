@@ -57,6 +57,14 @@ export interface Coach {
   instagramUrl?: string;
 }
 
+export interface AthleteFeature {
+  id: string;
+  title: string;
+  focus: string;
+  description: string;
+  image: ImageBrief;
+}
+
 export type OnlineOfferCategory = 'Free Consultation' | 'Custom Plans' | 'Online PT' | 'Transformation';
 
 export interface OnlineOffer {
@@ -125,7 +133,7 @@ export interface ImageBrief {
   label: string;
   description: string;
   orientation: 'Portrait' | 'Landscape' | 'Wide landscape';
-  association: 'Online training' | 'Offline training' | 'Competition' | 'Workshop';
+  association: 'Online training' | 'Offline training' | 'Competition' | 'Workshop' | 'Athlete';
 }
 
 export type FormQuality = 'Poor' | 'Average' | 'Good' | 'Excellent';
@@ -328,6 +336,45 @@ export const coaches: readonly Coach[] = [
     description: 'Abhishek brings more than eight years of experience in calisthenics and has trained over 500 athletes and fitness enthusiasts, including more than 10 athletes who have competed and won at the national level. He specialises in freestyle, statics, weighted calisthenics, and endurance. His coaching builds strong foundations, develops advanced skills, and improves strength, control, endurance, and overall athletic performance through structured, personalised training.',
     instagram: '@abhishek_icc',
     instagramUrl: 'https://www.instagram.com/abhishek_icc/',
+  },
+];
+
+export const athleteFeatures: readonly AthleteFeature[] = [
+  {
+    id: 'competition-athletes',
+    title: 'Competition Athletes',
+    focus: 'Weighted endurance · Statics · Streetlifting',
+    description: 'Athletes preparing for judged attempts, demanding standards, and the pressure of competition.',
+    image: {
+      label: 'Competition athlete photo',
+      description: 'An approved ICC athlete mid-attempt, with the movement and competition environment clearly visible.',
+      orientation: 'Portrait',
+      association: 'Athlete',
+    },
+  },
+  {
+    id: 'skill-athletes',
+    title: 'Skill Athletes',
+    focus: 'Freestyle · Control · Advanced holds',
+    description: 'Athletes developing technical positions, movement control, and confident skill expression.',
+    image: {
+      label: 'Skill athlete photo',
+      description: 'An approved ICC athlete performing a clean static hold or freestyle movement inside the academy.',
+      orientation: 'Landscape',
+      association: 'Athlete',
+    },
+  },
+  {
+    id: 'rising-athletes',
+    title: 'Rising Athletes',
+    focus: 'Foundations · First skills · Consistent progress',
+    description: 'Members building the strength, awareness, and consistency behind their next milestone.',
+    image: {
+      label: 'Rising athlete photo',
+      description: 'An approved ICC member training a foundational movement with a coach nearby.',
+      orientation: 'Landscape',
+      association: 'Athlete',
+    },
   },
 ];
 

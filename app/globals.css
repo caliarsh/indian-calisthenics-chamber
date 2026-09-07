@@ -216,6 +216,20 @@ button, input, select, textarea { font: inherit; }
 .coach-card a { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.5rem; color: #f6f2e9; font-size: .78rem; font-weight: 700; }
 .coach-card a svg { width: 17px; color: #d7546a; }
 
+.athletes-section { background: #0d0d0c; }
+.athletes-section .section-heading h2 em { color: #d7546a; font-style: normal; }
+.athlete-feature-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: 1.25rem; }
+.athlete-feature-card { min-width: 0; overflow: hidden; border: 1px solid var(--border); background: #151513; }
+.athlete-feature-card-primary { grid-row: span 2; }
+.athlete-feature-card .editorial-photo { margin: 0; border: 0; border-bottom: 1px solid var(--border); }
+.athlete-feature-card .editorial-photo-frame { height: 270px; }
+.athlete-feature-card-primary .editorial-photo-frame { height: 650px; }
+.athlete-feature-card .image-placeholder-index { color: rgba(215,84,106,.18); }
+.athlete-feature-copy { padding: clamp(1.5rem, 2.5vw, 2.5rem); }
+.athlete-feature-copy > span { color: #d7546a; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.athlete-feature-copy h3 { margin: .85rem 0 .75rem; font: 600 clamp(2rem, 3.2vw, 3.2rem)/.95 var(--font-display); text-transform: uppercase; }
+.athlete-feature-copy p { max-width: 620px; margin: 0; color: #aaa69d; line-height: 1.7; }
+
 .schedule-section { background: #151513; }
 .schedule-heading { margin-bottom: 3.5rem; }
 .location-tabs { gap: 1.25rem; }
@@ -712,6 +726,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .coach-carousel-controls { padding-left: 1rem; }
   .coach-portrait { min-height: 330px; border-right: 0; border-bottom: 1px solid var(--border); }
   .coach-card-body { min-height: 0; }
+  .athlete-feature-grid { grid-template-columns: 1fr; }
+  .athlete-feature-card-primary { grid-row: auto; }
+  .athlete-feature-card .editorial-photo-frame, .athlete-feature-card-primary .editorial-photo-frame { height: 430px; }
   .location-tab-list { width: 100%; }
   .location-tab-trigger { min-width: 0; }
   .schedule-groups { grid-template-columns: 1fr; }
@@ -815,6 +832,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .method-section { gap: 4rem; }
   .coach-card { grid-template-columns: .7fr 1.3fr; }
   .coach-portrait { min-height: 380px; }
+  .athlete-feature-grid { grid-template-columns: 1fr 1fr; }
+  .athlete-feature-card-primary { grid-row: auto; grid-column: 1 / -1; }
+  .athlete-feature-card-primary .editorial-photo-frame { height: 520px; }
   .review-grid { grid-template-columns: repeat(2, 1fr); }
   .trial-section { grid-template-columns: .8fr 1.2fr; }
   .trial-copy, .form-wrap { padding: 5rem 2.5rem; }

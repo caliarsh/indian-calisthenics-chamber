@@ -12,6 +12,7 @@ const primaryNavigation = [
   { href: '/offline-training', label: 'Offline Training', note: 'Bengaluru and Hyderabad' },
   { href: '/assessment', label: 'Assessment', note: 'Test your current level' },
   { href: '/#coaches', label: 'Coaches', note: 'Meet the ICC team' },
+  { href: '/#athletes', label: 'Athletes', note: 'Meet the ICC athlete community' },
 ] as const;
 
 const mobileNavigation = [
