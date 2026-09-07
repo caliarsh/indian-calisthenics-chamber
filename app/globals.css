@@ -889,3 +889,626 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .coach-carousel-track { will-change: auto; }
 }
+
+/* ICC editorial colour system: warm reading surfaces and high-impact burgundy. */
+:root,
+.dark {
+  --background: #e9e3d8;
+  --foreground: #171714;
+  --card: #f7f1e7;
+  --card-foreground: #171714;
+  --secondary: #ded6ca;
+  --secondary-foreground: #171714;
+  --muted: #e1d9cd;
+  --muted-foreground: #625e57;
+  --border: rgba(23, 23, 20, .2);
+  --input: rgba(23, 23, 20, .24);
+}
+
+html,
+body,
+.online-page,
+.offline-page,
+.booking-page,
+.assessment-page,
+.athletes-page,
+.event-page {
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.site-header {
+  border-color: rgba(255, 247, 247, .22);
+  background: rgba(132, 20, 42, .96);
+  color: #fff7f7;
+  box-shadow: 0 10px 36px rgba(87, 13, 27, .14);
+}
+
+.site-header .brand-mark {
+  border: 1px solid rgba(255, 247, 247, .42);
+  background: #fff7f7;
+  color: #791527;
+}
+
+.site-header .main-nav a:hover,
+.site-header .text-link:hover {
+  color: #ffd1d9;
+}
+
+.site-header .button-small {
+  border-color: #fff7f7;
+  background: #fff7f7;
+  color: #681020;
+}
+
+.site-header .mobile-menu-trigger {
+  border-color: rgba(255, 247, 247, .5);
+  color: #fff7f7;
+}
+
+.mobile-menu-sheet {
+  border-color: rgba(255, 247, 247, .22);
+  background: #8f1d2c;
+  color: #fff7f7;
+  box-shadow: -28px 0 80px rgba(84, 12, 26, .3);
+}
+
+.mobile-menu-sheet [data-slot="sheet-close"],
+.mobile-menu-header [data-slot="sheet-title"] {
+  color: #fff7f7;
+}
+
+.mobile-menu-header,
+.mobile-menu-nav > a {
+  border-color: rgba(255, 247, 247, .2);
+}
+
+.mobile-menu-header [data-slot="sheet-description"],
+.mobile-menu-nav > a small,
+.mobile-menu-nav > a > svg,
+.mobile-menu-footer p {
+  color: rgba(255, 247, 247, .68);
+}
+
+.mobile-menu-nav > a > span {
+  color: #ffd1d9;
+}
+
+.mobile-menu-nav > a:hover {
+  background: rgba(255, 247, 247, .1);
+}
+
+/* Image-led heroes retain contrast through burgundy, never black, overlays. */
+.hero,
+.offline-hero {
+  background: #761426;
+  color: #fff7f7;
+}
+
+.hero::before {
+  background: linear-gradient(90deg, #761426 0%, rgba(118, 20, 38, .97) 30%, rgba(118, 20, 38, .72) 54%, rgba(118, 20, 38, .18) 82%), linear-gradient(0deg, rgba(91, 12, 28, .72), transparent 50%);
+}
+
+.hero-media,
+.offline-hero-media {
+  background: #8f1d2c;
+}
+
+.hero-media::after {
+  background: linear-gradient(90deg, rgba(118, 20, 38, .68), transparent 44%), linear-gradient(0deg, rgba(91, 12, 28, .38), transparent 40%);
+}
+
+.offline-hero::before {
+  background: linear-gradient(90deg, #761426 0%, rgba(118, 20, 38, .97) 29%, rgba(118, 20, 38, .7) 54%, rgba(118, 20, 38, .14) 84%), linear-gradient(0deg, rgba(91, 12, 28, .7), transparent 54%);
+}
+
+.hero h1 em,
+.offline-hero h1 em,
+.hero-note-number {
+  color: #ffd1d9;
+}
+
+.hero-copy,
+.hero-note,
+.offline-hero .hero-copy,
+.hero .eyebrow,
+.offline-hero .eyebrow {
+  color: rgba(255, 247, 247, .84);
+}
+
+.principles {
+  border-color: rgba(255, 247, 247, .22);
+  background: #8f1d2c;
+  color: #fff7f7;
+}
+
+.principles i {
+  background: #ffd1d9;
+}
+
+/* Cream editorial sections and cards. */
+.programs-section,
+.coaches-section,
+.athlete-roster,
+.schedule-section,
+.offline-pricing,
+.assessment-workspace,
+.online-process,
+.online-offers,
+.online-offers:nth-of-type(even),
+.workshops-section,
+.event-photo-story,
+.offline-contacts,
+.rubric-note,
+.online-disclaimer {
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.program-card,
+.training-path-grid > a,
+.coach-team-photo,
+.arsh-training-gallery,
+.coach-carousel,
+.coach-card,
+.athlete-profile-card,
+.location-card,
+.schedule-group,
+.offline-price-card,
+.trainer-picker,
+.test-card,
+.circuit-card,
+.online-offer-card,
+.workshop-card,
+.offline-contacts > article {
+  border-color: rgba(23, 23, 20, .2);
+  background: #f7f1e7;
+  color: #171714;
+}
+
+.program-card:hover,
+.training-path-grid > a:hover {
+  background: #fffaf2;
+}
+
+.program-grid,
+.training-path-grid,
+.coach-team-photo,
+.arsh-training-gallery,
+.coach-carousel,
+.athlete-profile-grid,
+.offline-price-grid,
+.workshop-grid,
+.offline-contacts,
+.online-offer-grid {
+  border-color: rgba(23, 23, 20, .2);
+}
+
+.program-card > p:not(.program-type),
+.program-card li,
+.training-path-grid p,
+.section-heading > p,
+.coach-card p,
+.athlete-profile-copy > p,
+.athlete-page-cta > p,
+.schedule-days,
+.group-campaign p,
+.offline-price-card li,
+.athlete-price-feature p,
+.trainer-picker p:not(.section-kicker),
+.workshop-card > p:not(.workshop-lead),
+.workshop-card li,
+.online-process .online-section-heading > p:last-child,
+.online-process li p,
+.offer-heading > p,
+.online-offer-description,
+.online-offer-card li,
+.event-photo-intro > p:last-child {
+  color: #5d5a54;
+}
+
+.program-top,
+.mode-intro,
+.program-tab-trigger,
+.arsh-training-gallery-heading p,
+.coach-carousel-controls p,
+.athlete-profile-meta small,
+.location-card span,
+.location-card small,
+.location-card .location-arrow,
+.schedule-days small,
+.offline-price-card > div,
+.offline-price-card > small,
+.trainer-picker label span,
+.workshop-card-top small,
+.workshop-card .workshop-lead,
+.workshop-meta span,
+.online-offer-top,
+.online-price-row s,
+.editorial-photo figcaption,
+.placeholder-note {
+  color: #68645e;
+}
+
+.program-card h3,
+.program-card li,
+.mode-intro span,
+.coach-card h3,
+.coach-card a,
+.athlete-profile-copy h3,
+.athlete-profile-copy > strong,
+.location-card strong,
+.schedule-group h3,
+.schedule-row strong,
+.offline-price-card h3,
+.trainer-picker h3,
+.workshop-card h3,
+.workshop-lead strong,
+.online-offer-card h3,
+.online-process h3 {
+  color: #171714;
+}
+
+.program-tab-list,
+.location-tab-list,
+.pricing-tab-list,
+.reviews-tab-list {
+  border-color: rgba(23, 23, 20, .22);
+  background: rgba(255, 255, 255, .34);
+}
+
+.program-tab-trigger,
+.location-tab-trigger,
+.pricing-tab-trigger {
+  color: #625e57;
+}
+
+.coach-carousel-controls button {
+  border-color: rgba(23, 23, 20, .22);
+  color: #171714;
+}
+
+.coach-portrait,
+.athlete-profile-portrait {
+  border-color: rgba(23, 23, 20, .2);
+  background: radial-gradient(circle at 70% 25%, rgba(158, 27, 50, .35), transparent 34%), linear-gradient(145deg, #cdbfb1, #9e1b32);
+}
+
+.arsh-training-gallery-track {
+  scrollbar-color: #9e1b32 #ded6ca;
+}
+
+.arsh-training-gallery-track figure,
+.editorial-photo-frame {
+  background: #d8cfc2;
+}
+
+.image-placeholder .editorial-photo-frame {
+  background: linear-gradient(135deg, rgba(158, 27, 50, .16), transparent 48%), repeating-linear-gradient(90deg, transparent 0 69px, rgba(23, 23, 20, .055) 70px), #ded6ca;
+}
+
+.image-placeholder .editorial-photo-frame strong {
+  color: #171714;
+}
+
+.image-placeholder .editorial-photo-frame p {
+  color: #5d5a54;
+}
+
+.image-placeholder-index {
+  color: rgba(143, 29, 44, .09);
+}
+
+/* Red feature sections use the first approved template treatment. */
+.athletes-hero,
+.athlete-page-cta,
+.events-preview-section,
+.event-page-hero,
+.competition-section,
+.transformation-section,
+.offline-assessment,
+footer {
+  border-color: rgba(255, 247, 247, .22);
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.athletes-hero {
+  background: radial-gradient(circle at 76% 34%, rgba(255, 247, 247, .11), transparent 29%), linear-gradient(135deg, #9e1b32, #791527 70%);
+}
+
+.event-page-hero {
+  background: radial-gradient(circle at 82% 30%, rgba(255, 247, 247, .11), transparent 33%), #9e1b32;
+}
+
+.competition-section {
+  background: radial-gradient(circle at 15% 30%, rgba(255, 247, 247, .1), transparent 34%), #8f1d2c;
+}
+
+.events-preview-section .section-kicker,
+.events-preview-section .section-heading h2 em,
+.athletes-hero h1 em,
+.athlete-page-cta h2 em,
+.event-page-hero .section-kicker,
+.event-page-hero h1 em,
+.competition-heading h2 em,
+.competition-heading > svg {
+  color: #ffd1d9;
+}
+
+.events-preview-section .section-heading > p,
+.athletes-hero > p:last-child,
+.athlete-page-cta > p,
+.event-page-hero > p:last-child,
+.event-page-hero-with-photo > div:first-child > p:last-child {
+  color: rgba(255, 247, 247, .78);
+}
+
+.events-preview-grid,
+.events-preview-grid > a {
+  border-color: rgba(255, 247, 247, .22);
+}
+
+.events-preview-grid > a {
+  background: rgba(105, 14, 32, .34);
+  color: #fff7f7;
+}
+
+.events-preview-grid > a:hover {
+  background: rgba(105, 14, 32, .55);
+}
+
+.events-preview-grid > a > span,
+.events-preview-grid > a > svg,
+.events-preview-grid strong {
+  color: #ffd1d9;
+}
+
+.events-preview-grid p {
+  color: rgba(255, 247, 247, .76);
+}
+
+.competition-body {
+  border-color: #ffd1d9;
+  background: rgba(105, 14, 32, .5);
+}
+
+.competition-meta span,
+.competition-body > p,
+.competition-body .competition-coverage {
+  color: rgba(255, 247, 247, .8);
+}
+
+.competition-links,
+.competition-body .competition-upcoming {
+  border-color: rgba(255, 247, 247, .25);
+}
+
+.competition-links a,
+.competition-meta svg,
+.competition-heading > div > span {
+  color: #ffd1d9;
+}
+
+.event-photo-intro h2 {
+  color: #171714;
+}
+
+.event-photo-intro h2 em {
+  color: #8f1d2c;
+}
+
+/* Pricing, schedules, assessments and forms prioritise readability. */
+.group-campaign {
+  border-color: rgba(143, 29, 44, .42);
+  background: radial-gradient(circle at 20% 20%, rgba(158, 27, 50, .13), transparent 38%), #f7f1e7;
+  color: #171714;
+}
+
+.group-campaign-watch {
+  background: linear-gradient(145deg, #a91f38, #781426 72%);
+  color: #fff7f7;
+}
+
+.offline-price-card > div span,
+.pt-bonus,
+.online-offer-top strong {
+  color: #8f1d2c;
+}
+
+.pt-bonus,
+.online-offer-top strong {
+  background: rgba(158, 27, 50, .11);
+}
+
+.athlete-price-feature {
+  background: linear-gradient(110deg, rgba(158, 27, 50, .13), rgba(255, 255, 255, .28));
+  color: #171714;
+}
+
+.assessment-hero,
+.online-hero {
+  border-color: rgba(255, 247, 247, .22);
+  background: radial-gradient(circle at 82% 26%, rgba(255, 247, 247, .1), transparent 31%), #9e1b32;
+  color: #fff7f7;
+}
+
+.assessment-hero h1 em,
+.online-hero h1 em,
+.assessment-hero .back-link,
+.online-hero .back-link,
+.online-hero .eyebrow {
+  color: #ffd1d9;
+}
+
+.assessment-intro > p,
+.online-hero-content > p:not(.eyebrow) {
+  color: rgba(255, 247, 247, .8);
+}
+
+.safety-note {
+  border-color: rgba(255, 247, 247, .35);
+  background: rgba(105, 14, 32, .3);
+  color: rgba(255, 247, 247, .82);
+}
+
+.safety-note strong,
+.online-hero-summary strong {
+  color: #fff7f7;
+}
+
+.online-hero-summary {
+  border-color: #ffd1d9;
+  background: rgba(105, 14, 32, .46);
+}
+
+.online-hero-summary span,
+.online-hero-summary p {
+  color: #ffd1d9;
+}
+
+.metric-copy p,
+.assessment-form-heading small,
+.assessment-block-heading p,
+.test-card label,
+.circuit-card li,
+.time-inputs label span,
+.endurance-key,
+.rating-field label,
+.assessment-result > p {
+  color: #625e57;
+}
+
+.test-card legend,
+.circuit-card legend,
+.circuit-time-label,
+.endurance-key strong {
+  color: #171714;
+}
+
+.metric-input-wrap input,
+.assessment-select select,
+.test-card-row input,
+.time-inputs input,
+.field input,
+.field textarea,
+.field select {
+  border-color: rgba(23, 23, 20, .22);
+  background: #fffaf2;
+  color: #171714;
+}
+
+.field label {
+  color: #4d4943;
+}
+
+.field-error,
+.metric-error {
+  color: #9e1b32;
+}
+
+.form-wrap {
+  background: #f7f1e7;
+  color: #171714;
+}
+
+.form-heading small,
+.form-note {
+  color: #68645e;
+}
+
+.form-success {
+  color: #286343;
+}
+
+.assessed-badge {
+  color: #791527;
+}
+
+.assessment-result {
+  border-color: rgba(143, 29, 44, .36);
+  background: #f7f1e7;
+  color: #171714;
+}
+
+.result-placeholder {
+  color: rgba(143, 29, 44, .1);
+}
+
+.assessment-result.has-result {
+  border-color: #9e1b32;
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.online-price,
+.online-offer-card > a,
+.offline-price-card > a,
+.section-kicker,
+.program-type,
+.level-badges span,
+.schedule-period h4,
+.schedule-level,
+.workshop-card-top span,
+.workshop-card > a,
+.workshop-meta svg {
+  color: #8f1d2c;
+}
+
+.online-disclaimer,
+.rubric-note {
+  color: #625e57;
+}
+
+.booking-intro,
+.consultation-copy,
+.online-audience,
+.reviews-section,
+.method-section,
+.athlete-culture,
+.home-assessment,
+.online-final-cta {
+  background: #e9e3d8;
+  color: #171714;
+}
+
+footer {
+  color: #fff7f7;
+}
+
+footer .brand-mark {
+  border: 1px solid rgba(255, 247, 247, .42);
+  background: #fff7f7;
+  color: #791527;
+}
+
+footer > p,
+.footer-contact,
+.footer-location span,
+.footer-location > div a:last-child,
+.footer-instagram {
+  color: rgba(255, 247, 247, .72);
+}
+
+.footer-contact a:hover,
+.footer-instagram svg {
+  color: #ffd1d9;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background: #761426;
+  }
+
+  .hero::before {
+    background: linear-gradient(0deg, #761426 0%, #761426 34%, rgba(118, 20, 38, .74) 60%, rgba(118, 20, 38, .08) 100%);
+  }
+
+  .hero-media::after {
+    background: linear-gradient(0deg, #761426 0%, transparent 44%), linear-gradient(90deg, rgba(118, 20, 38, .2), transparent 50%, rgba(118, 20, 38, .14));
+  }
+
+  .offline-hero::before {
+    background: linear-gradient(0deg, #761426 0%, #761426 31%, rgba(118, 20, 38, .76) 54%, rgba(118, 20, 38, .07) 100%);
+  }
+}
