@@ -57,12 +57,14 @@ export interface Coach {
   instagramUrl?: string;
 }
 
-export interface AthleteFeature {
+export interface AthleteProfile {
   id: string;
-  title: string;
-  focus: string;
+  name: string;
+  initials: string;
+  discipline: string;
+  level: string;
   description: string;
-  image: ImageBrief;
+  status: 'Sample profile';
 }
 
 export type OnlineOfferCategory = 'Free Consultation' | 'Custom Plans' | 'Online PT' | 'Transformation';
@@ -339,42 +341,42 @@ export const coaches: readonly Coach[] = [
   },
 ];
 
-export const athleteFeatures: readonly AthleteFeature[] = [
+export const athleteProfiles: readonly AthleteProfile[] = [
   {
-    id: 'competition-athletes',
-    title: 'Competition Athletes',
-    focus: 'Weighted endurance · Statics · Streetlifting',
-    description: 'Athletes preparing for judged attempts, demanding standards, and the pressure of competition.',
-    image: {
-      label: 'Competition athlete photo',
-      description: 'An approved ICC athlete mid-attempt, with the movement and competition environment clearly visible.',
-      orientation: 'Portrait',
-      association: 'Athlete',
-    },
+    id: 'aarav-menon',
+    name: 'Aarav Menon',
+    initials: 'AM',
+    discipline: 'Weighted Endurance',
+    level: 'L3 athlete track',
+    description: 'A disciplined athlete profile focused on repeatable strength, efficient movement, and composure across demanding endurance sets.',
+    status: 'Sample profile',
   },
   {
-    id: 'skill-athletes',
-    title: 'Skill Athletes',
-    focus: 'Freestyle · Control · Advanced holds',
-    description: 'Athletes developing technical positions, movement control, and confident skill expression.',
-    image: {
-      label: 'Skill athlete photo',
-      description: 'An approved ICC athlete performing a clean static hold or freestyle movement inside the academy.',
-      orientation: 'Landscape',
-      association: 'Athlete',
-    },
+    id: 'meera-rao',
+    name: 'Meera Rao',
+    initials: 'MR',
+    discipline: 'Static Strength',
+    level: 'L3 athlete track',
+    description: 'A technique-led athlete profile built around clean lines, patient progressions, and complete ownership of advanced static positions.',
+    status: 'Sample profile',
   },
   {
-    id: 'rising-athletes',
-    title: 'Rising Athletes',
-    focus: 'Foundations · First skills · Consistent progress',
-    description: 'Members building the strength, awareness, and consistency behind their next milestone.',
-    image: {
-      label: 'Rising athlete photo',
-      description: 'An approved ICC member training a foundational movement with a coach nearby.',
-      orientation: 'Landscape',
-      association: 'Athlete',
-    },
+    id: 'kabir-sharma',
+    name: 'Kabir Sharma',
+    initials: 'KS',
+    discipline: 'Streetlifting',
+    level: 'L3 athlete track',
+    description: 'A strength-focused athlete profile centred on precise weighted pull-ups and dips, smart loading, and competition-ready standards.',
+    status: 'Sample profile',
+  },
+  {
+    id: 'nisha-verma',
+    name: 'Nisha Verma',
+    initials: 'NV',
+    discipline: 'Freestyle',
+    level: 'Advanced skill track',
+    description: 'A movement-driven athlete profile combining foundational control with confident transitions, creativity, and consistent skill practice.',
+    status: 'Sample profile',
   },
 ];
 

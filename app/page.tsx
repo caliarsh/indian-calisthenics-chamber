@@ -12,8 +12,6 @@ import {
 import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { CoachCarousel } from '@/components/coach-carousel';
-import { ImagePlaceholder } from '@/components/editorial-photo';
-import { athleteFeatures } from '@/lib/site-config';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -120,28 +118,6 @@ export default function Home() {
           </div>
         </div>
         <CoachCarousel />
-      </section>
-
-      <section className="section athletes-section" id="athletes">
-        <div className="section-heading">
-          <div>
-            <p className="section-kicker">The people behind the progress</p>
-            <h2>Our<br /><em>Athletes.</em></h2>
-          </div>
-          <p>From first skills to competitive stages, ICC athletes train with intent, patience, and a standard they can be proud of.</p>
-        </div>
-        <div className="athlete-feature-grid">
-          {athleteFeatures.map((athlete, index) => (
-            <article className={`athlete-feature-card${index === 0 ? ' athlete-feature-card-primary' : ''}`} key={athlete.id}>
-              <ImagePlaceholder brief={athlete.image} />
-              <div className="athlete-feature-copy">
-                <span>{athlete.focus}</span>
-                <h3>{athlete.title}</h3>
-                <p>{athlete.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="home-assessment section"><ClipboardCheck aria-hidden="true" /><div><p className="section-kicker">ICC fitness assessment</p><h2>Know where<br /><em>to begin.</em></h2><p>Test strength, endurance, mobility, and flexibility to receive an indicative L1, L2, or L3 starting level.</p></div><a className="button" href="/assessment">Test your current level <ArrowUpRight /></a></section>
