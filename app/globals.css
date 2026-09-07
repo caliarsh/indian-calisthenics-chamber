@@ -1520,7 +1520,9 @@ footer > p,
 }
 
 .home-page > .hero::before {
-  background: none;
+  background:
+    linear-gradient(90deg, rgba(74, 8, 21, .94) 0%, rgba(92, 11, 28, .86) 30%, rgba(92, 11, 28, .6) 52%, rgba(92, 11, 28, .16) 78%, transparent 100%),
+    linear-gradient(0deg, rgba(38, 4, 11, .54), transparent 52%);
 }
 
 .home-page > .hero .hero-media {
@@ -1529,12 +1531,19 @@ footer > p,
 }
 
 .home-page > .hero .hero-media::after {
-  background: none;
+  background: linear-gradient(90deg, rgba(54, 6, 17, .28), transparent 58%);
 }
 
 .home-page > .hero .hero-content,
 .home-page > .hero .hero-note {
-  text-shadow: 0 2px 16px rgba(13, 13, 12, .82);
+  text-shadow: 0 2px 18px rgba(13, 13, 12, .92);
+}
+
+.home-page > .hero .hero-note {
+  padding-block: .75rem;
+  padding-right: 1rem;
+  background: rgba(62, 7, 19, .58);
+  backdrop-filter: blur(8px);
 }
 
 .home-page > .hero h1 em,
@@ -1657,10 +1666,10 @@ footer > p,
   }
 
   .home-page > .hero::before {
-    background: none;
+    background: linear-gradient(0deg, rgba(72, 8, 22, .98) 0%, rgba(86, 10, 26, .94) 36%, rgba(86, 10, 26, .66) 58%, rgba(54, 6, 17, .12) 84%, transparent 100%);
   }
 
   .home-page > .hero .hero-media::after {
-    background: none;
+    background: linear-gradient(0deg, rgba(54, 6, 17, .22), transparent 58%);
   }
 }
