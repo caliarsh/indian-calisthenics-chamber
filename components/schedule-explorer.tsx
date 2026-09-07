@@ -1,9 +1,9 @@
 'use client';
 
 import { ArrowUpRight, MapPin } from 'lucide-react';
-import { EditorialPhoto } from '@/components/editorial-photo';
+import { ImagePlaceholder } from '@/components/editorial-photo';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { siteConfig, siteMedia } from '@/lib/site-config';
+import { siteConfig, siteImageBriefs } from '@/lib/site-config';
 
 function slug(value: string) {
   return value.replaceAll(' ', '-').toLowerCase();
@@ -26,7 +26,7 @@ export function ScheduleExplorer() {
             <ArrowUpRight className="location-arrow" aria-hidden="true" />
           </a>
 
-          <EditorialPhoto image={siteMedia.offline[location.id]} className="location-editorial-photo" />
+          <ImagePlaceholder brief={siteImageBriefs.offline[location.id]} className="location-editorial-photo" />
 
           <div className="schedule-groups">
             {location.schedule.map((group) => (

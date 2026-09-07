@@ -121,13 +121,10 @@ export interface WorkshopEvent {
   sourceUrl: string;
 }
 
-export interface EditorialImage {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-  caption: string;
-  focalPoint: string;
+export interface ImageBrief {
+  label: string;
+  description: string;
+  orientation: 'Portrait' | 'Landscape' | 'Wide landscape';
   association: 'Online training' | 'Offline training' | 'Competition' | 'Workshop';
 }
 
@@ -334,41 +331,32 @@ export const coaches: readonly Coach[] = [
   },
 ];
 
-const coachingImages = [
-  { src: '/arsh-training/arsh-coaching-01.jpeg', width: 738, height: 1312, alt: 'Arsh coaching an athlete through a pulling exercise', caption: 'Individual feedback · ICC coaching', focalPoint: '50% 42%' },
-  { src: '/arsh-training/arsh-coaching-02.jpeg', width: 738, height: 1312, alt: 'Arsh guiding an athlete through a parallel-bar core exercise', caption: 'Progressions matched to the athlete', focalPoint: '50% 42%' },
-  { src: '/arsh-training/arsh-coaching-03.jpeg', width: 738, height: 1312, alt: 'Arsh spotting an athlete during a handstand drill', caption: 'Skill practice with coach support', focalPoint: '50% 45%' },
-  { src: '/arsh-training/arsh-coaching-04.jpeg', width: 738, height: 1312, alt: 'Arsh coaching an athlete through a weighted dip', caption: 'Strength work at ICC', focalPoint: '50% 45%' },
-  { src: '/arsh-training/arsh-coaching-05.jpeg', width: 738, height: 1312, alt: 'Arsh giving technique feedback during a parallel-bar exercise', caption: 'Technique before intensity', focalPoint: '52% 42%' },
-  { src: '/arsh-training/arsh-coaching-06.jpeg', width: 738, height: 1312, alt: 'Arsh observing an athlete during a pull-up drill', caption: 'Coach-led movement practice', focalPoint: '50% 45%' },
-] as const;
-
-export const siteMedia = {
+export const siteImageBriefs = {
   online: {
-    home: { ...coachingImages[0], association: 'Online training' },
-    gym: { ...coachingImages[2], association: 'Online training' },
+    home: { label: 'Home training photo', description: 'Athlete following an ICC program in a clean home workout space, with any available equipment visible.', orientation: 'Landscape', association: 'Online training' },
+    gym: { label: 'Your gym coaching photo', description: 'An ICC coach guiding an athlete remotely or in a gym, with the movement and equipment clearly visible.', orientation: 'Landscape', association: 'Online training' },
   },
   offline: {
-    hero: { src: '/editorial/icc-training-community.jpeg', width: 738, height: 1600, alt: 'ICC athletes and community members gathered on the academy training floor', caption: 'The ICC training community', focalPoint: '50% 47%', association: 'Offline training' },
-    bengaluru: { ...coachingImages[5], association: 'Offline training' },
-    hyderabad: { ...coachingImages[3], association: 'Offline training' },
+    hero: { label: 'Offline training hero', description: 'Wide, energetic group class inside ICC. Keep faces clear and leave visual space on the left for the headline.', orientation: 'Wide landscape', association: 'Offline training' },
+    bengaluru: { label: 'ICC Bengaluru photo', description: 'A recognisable wide view of the Bengaluru training floor or a coached group class at this branch.', orientation: 'Wide landscape', association: 'Offline training' },
+    hyderabad: { label: 'ICC Hyderabad photo', description: 'A recognisable wide view of the Hyderabad training floor or a coached group class at this branch.', orientation: 'Wide landscape', association: 'Offline training' },
   },
   competition: [
-    { src: '/icc-community-hero.jpeg', width: 1280, height: 1177, alt: 'ICC athletes and community members gathered inside the academy', caption: 'ICC community · Bengaluru', focalPoint: '50% 48%', association: 'Competition' },
-    { src: '/icc-coaches.jpeg', width: 1280, height: 900, alt: 'ICC athletes posing together after training', caption: 'Athletes, coaches, and community', focalPoint: '50% 52%', association: 'Competition' },
-    { ...coachingImages[5], caption: 'Strict movement standards in training', association: 'Competition' },
+    { label: 'ICCWE 26 hero photo', description: 'The strongest photograph from ICCWE 26—an athlete mid-attempt, with the competition setting visible.', orientation: 'Portrait', association: 'Competition' },
+    { label: 'Judged attempt photo', description: 'A strict weighted endurance attempt showing the athlete, equipment, and judging environment.', orientation: 'Portrait', association: 'Competition' },
+    { label: 'Competition community photo', description: 'Athletes, coaches, judges, or spectators together at ICCWE 26.', orientation: 'Portrait', association: 'Competition' },
   ],
   workshops: {
-    'bengaluru-inauguration-workshop-2025': { src: '/icc-community-hero.jpeg', width: 1280, height: 1177, alt: 'ICC community gathered inside the academy', caption: 'Community at ICC Bengaluru', focalPoint: '50% 48%', association: 'Workshop' },
-    'weighted-calisthenics-hyderabad-2025': { ...coachingImages[3], association: 'Workshop' },
-    'freestyle-calisthenics-hyderabad-2025': { ...coachingImages[2], association: 'Workshop' },
-    'sportexpo-india-2025': { src: '/icc-coaches.jpeg', width: 1280, height: 900, alt: 'ICC athletes posing together between training equipment', caption: 'Team ICC', focalPoint: '50% 50%', association: 'Workshop' },
+    'bengaluru-inauguration-workshop-2025': { label: 'Bengaluru inauguration workshop', description: 'Wide community photograph from the free workshop and grand inauguration on 13 December 2025.', orientation: 'Landscape', association: 'Workshop' },
+    'weighted-calisthenics-hyderabad-2025': { label: 'Weighted calisthenics workshop', description: 'Arsh teaching or demonstrating weighted calisthenics at ICC Hyderabad on 1 June 2025.', orientation: 'Landscape', association: 'Workshop' },
+    'freestyle-calisthenics-hyderabad-2025': { label: 'Freestyle workshop', description: 'Krishna Mishra teaching a freestyle foundation or athletes participating in the Hyderabad workshop.', orientation: 'Landscape', association: 'Workshop' },
+    'sportexpo-india-2025': { label: 'SportExpo India showcase', description: 'Team ICC performing a clear calisthenics skill during the SportExpo India 2025 showcase.', orientation: 'Landscape', association: 'Workshop' },
   },
 } as const satisfies {
-  online: Record<'home' | 'gym', EditorialImage>;
-  offline: Record<'hero' | Location['id'], EditorialImage>;
-  competition: readonly EditorialImage[];
-  workshops: Record<string, EditorialImage>;
+  online: Record<'home' | 'gym', ImageBrief>;
+  offline: Record<'hero' | Location['id'], ImageBrief>;
+  competition: readonly ImageBrief[];
+  workshops: Record<string, ImageBrief>;
 };
 
 const bengaluruReviews: readonly Review[] = [

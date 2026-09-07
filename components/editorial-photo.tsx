@@ -1,14 +1,15 @@
-import Image from 'next/image';
-import type { CSSProperties } from 'react';
-import type { EditorialImage } from '@/lib/site-config';
+import { ImageIcon } from 'lucide-react';
+import type { ImageBrief } from '@/lib/site-config';
 
-export function EditorialPhoto({ image, className = '', priority = false }: { image: EditorialImage; className?: string; priority?: boolean }) {
+export function ImagePlaceholder({ brief, className = '' }: { brief: ImageBrief; className?: string }) {
   return (
-    <figure className={`editorial-photo ${className}`.trim()}>
+    <figure className={`editorial-photo image-placeholder ${className}`.trim()}>
       <div className="editorial-photo-frame">
-        <Image src={image.src} width={image.width} height={image.height} alt={image.alt} priority={priority} unoptimized sizes="(max-width: 760px) 92vw, (max-width: 1180px) 48vw, 38vw" style={{ '--photo-focus': image.focalPoint } as CSSProperties} />
+        <span className="image-placeholder-index" aria-hidden="true">PHOTO</span>
+        <ImageIcon aria-hidden="true" />
+        <div><strong>{brief.label}</strong><p>{brief.description}</p><small>{brief.orientation}</small></div>
       </div>
-      <figcaption><span aria-hidden="true" />{image.caption}</figcaption>
+      <figcaption><span aria-hidden="true" />Image to be supplied</figcaption>
     </figure>
   );
 }

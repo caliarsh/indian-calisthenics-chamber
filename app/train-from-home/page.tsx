@@ -10,8 +10,8 @@ import {
   Home,
 } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
-import { EditorialPhoto } from '@/components/editorial-photo';
-import { onlineOffers, siteMedia, type OnlineOfferCategory } from '@/lib/site-config';
+import { ImagePlaceholder } from '@/components/editorial-photo';
+import { onlineOffers, siteImageBriefs, type OnlineOfferCategory } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Train From Home or Your Gym | Indian Calisthenics Chamber',
@@ -82,12 +82,12 @@ export default function TrainFromHomePage() {
         </div>
         <div className="audience-grid">
           <article className="audience-photo-card">
-            <EditorialPhoto image={siteMedia.online.home} />
+            <ImagePlaceholder brief={siteImageBriefs.online.home} />
             <div className="audience-card-copy"><Home aria-hidden="true" /><span>01</span><h3>Home training</h3>
             <p>Start with bodyweight and the equipment you already have. Your plan adapts to your space instead of assuming a full gym.</p></div>
           </article>
           <article className="audience-photo-card">
-            <EditorialPhoto image={siteMedia.online.gym} />
+            <ImagePlaceholder brief={siteImageBriefs.online.gym} />
             <div className="audience-card-copy"><Dumbbell aria-hidden="true" /><span>02</span><h3>Your gym</h3>
             <p>Use the bars, weights, rings, and machines available to build calisthenics strength with a clear progression plan.</p></div>
           </article>
