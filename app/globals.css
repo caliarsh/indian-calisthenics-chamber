@@ -1512,3 +1512,169 @@ footer > p,
     background: linear-gradient(0deg, #761426 0%, #761426 31%, rgba(118, 20, 38, .76) 54%, rgba(118, 20, 38, .07) 100%);
   }
 }
+
+/* Homepage rhythm: black opening, followed by alternating red and cream. */
+.home-page > .site-header {
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(13, 13, 12, .94);
+  color: #fff7f7;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, .2);
+}
+
+.home-page > .site-header .brand-mark,
+.home-page > .site-header .button-small {
+  border-color: #9e1b32;
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.home-page > .site-header .main-nav a:hover,
+.home-page > .site-header .text-link:hover,
+.home-page > .site-header .mobile-menu-trigger:hover {
+  color: #d7546a;
+}
+
+.home-page > .hero {
+  background: #0d0d0c;
+  color: #fff7f7;
+}
+
+.home-page > .hero::before {
+  background: linear-gradient(90deg, #0d0d0c 0%, rgba(13, 13, 12, .98) 30%, rgba(13, 13, 12, .72) 52%, rgba(13, 13, 12, .2) 78%), linear-gradient(0deg, rgba(13, 13, 12, .7), transparent 48%);
+}
+
+.home-page > .hero .hero-media {
+  background: #171714;
+}
+
+.home-page > .hero .hero-media::after {
+  background: linear-gradient(90deg, rgba(13, 13, 12, .72), transparent 42%), linear-gradient(0deg, rgba(13, 13, 12, .38), transparent 38%);
+}
+
+.home-page > .hero h1 em,
+.home-page > .hero .hero-note-number {
+  color: #d7546a;
+}
+
+.home-page > .hero .hero-copy,
+.home-page > .hero .hero-note,
+.home-page > .hero .eyebrow {
+  color: #e5e0d8;
+}
+
+.home-page > .principles {
+  border-color: rgba(255, 255, 255, .16);
+  background: #141412;
+  color: #f6f2e9;
+}
+
+.home-page > .principles i {
+  background: #d7546a;
+}
+
+.home-page > .programs-section {
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.home-page > .programs-section .section-kicker,
+.home-page > .programs-section .section-heading h2 em,
+.home-page > .programs-section .training-path-grid > a > svg,
+.home-page > .programs-section .training-path-grid > a > span,
+.home-page > .programs-section .training-path-grid strong {
+  color: #ffd1d9;
+}
+
+.home-page > .programs-section .section-heading > p,
+.home-page > .programs-section .training-path-grid p {
+  color: rgba(255, 247, 247, .78);
+}
+
+.home-page > .programs-section .training-path-grid,
+.home-page > .programs-section .training-path-grid > a {
+  border-color: rgba(255, 247, 247, .22);
+}
+
+.home-page > .programs-section .training-path-grid > a {
+  background: rgba(105, 14, 32, .34);
+  color: #fff7f7;
+}
+
+.home-page > .programs-section .training-path-grid > a:hover {
+  background: rgba(105, 14, 32, .56);
+}
+
+.home-page > .method-section {
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.home-page > .events-preview-section {
+  background: #9e1b32;
+}
+
+.home-page > .coaches-section {
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.home-page > .home-assessment {
+  border-color: rgba(255, 247, 247, .22);
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.home-page > .home-assessment > svg,
+.home-page > .home-assessment .section-kicker,
+.home-page > .home-assessment h2 em {
+  color: #ffd1d9;
+}
+
+.home-page > .home-assessment p:not(.section-kicker) {
+  color: rgba(255, 247, 247, .78);
+}
+
+.home-page > .home-assessment .button {
+  border-color: #fff7f7;
+  background: #fff7f7;
+  color: #681020;
+}
+
+.home-page > footer {
+  border-color: rgba(23, 23, 20, .2);
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.home-page > footer .brand-mark {
+  border-color: #9e1b32;
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.home-page > footer > p,
+.home-page > footer .footer-contact,
+.home-page > footer .footer-location span,
+.home-page > footer .footer-location > div a:last-child,
+.home-page > footer .footer-instagram {
+  color: #625e57;
+}
+
+.home-page > footer .footer-contact a:hover,
+.home-page > footer .footer-instagram svg {
+  color: #8f1d2c;
+}
+
+@media (max-width: 760px) {
+  .home-page > .hero {
+    background: #0d0d0c;
+  }
+
+  .home-page > .hero::before {
+    background: linear-gradient(0deg, #0d0d0c 0%, #0d0d0c 34%, rgba(13, 13, 12, .72) 58%, rgba(13, 13, 12, .14) 100%);
+  }
+
+  .home-page > .hero .hero-media::after {
+    background: linear-gradient(0deg, #0d0d0c 0%, transparent 42%), linear-gradient(90deg, rgba(13, 13, 12, .2), transparent 50%, rgba(13, 13, 12, .15));
+  }
+}

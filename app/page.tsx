@@ -31,7 +31,7 @@ const arshTrainingImages = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="home-page">
       <SiteHeader />
 
       <section className="hero" id="top">
