@@ -1,6 +1,7 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export links */
 import type { Metadata } from 'next';
-import { ArrowUpRight, Medal, Target, UsersRound } from 'lucide-react';
+import { ArrowUpRight, BadgeCheck, BedDouble, Medal, Plane, Target, TicketCheck, UsersRound } from 'lucide-react';
+import { AthleteApplicationForm } from '@/components/community-forms';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { athleteProfiles } from '@/lib/site-config';
 
@@ -23,6 +24,7 @@ export default function AthletesPage() {
       <p className="eyebrow"><span /> Built inside the chamber</p>
       <h1>Our<br /><em>Athletes.</em></h1>
       <p>ICC has an athlete-rich culture built through ambitious training, shared standards, and years of disciplined work. The academy has helped produce national-level athletes across multiple calisthenics disciplines while continuing to develop the next generation.</p>
+      <div className="hero-actions"><a className="button" href="#apply">Apply to be an ICC athlete <ArrowUpRight aria-hidden="true" /></a><a className="text-link" href="#profiles">Meet the athlete culture</a></div>
     </section>
 
     <section className="athlete-culture section" aria-labelledby="athlete-culture-title">
@@ -49,7 +51,9 @@ export default function AthletesPage() {
       </div>
     </section>
 
-    <section className="athlete-page-cta section"><div><p className="section-kicker">Your progression starts here</p><h2>Train like an<br /><em>athlete.</em></h2></div><p>Begin with your current level. ICC will help you choose the training path that matches where you are and where you want to go.</p><a className="button" href="/book-trial">Book a trial <ArrowUpRight aria-hidden="true" /></a></section>
+    <section className="section athlete-support-section"><div><p className="section-kicker">Selected athlete support</p><h2>Train hard.<br /><em>We back the journey.</em></h2><p>For approved competitions, selected ICC athletes receive ICC funding for the costs that make participation possible.</p></div><div className="athlete-support-grid"><article><TicketCheck aria-hidden="true" /><h3>Registration</h3><p>Approved competition registration fees funded by ICC.</p></article><article><Plane aria-hidden="true" /><h3>Travel</h3><p>Approved intercity travel for eligible competitive events.</p></article><article><BedDouble aria-hidden="true" /><h3>Stay</h3><p>Accommodation funded when approved events require it.</p></article></div></section>
+
+    <section className="section application-section athlete-application-section" id="apply"><div className="application-copy"><p className="section-kicker">Apply to represent ICC</p><h2>Earn your place.<br /><em>Raise the standard.</em></h2><p>Tell us about your discipline, competition experience, and the athlete you want to become. The pathway is selective and built for people ready to train consistently, respect the team, and represent ICC well.</p><div className="credential-note"><BadgeCheck aria-hidden="true" /><p><strong>How selection works</strong>ICC reviews readiness, conduct, consistency, event eligibility, and competitive potential. Submitting an application does not guarantee selection or funding.</p></div></div><div className="form-wrap"><div className="form-heading"><span>Athlete application</span><small>Continue on WhatsApp</small></div><AthleteApplicationForm /></div></section>
     <SiteFooter />
   </main>;
 }

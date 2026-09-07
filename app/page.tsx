@@ -6,6 +6,9 @@ import {
   Building2,
   CalendarRange,
   ClipboardCheck,
+  GraduationCap,
+  HandHeart,
+  Medal,
   Presentation,
   Wifi,
 } from 'lucide-react';
@@ -98,6 +101,11 @@ export default function Home() {
           <a href="/competitions"><CalendarRange aria-hidden="true" /><span>Competition archive</span><h3>Competitions</h3><p>Look back at ICCWE 26 and find announcements for upcoming competitive events.</p><strong>Explore competitions <ArrowUpRight /></strong></a>
           <a href="/workshops"><Presentation aria-hidden="true" /><span>Learning and showcases</span><h3>Workshops</h3><p>Discover previous skill workshops and live ICC demonstrations across the community.</p><strong>Explore workshops <ArrowUpRight /></strong></a>
         </div>
+      </section>
+
+      <section className="section community-pathways-section" id="community-pathways">
+        <div className="section-heading"><div><p className="section-kicker">Grow with the community</p><h2>More ways to<br /><em>build the sport.</em></h2></div><p>Develop as a trainer, pursue the ICC athlete pathway, or help create more opportunities for calisthenics across India.</p></div>
+        <div className="community-pathways-grid"><a href="/trainer-internship"><GraduationCap aria-hidden="true" /><span>Six-month program</span><h3>Trainer Internship</h3><p>Learn theory, programming, assessment, and practical coaching in Bengaluru or Hyderabad.</p><strong>Explore the internship <ArrowUpRight /></strong></a><a href="/athletes#apply"><Medal aria-hidden="true" /><span>Competitive pathway</span><h3>Become an ICC Athlete</h3><p>Apply to represent ICC and receive approved competition, travel, and stay support.</p><strong>View athlete pathway <ArrowUpRight /></strong></a><a href="/grow-calisthenics-india"><HandHeart aria-hidden="true" /><span>Support the movement</span><h3>Grow Calisthenics in India</h3><p>Back athletes, free workshops, and competition opportunities that expand the culture.</p><strong>See how to help <ArrowUpRight /></strong></a></div>
       </section>
 
       <section className="section coaches-section" id="coaches">

@@ -138,6 +138,19 @@ export interface ImageBrief {
   association: 'Online training' | 'Offline training' | 'Competition' | 'Workshop' | 'Athlete';
 }
 
+export interface InternshipModule {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface SupportInitiative {
+  id: string;
+  title: string;
+  description: string;
+  examples: readonly string[];
+}
+
 export type FormQuality = 'Poor' | 'Average' | 'Good' | 'Excellent';
 export type MobilityRating = 'Restricted' | 'Average' | 'Good';
 export type FlexibilityRating = 'Poor' | 'Average' | 'Good';
@@ -378,6 +391,25 @@ export const athleteProfiles: readonly AthleteProfile[] = [
     description: 'A movement-driven athlete profile combining foundational control with confident transitions, creativity, and consistent skill practice.',
     status: 'Sample profile',
   },
+];
+
+export const trainerInternship = {
+  duration: '6 months',
+  locations: ['Bengaluru', 'Hyderabad'],
+  modules: [
+    { number: '01', title: 'Movement foundations', description: 'Learn exercise standards, regressions, progressions, joint preparation, and safe spotting for athletes at different levels.' },
+    { number: '02', title: 'Programming', description: 'Build structured sessions and training blocks using volume, intensity, recovery, progression, and goal-specific planning.' },
+    { number: '03', title: 'Applied anatomy', description: 'Understand the major movement patterns, muscles, joints, leverage, and common technique errors relevant to calisthenics coaching.' },
+    { number: '04', title: 'Assessment and coaching', description: 'Practise athlete screening, level placement, cueing, observation, feedback, session management, and progress tracking.' },
+    { number: '05', title: 'Nutrition and diet foundations', description: 'Learn general nutrition, diet planning, recovery, and habit-building principles while understanding when a client needs a qualified medical or nutrition professional.' },
+    { number: '06', title: 'Supervised practice', description: 'Apply the theory on the training floor through observation, assisted coaching, supervised sessions, and a final ICC assessment.' },
+  ] satisfies readonly InternshipModule[],
+} as const;
+
+export const supportInitiatives: readonly SupportInitiative[] = [
+  { id: 'athlete-support', title: 'Help athletes compete', description: 'Support selected ICC athletes as they represent their training community at competitions across India.', examples: ['Competition registration', 'Intercity travel', 'Accommodation during events'] },
+  { id: 'free-workshops', title: 'Take calisthenics to more people', description: 'Help ICC host free introductory workshops that make safe bodyweight training easier to discover.', examples: ['Venue and equipment', 'Coach travel', 'Community learning material'] },
+  { id: 'competition-culture', title: 'Build stronger platforms', description: 'Support athlete-first events, judged attempts, and opportunities for the community to train and perform together.', examples: ['Event operations', 'Safety and judging equipment', 'Athlete participation support'] },
 ];
 
 export const siteImageBriefs = {

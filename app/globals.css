@@ -851,6 +851,169 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .booking-shell .form-wrap { min-height: 0; }
 }
 
+/* Community pathways, internship, athlete applications, and sport support. */
+.footer-center { display: flex; align-items: center; flex-direction: column; gap: .7rem; text-align: center; }
+.footer-center > p { margin: 0; color: #85817a; font: 500 .8rem var(--font-display); letter-spacing: .12em; text-transform: uppercase; }
+.footer-center nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem 1rem; }
+.footer-center nav a { color: #aaa69d; font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.footer-center nav a:hover { color: #ffd1d9; }
+
+.community-pathways-section { border-top: 1px solid rgba(255,247,247,.22); background: #8f1d2c; color: #fff7f7; }
+.community-pathways-section .section-kicker,
+.community-pathways-section .section-heading h2 em,
+.community-pathways-grid > a > svg,
+.community-pathways-grid > a > span,
+.community-pathways-grid strong { color: #ffd1d9; }
+.community-pathways-section .section-heading > p,
+.community-pathways-grid p { color: rgba(255,247,247,.78); }
+.community-pathways-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(255,247,247,.22); border-left: 1px solid rgba(255,247,247,.22); }
+.community-pathways-grid > a { display: flex; min-height: 460px; flex-direction: column; padding: clamp(1.6rem,3vw,3rem); border-right: 1px solid rgba(255,247,247,.22); border-bottom: 1px solid rgba(255,247,247,.22); background: rgba(105,14,32,.28); transition: background .22s ease, transform .22s ease; }
+.community-pathways-grid > a:hover { transform: translateY(-6px); background: rgba(105,14,32,.5); }
+.community-pathways-grid > a > svg { width: 38px; height: 38px; margin-bottom: 2.8rem; stroke-width: 1.35; }
+.community-pathways-grid > a > span { font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.community-pathways-grid h3 { margin: 1rem 0; font: 600 clamp(2.4rem,3.4vw,3.8rem)/.9 var(--font-display); text-transform: uppercase; }
+.community-pathways-grid p { margin: 0; line-height: 1.7; }
+.community-pathways-grid strong { display: inline-flex; align-items: center; gap: .5rem; margin-top: auto; padding-top: 2rem; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+.community-pathways-grid strong svg { width: 16px; }
+
+.initiative-page { background: #e9e3d8; color: #171714; }
+.initiative-hero { min-height: 820px; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(320px,.55fr); gap: clamp(3rem,8vw,8rem); align-items: center; padding: 10rem clamp(1.25rem,6.5vw,7rem) 6rem; overflow: hidden; background: radial-gradient(circle at 83% 30%, rgba(158,27,50,.12), transparent 32%), #e9e3d8; }
+.initiative-hero > div { position: relative; z-index: 1; }
+.initiative-hero .eyebrow { color: #625e57; }
+.initiative-hero h1 { margin: 0; font: 600 clamp(5rem,9vw,9.5rem)/.78 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; }
+.initiative-hero h1 em { color: #9e1b32; font-style: normal; }
+.initiative-hero > div > p:not(.eyebrow) { max-width: 720px; margin: 2rem 0 0; color: #5d5a54; font-size: 1.08rem; line-height: 1.78; }
+.initiative-hero .text-link { color: #791527; }
+.initiative-hero aside { min-height: 430px; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(2rem,4vw,4rem); border: 1px solid rgba(255,247,247,.25); background: #9e1b32; color: #fff7f7; }
+.initiative-hero aside span { color: #ffd1d9; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.initiative-hero aside strong { margin: auto 0 1.25rem; font: 600 clamp(5rem,8vw,8rem)/.8 var(--font-display); text-transform: uppercase; }
+.initiative-hero aside p { margin: 0; color: rgba(255,247,247,.76); line-height: 1.6; }
+.support-initiative-hero { background: radial-gradient(circle at 82% 28%, rgba(255,247,247,.12), transparent 31%), #9e1b32; color: #fff7f7; }
+.support-initiative-hero .eyebrow,
+.support-initiative-hero > div > p:not(.eyebrow) { color: rgba(255,247,247,.82); }
+.support-initiative-hero h1 em { color: #ffd1d9; }
+.support-initiative-hero .text-link { color: #fff7f7; }
+.support-initiative-hero aside { border-color: rgba(255,247,247,.34); background: rgba(105,14,32,.34); }
+.button-light { border-color: #fff7f7; background: #fff7f7; color: #681020; }
+
+.initiative-facts { min-height: 94px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem clamp(2rem,5vw,5rem); padding: 1.4rem clamp(1.25rem,6.5vw,7rem); border-block: 1px solid rgba(23,23,20,.2); background: #f7f1e7; }
+.initiative-facts span { display: inline-flex; align-items: center; gap: .55rem; color: #4f4b45; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.initiative-facts svg { width: 18px; color: #9e1b32; }
+.initiative-intro { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: clamp(3rem,8vw,8rem); background: #e9e3d8; }
+.initiative-intro h2,
+.internship-path h2,
+.funding-process h2,
+.application-copy h2,
+.athlete-support-section h2 { margin: 0; font: 600 clamp(3.8rem,7vw,7rem)/.86 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; }
+.initiative-intro h2 em,
+.internship-path h2 em,
+.funding-process h2 em,
+.application-copy h2 em,
+.athlete-support-section h2 em { color: #9e1b32; font-style: normal; }
+.initiative-intro > div:last-child p { max-width: 720px; margin: 0 0 1.4rem; color: #5d5a54; font-size: 1.02rem; line-height: 1.8; }
+
+.curriculum-section,
+.impact-section { background: #9e1b32; color: #fff7f7; }
+.curriculum-section .section-kicker,
+.curriculum-section .section-heading h2 em,
+.impact-section .section-kicker,
+.impact-section .section-heading h2 em { color: #ffd1d9; }
+.curriculum-section .section-heading > p,
+.impact-section .section-heading > p { color: rgba(255,247,247,.76); }
+.curriculum-grid,
+.impact-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid rgba(255,247,247,.22); border-left: 1px solid rgba(255,247,247,.22); }
+.curriculum-grid article,
+.impact-grid article { min-height: 390px; display: flex; flex-direction: column; padding: clamp(1.6rem,3vw,3rem); border-right: 1px solid rgba(255,247,247,.22); border-bottom: 1px solid rgba(255,247,247,.22); background: rgba(105,14,32,.27); }
+.curriculum-grid article > span,
+.impact-grid article > span { color: #ffd1d9; font: 600 .72rem var(--font-display); }
+.curriculum-grid svg,
+.impact-grid svg { width: 30px; margin: 2.5rem 0 1.5rem; color: #ffd1d9; stroke-width: 1.4; }
+.curriculum-grid h3,
+.impact-grid h3 { margin: 0 0 1rem; font: 600 clamp(2rem,3vw,3rem)/.95 var(--font-display); text-transform: uppercase; }
+.curriculum-grid p,
+.impact-grid p { margin: 0; color: rgba(255,247,247,.76); line-height: 1.7; }
+.impact-grid ul { list-style: none; margin: auto 0 0; padding: 2rem 0 0; }
+.impact-grid li { margin-top: .55rem; color: #fff7f7; font-size: .76rem; }
+.impact-grid li::before { content: '—'; margin-right: .55rem; color: #ffd1d9; }
+
+.internship-path,
+.funding-process { display: grid; grid-template-columns: minmax(300px,.8fr) minmax(0,1.2fr); gap: clamp(3rem,8vw,8rem); background: #f7f1e7; }
+.internship-path > div > p:last-child { max-width: 500px; color: #5d5a54; line-height: 1.75; }
+.internship-path ol,
+.funding-process ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(23,23,20,.2); }
+.internship-path li,
+.funding-process li { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid rgba(23,23,20,.2); }
+.internship-path li > span,
+.funding-process li > span { color: #9e1b32; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.internship-path h3,
+.funding-process h3 { margin: 0 0 .65rem; font: 600 clamp(1.9rem,3vw,2.8rem)/1 var(--font-display); text-transform: uppercase; }
+.internship-path li p,
+.funding-process li p { margin: 0; color: #5d5a54; line-height: 1.65; }
+.funding-process li { grid-template-columns: 48px 1fr; }
+
+.application-section { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); padding: 0; background: #9e1b32; color: #fff7f7; }
+.application-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(4rem,7vw,7rem); }
+.application-copy .section-kicker,
+.application-copy h2 em { color: #ffd1d9; }
+.application-copy > p:not(.section-kicker) { max-width: 560px; color: rgba(255,247,247,.78); line-height: 1.75; }
+.credential-note { display: grid; grid-template-columns: 34px 1fr; gap: 1rem; max-width: 580px; margin-top: 2.2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,247,247,.28); }
+.credential-note svg { width: 27px; color: #ffd1d9; }
+.credential-note p { margin: 0; color: rgba(255,247,247,.76); font-size: .8rem; line-height: 1.65; }
+.credential-note strong { display: block; margin-bottom: .35rem; color: #fff7f7; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+.application-section .form-wrap { min-height: 980px; }
+.community-form .field label span { color: #77736c; font-size: .62rem; }
+
+.athlete-support-section { display: grid; grid-template-columns: minmax(300px,.8fr) minmax(0,1.2fr); gap: clamp(3rem,8vw,8rem); background: #f7f1e7; color: #171714; }
+.athlete-support-section > div:first-child > p:last-child { max-width: 560px; color: #5d5a54; line-height: 1.75; }
+.athlete-support-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(23,23,20,.2); border-left: 1px solid rgba(23,23,20,.2); }
+.athlete-support-grid article { min-height: 300px; display: flex; flex-direction: column; padding: 2rem; border-right: 1px solid rgba(23,23,20,.2); border-bottom: 1px solid rgba(23,23,20,.2); }
+.athlete-support-grid svg { width: 32px; color: #9e1b32; }
+.athlete-support-grid h3 { margin: auto 0 .8rem; font: 600 2rem/1 var(--font-display); text-transform: uppercase; }
+.athlete-support-grid p { margin: 0; color: #5d5a54; font-size: .85rem; line-height: 1.65; }
+
+@media (max-width: 980px) {
+  .community-pathways-grid,
+  .curriculum-grid,
+  .impact-grid { grid-template-columns: 1fr 1fr; }
+  .initiative-hero { grid-template-columns: 1fr; }
+  .initiative-hero aside { min-height: 300px; }
+  .initiative-intro,
+  .internship-path,
+  .funding-process,
+  .application-section,
+  .athlete-support-section { grid-template-columns: 1fr; }
+  .application-section .form-wrap { min-height: 0; }
+}
+
+@media (max-width: 760px) {
+  footer { grid-template-columns: 1fr; justify-items: start; padding-block: 3rem; }
+  .footer-center { align-items: flex-start; text-align: left; }
+  .footer-center nav { justify-content: flex-start; }
+  .footer-contact { justify-self: start; align-items: flex-start; }
+  .footer-location { align-items: flex-start; }
+  .footer-location > div { justify-content: flex-start; }
+  .community-pathways-grid,
+  .curriculum-grid,
+  .impact-grid,
+  .athlete-support-grid { grid-template-columns: 1fr; }
+  .community-pathways-grid > a { min-height: 390px; }
+  .initiative-hero { min-height: auto; gap: 3rem; padding-top: 8rem; }
+  .initiative-hero h1 { font-size: clamp(4.2rem,20vw,6.5rem); }
+  .initiative-hero aside { min-height: 280px; }
+  .initiative-facts { align-items: flex-start; justify-content: flex-start; flex-direction: column; }
+  .curriculum-grid article,
+  .impact-grid article { min-height: 340px; }
+  .internship-path li { grid-template-columns: 1fr; gap: .7rem; }
+  .application-copy,
+  .application-section .form-wrap { padding: 5rem 1.25rem; }
+  .athlete-support-grid article { min-height: 240px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-pathways-grid > a { transition: none; }
+  .community-pathways-grid > a:hover { transform: none; }
+}
+
 @media (min-width: 761px) and (max-width: 1050px) {
   .schedule-groups { grid-template-columns: 1fr; }
   .program-grid { grid-template-columns: 1fr; }
@@ -1672,4 +1835,26 @@ footer > p,
   .home-page > .hero .hero-media::after {
     background: linear-gradient(0deg, rgba(54, 6, 17, .22), transparent 58%);
   }
+}
+
+.home-page > footer .footer-center > p,
+.home-page > footer .footer-center nav a {
+  color: #625e57;
+}
+
+.home-page > footer .footer-center nav a:hover {
+  color: #8f1d2c;
+}
+
+.initiative-page footer .footer-center > p,
+.initiative-page footer .footer-center nav a {
+  color: rgba(255, 247, 247, .76);
+}
+
+.initiative-page footer .footer-center nav a:hover {
+  color: #ffd1d9;
+}
+
+.athletes-hero > p:not(.eyebrow) {
+  color: rgba(255, 247, 247, .8);
 }
