@@ -121,6 +121,16 @@ export interface WorkshopEvent {
   sourceUrl: string;
 }
 
+export interface EditorialImage {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+  focalPoint: string;
+  association: 'Online training' | 'Offline training' | 'Competition' | 'Workshop';
+}
+
 export type FormQuality = 'Poor' | 'Average' | 'Good' | 'Excellent';
 export type MobilityRating = 'Restricted' | 'Average' | 'Good';
 export type FlexibilityRating = 'Poor' | 'Average' | 'Good';
@@ -323,6 +333,43 @@ export const coaches: readonly Coach[] = [
     instagramUrl: 'https://www.instagram.com/abhishek_icc/',
   },
 ];
+
+const coachingImages = [
+  { src: '/arsh-training/arsh-coaching-01.jpeg', width: 738, height: 1312, alt: 'Arsh coaching an athlete through a pulling exercise', caption: 'Individual feedback · ICC coaching', focalPoint: '50% 42%' },
+  { src: '/arsh-training/arsh-coaching-02.jpeg', width: 738, height: 1312, alt: 'Arsh guiding an athlete through a parallel-bar core exercise', caption: 'Progressions matched to the athlete', focalPoint: '50% 42%' },
+  { src: '/arsh-training/arsh-coaching-03.jpeg', width: 738, height: 1312, alt: 'Arsh spotting an athlete during a handstand drill', caption: 'Skill practice with coach support', focalPoint: '50% 45%' },
+  { src: '/arsh-training/arsh-coaching-04.jpeg', width: 738, height: 1312, alt: 'Arsh coaching an athlete through a weighted dip', caption: 'Strength work at ICC', focalPoint: '50% 45%' },
+  { src: '/arsh-training/arsh-coaching-05.jpeg', width: 738, height: 1312, alt: 'Arsh giving technique feedback during a parallel-bar exercise', caption: 'Technique before intensity', focalPoint: '52% 42%' },
+  { src: '/arsh-training/arsh-coaching-06.jpeg', width: 738, height: 1312, alt: 'Arsh observing an athlete during a pull-up drill', caption: 'Coach-led movement practice', focalPoint: '50% 45%' },
+] as const;
+
+export const siteMedia = {
+  online: {
+    home: { ...coachingImages[0], association: 'Online training' },
+    gym: { ...coachingImages[2], association: 'Online training' },
+  },
+  offline: {
+    hero: { src: '/editorial/icc-training-community.jpeg', width: 738, height: 1600, alt: 'ICC athletes and community members gathered on the academy training floor', caption: 'The ICC training community', focalPoint: '50% 47%', association: 'Offline training' },
+    bengaluru: { ...coachingImages[5], association: 'Offline training' },
+    hyderabad: { ...coachingImages[3], association: 'Offline training' },
+  },
+  competition: [
+    { src: '/icc-community-hero.jpeg', width: 1280, height: 1177, alt: 'ICC athletes and community members gathered inside the academy', caption: 'ICC community · Bengaluru', focalPoint: '50% 48%', association: 'Competition' },
+    { src: '/icc-coaches.jpeg', width: 1280, height: 900, alt: 'ICC athletes posing together after training', caption: 'Athletes, coaches, and community', focalPoint: '50% 52%', association: 'Competition' },
+    { ...coachingImages[5], caption: 'Strict movement standards in training', association: 'Competition' },
+  ],
+  workshops: {
+    'bengaluru-inauguration-workshop-2025': { src: '/icc-community-hero.jpeg', width: 1280, height: 1177, alt: 'ICC community gathered inside the academy', caption: 'Community at ICC Bengaluru', focalPoint: '50% 48%', association: 'Workshop' },
+    'weighted-calisthenics-hyderabad-2025': { ...coachingImages[3], association: 'Workshop' },
+    'freestyle-calisthenics-hyderabad-2025': { ...coachingImages[2], association: 'Workshop' },
+    'sportexpo-india-2025': { src: '/icc-coaches.jpeg', width: 1280, height: 900, alt: 'ICC athletes posing together between training equipment', caption: 'Team ICC', focalPoint: '50% 50%', association: 'Workshop' },
+  },
+} as const satisfies {
+  online: Record<'home' | 'gym', EditorialImage>;
+  offline: Record<'hero' | Location['id'], EditorialImage>;
+  competition: readonly EditorialImage[];
+  workshops: Record<string, EditorialImage>;
+};
 
 const bengaluruReviews: readonly Review[] = [
   {

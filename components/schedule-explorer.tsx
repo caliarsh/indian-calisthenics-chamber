@@ -1,8 +1,9 @@
 'use client';
 
 import { ArrowUpRight, MapPin } from 'lucide-react';
+import { EditorialPhoto } from '@/components/editorial-photo';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { siteConfig } from '@/lib/site-config';
+import { siteConfig, siteMedia } from '@/lib/site-config';
 
 function slug(value: string) {
   return value.replaceAll(' ', '-').toLowerCase();
@@ -24,6 +25,8 @@ export function ScheduleExplorer() {
             <div><span>Training base</span><strong>{location.area}</strong>{location.address !== location.area && <small>{location.address}</small>}</div>
             <ArrowUpRight className="location-arrow" aria-hidden="true" />
           </a>
+
+          <EditorialPhoto image={siteMedia.offline[location.id]} className="location-editorial-photo" />
 
           <div className="schedule-groups">
             {location.schedule.map((group) => (
