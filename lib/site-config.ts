@@ -63,6 +63,7 @@ export interface AthleteProfile {
   initials: string;
   discipline: string;
   status: 'ICC athlete';
+  representedIndia?: boolean;
 }
 
 export type OnlineOfferCategory = 'Free Consultation' | 'Custom Plans' | 'Online PT' | 'Transformation';
@@ -354,6 +355,22 @@ export const coaches: readonly Coach[] = [
 
 export const athleteProfiles: readonly AthleteProfile[] = [
   {
+    id: 'arsh',
+    name: 'Arsh',
+    initials: 'AR',
+    discipline: 'Weighted Endurance · Streetlifting · Static',
+    status: 'ICC athlete',
+    representedIndia: true,
+  },
+  {
+    id: 'krishna',
+    name: 'Krishna',
+    initials: 'KR',
+    discipline: 'Freestyle',
+    status: 'ICC athlete',
+    representedIndia: true,
+  },
+  {
     id: 'aakash',
     name: 'Aakash',
     initials: 'AA',
@@ -365,20 +382,6 @@ export const athleteProfiles: readonly AthleteProfile[] = [
     name: 'Durga',
     initials: 'DU',
     discipline: 'Static',
-    status: 'ICC athlete',
-  },
-  {
-    id: 'arsh',
-    name: 'Arsh',
-    initials: 'AR',
-    discipline: 'Weighted Endurance · Streetlifting · Static',
-    status: 'ICC athlete',
-  },
-  {
-    id: 'krishna',
-    name: 'Krishna',
-    initials: 'KR',
-    discipline: 'Freestyle',
     status: 'ICC athlete',
   },
   {

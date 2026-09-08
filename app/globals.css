@@ -2136,6 +2136,23 @@ footer > p,
   color: #5d5a54;
 }
 
+.athletes-page > .athlete-roster .india-representative {
+  display: inline-block;
+  margin-left: .25em;
+  font: normal .55em/1 system-ui, sans-serif;
+  vertical-align: .12em;
+}
+
+@media (min-width: 1051px) {
+  .athletes-page > .athlete-roster .athlete-profile-grid-secondary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .athletes-page > .athlete-roster .athlete-profile-grid-secondary .athlete-profile-card {
+    grid-template-columns: minmax(130px, .65fr) minmax(0, 1.35fr);
+  }
+}
+
 .event-page > .event-photo-story .editorial-photo figcaption {
   color: rgba(255, 247, 247, .72);
 }
