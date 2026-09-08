@@ -1,0 +1,14 @@
+# Copy to .dev.vars for local testing. Never commit the populated file.
+TURNSTILE_SECRET_KEY=
+ZOHO_CLIENT_ID=
+ZOHO_CLIENT_SECRET=
+ZOHO_REFRESH_TOKEN=
+ZOHO_API_DOMAIN=https://www.zohoapis.in
+ZOHO_ACCOUNTS_DOMAIN=https://accounts.zoho.in
+ZOHO_PIPELINE_ID=
+ZOHO_PIPELINE_NAME=Training Enquiries
+ZOHO_SUB_PIPELINE=Training Enquiries
+ZOHO_INITIAL_STAGE=New Enquiry
+ZOHO_OWNER_MAP_JSON={"online":"","bengaluru":"","hyderabad":""}
+ZOHO_FIELD_MAPPING_JSON={"submissionId":"Website_Submission_ID"}
+

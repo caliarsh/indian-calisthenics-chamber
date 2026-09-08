@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed, Manrope } from 'next/font/google';
+import { AttributionTracker } from '@/components/attribution-tracker';
+import { CloudflareAnalytics } from '@/components/cloudflare-analytics';
 import './globals.css';
 
 const display = Barlow_Condensed({
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${sans.variable}`}>{children}</body>
+      <body className={`${display.variable} ${sans.variable}`}><AttributionTracker />{children}<CloudflareAnalytics /></body>
     </html>
   );
 }

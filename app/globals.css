@@ -1584,6 +1584,37 @@ footer {
   color: #286343;
 }
 
+.consent-stack { display: grid; gap: .8rem; margin: .2rem 0 1.2rem; }
+.consent-row { display: grid !important; grid-template-columns: 22px 1fr; align-items: start; gap: .75rem; margin: 0 !important; color: #4d4943 !important; font-size: .78rem !important; font-weight: 500 !important; letter-spacing: 0 !important; line-height: 1.55; text-transform: none !important; }
+.consent-row [data-slot="checkbox"] { margin-top: .12rem; border-color: rgba(143,29,44,.48); background: #fffaf2; color: #fff; }
+.consent-row [data-slot="checkbox"][data-checked] { background: #9e1b32; }
+.consent-row a { color: #8f1d2c; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.turnstile-field { min-height: 28px; margin: .6rem 0 1rem; }
+.turnstile-note { margin: 0; color: #68645e; font-size: .72rem; line-height: 1.5; }
+.form-status { display: grid; gap: .65rem; margin: 1rem 0 0; padding: 1rem; border: 1px solid rgba(23,23,20,.18); font-size: .78rem; line-height: 1.5; }
+.form-status.success { border-color: rgba(40,99,67,.4); background: rgba(40,99,67,.08); color: #1f5638; }
+.form-status.fallback { border-color: rgba(158,27,50,.38); background: rgba(158,27,50,.08); color: #5f1825; }
+.form-status > div { display: flex; flex-wrap: wrap; gap: .7rem; }
+.form-status a, .form-status button { border: 0; background: transparent; color: inherit; font: 800 .7rem var(--font-sans-custom); letter-spacing: .06em; text-decoration: underline; text-transform: uppercase; cursor: pointer; }
+
+.privacy-page { background: #f3ede2; color: #171714; }
+.privacy-hero { padding: clamp(7rem, 12vw, 11rem) clamp(1.25rem, 7vw, 8rem) clamp(4rem, 7vw, 7rem); background: #9e1b32; color: #fff7f7; }
+.privacy-hero .back-link, .privacy-hero .section-kicker { color: #fff7f7; }
+.privacy-hero h1 { margin: 1.5rem 0; font: 600 clamp(4.4rem, 10vw, 9rem)/.82 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; }
+.privacy-hero h1 em { color: #f2a0ad; font-style: normal; }
+.privacy-hero > p { max-width: 720px; font-size: 1.05rem; line-height: 1.75; }
+.privacy-hero > span { display: block; margin-top: 2rem; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.privacy-content { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 7vw, 8rem); }
+.privacy-content article { padding: clamp(1.5rem, 3vw, 3rem); border-top: 1px solid rgba(23,23,20,.2); }
+.privacy-content h2 { margin: 0 0 1rem; font: 600 clamp(1.8rem, 3vw, 2.8rem)/1 var(--font-display); text-transform: uppercase; }
+.privacy-content p, .privacy-content li { color: #59554f; font-size: .94rem; line-height: 1.75; }
+.privacy-content a { color: #8f1d2c; font-weight: 700; text-decoration: underline; }
+.privacy-content ul { padding-left: 1.25rem; }
+
+@media (max-width: 720px) {
+  .privacy-content { grid-template-columns: 1fr; }
+}
+
 .assessed-badge {
   color: #791527;
 }

@@ -43,7 +43,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return <footer>
     <a className="brand footer-brand" href="/" aria-label="Indian Calisthenics Chamber home"><span className="brand-mark" aria-hidden="true">ICC</span><span className="brand-name">Indian Calisthenics<br />Chamber</span></a>
-    <div className="footer-center"><p>Strength is a skill. Learn it well.</p><nav aria-label="Community links"><a href="/trainer-internship">Internship</a><a href="/athletes">Athletes</a><a href="/grow-calisthenics-india">Support the sport</a></nav></div>
+    <div className="footer-center"><p>Strength is a skill. Learn it well.</p><nav aria-label="Community links"><a href="/trainer-internship">Internship</a><a href="/athletes">Athletes</a><a href="/grow-calisthenics-india">Support the sport</a><a href="/privacy">Privacy</a></nav></div>
     <div className="footer-contact">{siteConfig.locations.map(location => <div className="footer-location" key={location.id}><div><a href={location.mapsUrl} target="_blank" rel="noreferrer">{location.name}</a><span aria-hidden="true">·</span><a href={`tel:+${location.whatsappNumber}`}>{location.whatsappDisplay}</a></div><a className="footer-instagram" href={location.instagramUrl} target="_blank" rel="noreferrer"><AtSign aria-hidden="true" /> {location.instagram}</a></div>)}</div>
   </footer>;
 }
