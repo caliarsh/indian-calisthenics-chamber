@@ -1757,6 +1757,28 @@ footer > p,
   color: #e5e0d8;
 }
 
+.offline-page > .offline-hero {
+  background: transparent;
+}
+
+.offline-page > .offline-hero::before {
+  background:
+    linear-gradient(90deg, rgba(10, 10, 9, .94) 0%, rgba(10, 10, 9, .86) 28%, rgba(10, 10, 9, .6) 50%, rgba(10, 10, 9, .16) 74%, transparent 88%),
+    linear-gradient(0deg, rgba(10, 10, 9, .42), transparent 48%);
+}
+
+.offline-page > .offline-hero .offline-hero-media {
+  inset: 0;
+  height: auto;
+  background: transparent;
+}
+
+.offline-page > .offline-hero .offline-hero-media img {
+  transform: scale(1.1);
+  transform-origin: 52% 100%;
+  object-position: 52% 54%;
+}
+
 .home-page > .principles {
   border-color: rgba(23, 23, 20, .2);
   background: #e9e3d8;
@@ -1840,6 +1862,11 @@ footer > p,
     transform: scale(1.2);
     transform-origin: 52% 100%;
   }
+
+  .offline-page > .offline-hero .offline-hero-media img {
+    transform: scale(1.2);
+    transform-origin: 52% 100%;
+  }
 }
 
 .home-page > footer {
@@ -1881,6 +1908,21 @@ footer > p,
   }
 
   .home-page > .hero .hero-media img {
+    transform: scale(1.14);
+    transform-origin: 54% 100%;
+    object-position: 54% 52%;
+  }
+
+  .offline-page > .offline-hero::before {
+    background: linear-gradient(0deg, rgba(10, 10, 9, .98) 0%, rgba(10, 10, 9, .94) 36%, rgba(10, 10, 9, .68) 58%, rgba(10, 10, 9, .14) 84%, transparent 100%);
+  }
+
+  .offline-page > .offline-hero .offline-hero-media {
+    inset: 0;
+    height: auto;
+  }
+
+  .offline-page > .offline-hero .offline-hero-media img {
     transform: scale(1.14);
     transform-origin: 54% 100%;
     object-position: 54% 52%;
