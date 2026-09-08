@@ -136,6 +136,15 @@ export interface ImageBrief {
   association: 'Online training' | 'Offline training' | 'Competition' | 'Workshop' | 'Athlete';
 }
 
+export interface SiteImage {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+  focalPosition?: string;
+}
+
 export interface InternshipModule {
   number: string;
   title: string;
@@ -435,6 +444,75 @@ export const siteImageBriefs = {
   offline: Record<'hero' | Location['id'], ImageBrief>;
   competition: readonly ImageBrief[];
   workshops: Record<string, ImageBrief>;
+};
+
+export const siteImages = {
+  online: {
+    home: {
+      src: '/online-coaching/home-training.jpg',
+      alt: 'Athlete following a bodyweight training program with parallettes in a bright home workout space.',
+      caption: 'Home training · AI-created concept image',
+      width: 1672,
+      height: 941,
+      focalPosition: '50% 54%',
+    },
+    gym: {
+      src: '/online-coaching/gym-coaching.jpg',
+      alt: 'Athlete training on parallettes in a gym while receiving remote coaching through a tablet.',
+      caption: 'Your gym coaching · AI-created concept image',
+      width: 1672,
+      height: 941,
+      focalPosition: '50% 52%',
+    },
+  },
+  locations: {
+    bengaluru: {
+      src: '/locations/icc-bengaluru.jpg',
+      alt: 'Calisthenics training rig, rings, and floor equipment inside ICC Bengaluru.',
+      caption: 'ICC Bengaluru training floor · Google Maps',
+      width: 609,
+      height: 812,
+      focalPosition: '50% 46%',
+    },
+    hyderabad: {
+      src: '/locations/icc-hyderabad.jpg',
+      alt: 'Red and black calisthenics rig and mirrored training floor inside ICC Hyderabad.',
+      caption: 'ICC Hyderabad training floor · Google Maps',
+      width: 870,
+      height: 580,
+      focalPosition: '50% 50%',
+    },
+  },
+  athletes: [
+    {
+      src: '/athletes/icc-athletes-community.jpg',
+      alt: 'ICC athletes and coaches gathered together on a calisthenics training floor.',
+      caption: 'Athlete community · Built together',
+      width: 1440,
+      height: 1440,
+      focalPosition: '50% 34%',
+    },
+    {
+      src: '/athletes/icc-athletes-awards.jpg',
+      alt: 'ICC athletes and coaches together after a competition, with athletes holding trophies and certificates.',
+      caption: 'Competition team · Shared standards',
+      width: 1440,
+      height: 1440,
+      focalPosition: '50% 46%',
+    },
+    {
+      src: '/athletes/icc-athlete-podium.jpg',
+      alt: 'Calisthenics athletes celebrating with trophies on a competition podium.',
+      caption: 'Competition podium · Earned through preparation',
+      width: 1440,
+      height: 810,
+      focalPosition: '50% 44%',
+    },
+  ],
+} as const satisfies {
+  online: Record<'home' | 'gym', SiteImage>;
+  locations: Record<Location['id'], SiteImage>;
+  athletes: readonly SiteImage[];
 };
 
 const bengaluruReviews: readonly Review[] = [

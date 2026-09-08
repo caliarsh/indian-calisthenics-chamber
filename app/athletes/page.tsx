@@ -2,8 +2,9 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight, BadgeCheck, BedDouble, Medal, Plane, Target, TicketCheck, UsersRound } from 'lucide-react';
 import { AthleteApplicationForm } from '@/components/community-forms';
+import { EditorialImage } from '@/components/editorial-photo';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
-import { athleteProfiles } from '@/lib/site-config';
+import { athleteProfiles, siteImages } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Our Athletes | Indian Calisthenics Chamber',
@@ -35,6 +36,16 @@ export default function AthletesPage() {
       </div>
       <div className="athlete-culture-grid">
         {culture.map(({ icon: Icon, title, copy }, index) => <article key={title}><span>{String(index + 1).padStart(2, '0')}</span><Icon aria-hidden="true" /><h3>{title}</h3><p>{copy}</p></article>)}
+      </div>
+    </section>
+
+    <section className="athlete-photo-story section" aria-labelledby="athlete-photo-story-title">
+      <div className="section-heading athlete-photo-story-heading">
+        <div><p className="section-kicker">Inside the athlete culture</p><h2 id="athlete-photo-story-title">The work.<br /><em>The team. The stage.</em></h2></div>
+        <p>Training partners, coaches, and competition days are all part of the same process. These moments show the culture surrounding ICC athletes beyond a list of disciplines.</p>
+      </div>
+      <div className="athlete-photo-grid">
+        {siteImages.athletes.map((image, index) => <EditorialImage {...image} className={`athlete-story-photo athlete-story-photo-${index + 1}`} sizes={index === 0 ? '(max-width: 900px) 100vw, 58vw' : '(max-width: 900px) 100vw, 42vw'} key={image.src} />)}
       </div>
     </section>
 
