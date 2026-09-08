@@ -63,7 +63,6 @@ export interface AthleteProfile {
   initials: string;
   discipline: string;
   status: 'ICC athlete';
-  representedIndia?: boolean;
 }
 
 export type OnlineOfferCategory = 'Free Consultation' | 'Custom Plans' | 'Online PT' | 'Transformation';
@@ -360,7 +359,6 @@ export const athleteProfiles: readonly AthleteProfile[] = [
     initials: 'AR',
     discipline: 'Weighted Endurance · Streetlifting · Static',
     status: 'ICC athlete',
-    representedIndia: true,
   },
   {
     id: 'krishna',
@@ -368,7 +366,6 @@ export const athleteProfiles: readonly AthleteProfile[] = [
     initials: 'KR',
     discipline: 'Freestyle',
     status: 'ICC athlete',
-    representedIndia: true,
   },
   {
     id: 'aakash',

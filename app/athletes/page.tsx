@@ -46,7 +46,7 @@ export default function AthletesPage() {
       <div className="athlete-profile-grid athlete-profile-grid-featured">
         {athleteProfiles.slice(0, 2).map((athlete, index) => <article className="athlete-profile-card" key={athlete.id}>
           <div className="athlete-profile-portrait" aria-hidden="true"><span>{athlete.initials}</span><small>{String(index + 1).padStart(2, '0')}</small></div>
-          <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name} {athlete.representedIndia && <span className="india-representative"><span aria-hidden="true">🇮🇳</span><span className="sr-only">Represented India</span></span>}</h3></div>
+          <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name}</h3></div>
         </article>)}
       </div>
       <div className="athlete-profile-grid athlete-profile-grid-secondary">
