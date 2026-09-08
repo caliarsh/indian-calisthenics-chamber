@@ -19,7 +19,7 @@ const mobileNavigation = [
   ...primaryNavigation.slice(0, 3),
   { href: '/competitions', label: 'Competitions', note: 'Past events and upcoming announcements' },
   { href: '/workshops', label: 'Workshops', note: 'Workshops and ICC showcases' },
-  { href: '/trainer-internship', label: 'Trainer Internship', note: 'Become an ICC-certified trainer' },
+  { href: '/trainer-internship', label: 'Internship', note: 'Become an ICC-certified trainer' },
   { href: '/grow-calisthenics-india', label: 'Support the Sport', note: 'Back athletes and community access' },
   ...primaryNavigation.slice(3),
 ] as const;
