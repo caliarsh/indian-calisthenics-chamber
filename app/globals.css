@@ -1877,3 +1877,306 @@ footer > p,
 .athletes-hero > p:not(.eyebrow) {
   color: rgba(255, 247, 247, .8);
 }
+
+/* Non-home page rhythm: alternate deep red and warm cream without black bands. */
+.online-page > .online-process,
+.online-page > .online-offers:nth-of-type(5),
+.online-page > .online-final-cta,
+.offline-page > .schedule-section,
+.offline-page > .reviews-section,
+.athletes-page > .athlete-roster,
+.event-page > .event-photo-story,
+.assessment-page > .rubric-note,
+.internship-page > .initiative-hero {
+  --section-accent: #ffd1d9;
+  --section-border: rgba(255, 247, 247, .22);
+  --section-muted: rgba(255, 247, 247, .78);
+  border-color: var(--section-border);
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.online-page > .online-process .section-kicker,
+.online-page > .online-process h2 em,
+.online-page > .online-process li > span,
+.online-page > .online-offers:nth-of-type(5) .section-kicker,
+.online-page > .online-offers:nth-of-type(5) h2 em,
+.online-page > .online-offers:nth-of-type(5) .online-price,
+.online-page > .online-offers:nth-of-type(5) .online-offer-card > a,
+.online-page > .online-offers:nth-of-type(5) .online-offer-card li svg,
+.online-page > .online-final-cta .section-kicker,
+.online-page > .online-final-cta h2 em,
+.offline-page > .schedule-section .section-kicker,
+.offline-page > .schedule-section h2 em,
+.offline-page > .reviews-section .section-kicker,
+.offline-page > .reviews-section h2 em,
+.offline-page > .reviews-section .reviews-location-heading span,
+.athletes-page > .athlete-roster .section-kicker,
+.athletes-page > .athlete-roster h2 em,
+.event-page > .event-photo-story .section-kicker,
+.event-page > .event-photo-story h2 em,
+.assessment-page > .rubric-note span,
+.internship-page > .initiative-hero h1 em,
+.internship-page > .initiative-hero .eyebrow {
+  color: var(--section-accent);
+}
+
+.online-page > .online-process h2,
+.online-page > .online-process h3,
+.online-page > .online-offers:nth-of-type(5) h2,
+.online-page > .online-offers:nth-of-type(5) .online-offer-card h3,
+.online-page > .online-final-cta h2,
+.offline-page > .schedule-section h2,
+.offline-page > .reviews-section h2,
+.athletes-page > .athlete-roster h2,
+.event-page > .event-photo-story h2,
+.internship-page > .initiative-hero h1 {
+  color: #fff7f7;
+}
+
+.online-page > .online-process .online-section-heading > p:last-child,
+.online-page > .online-process li p,
+.online-page > .online-offers:nth-of-type(5) .offer-heading > p,
+.online-page > .online-offers:nth-of-type(5) .online-offer-description,
+.online-page > .online-offers:nth-of-type(5) .online-offer-card li,
+.online-page > .online-final-cta p:not(.section-kicker),
+.offline-page > .schedule-section .placeholder-note,
+.event-page > .event-photo-story .event-photo-intro > p:last-child,
+.assessment-page > .rubric-note p,
+.internship-page > .initiative-hero > div > p:not(.eyebrow) {
+  color: var(--section-muted);
+}
+
+.online-page > .online-process ol,
+.online-page > .online-process li,
+.online-page > .online-offers:nth-of-type(5) .online-offer-grid,
+.online-page > .online-offers:nth-of-type(5) .online-offer-card,
+.online-page > .online-offers:nth-of-type(5) .online-offer-card ul,
+.offline-page > .schedule-section .location-tab-list,
+.offline-page > .reviews-section .reviews-tab-list,
+.offline-page > .reviews-section .review-grid,
+.offline-page > .reviews-section .review-card,
+.offline-page > .reviews-section .rating-summary,
+.athletes-page > .athlete-roster .athlete-profile-grid,
+.athletes-page > .athlete-roster .athlete-profile-card {
+  border-color: var(--section-border);
+}
+
+.online-page > .online-offers:nth-of-type(5) .online-offer-card {
+  background: rgba(105, 14, 32, .3);
+  color: #fff7f7;
+}
+
+.online-page > .online-offers:nth-of-type(5) .online-offer-top,
+.online-page > .online-offers:nth-of-type(5) .online-price-row s {
+  color: rgba(255, 247, 247, .68);
+}
+
+.online-page > .online-offers:nth-of-type(5) .online-offer-top strong {
+  background: rgba(255, 247, 247, .12);
+  color: #fff7f7;
+}
+
+.online-page > .online-final-cta .button {
+  border-color: #fff7f7;
+  background: #fff7f7;
+  color: #681020;
+}
+
+.online-page > .online-final-cta .text-link {
+  color: #fff7f7;
+}
+
+.online-page > .transformation-section,
+.offline-page > .offline-assessment,
+.competitions-page > .competition-section {
+  border-color: rgba(23, 23, 20, .2);
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.online-page > .transformation-section .section-kicker,
+.online-page > .transformation-section h2 em,
+.offline-page > .offline-assessment > svg,
+.offline-page > .offline-assessment .section-kicker,
+.offline-page > .offline-assessment h2 em,
+.competitions-page > .competition-section .section-kicker,
+.competitions-page > .competition-section h2 em,
+.competitions-page > .competition-section .competition-heading > svg {
+  color: #8f1d2c;
+}
+
+.online-page > .transformation-section .transformation-copy > p:last-child,
+.offline-page > .offline-assessment p:not(.section-kicker) {
+  color: #5d5a54;
+}
+
+.online-page > .transformation-section .transformation-number {
+  color: rgba(143, 29, 44, .08);
+}
+
+.online-page > .transformation-section .transformation-offer,
+.competitions-page > .competition-section .competition-body {
+  border-color: rgba(143, 29, 44, .3);
+  background: #f7f1e7;
+  color: #171714;
+}
+
+.online-page > .transformation-section .transformation-offer ul,
+.competitions-page > .competition-section .competition-links {
+  border-color: rgba(23, 23, 20, .2);
+}
+
+.online-page > .transformation-section .transformation-offer li,
+.competitions-page > .competition-section .competition-meta span,
+.competitions-page > .competition-section .competition-body > p,
+.competitions-page > .competition-section .competition-body .competition-coverage {
+  color: #5d5a54;
+}
+
+.online-page > .transformation-section .transformation-offer li svg,
+.competitions-page > .competition-section .competition-links a,
+.competitions-page > .competition-section .competition-meta svg,
+.competitions-page > .competition-section .competition-heading > div > span {
+  color: #8f1d2c;
+}
+
+.online-page > .transformation-section .transformation-offer .button,
+.offline-page > .offline-assessment .button {
+  border-color: #9e1b32;
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.offline-page > .schedule-section .location-tab-list,
+.offline-page > .reviews-section .reviews-tab-list {
+  background: rgba(105, 14, 32, .3);
+}
+
+.offline-page > .schedule-section .location-tab-trigger,
+.offline-page > .reviews-section .reviews-tab-trigger {
+  color: rgba(255, 247, 247, .78);
+}
+
+.offline-page > .schedule-section .location-tab-trigger[data-active],
+.offline-page > .reviews-section .reviews-tab-trigger[data-active] {
+  background: #fff7f7;
+  color: #791527;
+}
+
+.offline-page > .reviews-section .reviews-location-heading strong,
+.offline-page > .reviews-section .rating-summary > strong {
+  color: #fff7f7;
+}
+
+.offline-page > .reviews-section .rating-summary small {
+  color: rgba(255, 247, 247, .7);
+}
+
+.offline-page > .reviews-section .rating-stars {
+  color: #ffd1d9;
+}
+
+.offline-page > .reviews-section .review-card {
+  background: #f7f1e7;
+}
+
+.offline-page > .reviews-section .review-card blockquote {
+  color: #2f2d29;
+}
+
+.offline-page > .reviews-section .reviews-button {
+  border-color: #fff7f7;
+  background: #fff7f7;
+  color: #791527;
+}
+
+.athletes-page > .athlete-roster .athlete-profile-card {
+  background: #f7f1e7;
+  color: #171714;
+}
+
+.athletes-page > .athlete-roster .athlete-profile-copy h3,
+.athletes-page > .athlete-roster .athlete-profile-copy > strong {
+  color: #171714;
+}
+
+.athletes-page > .athlete-roster .athlete-profile-copy > p {
+  color: #5d5a54;
+}
+
+.event-page > .event-photo-story .editorial-photo figcaption {
+  color: rgba(255, 247, 247, .72);
+}
+
+.internship-page > .initiative-hero {
+  background: radial-gradient(circle at 83% 30%, rgba(255, 247, 247, .11), transparent 32%), #9e1b32;
+}
+
+.internship-page > .initiative-hero .text-link {
+  color: #fff7f7;
+}
+
+.internship-page > .initiative-hero aside {
+  background: rgba(105, 14, 32, .38);
+}
+
+.athletes-page > footer,
+.assessment-page > footer,
+.competitions-page > footer,
+.initiative-page > footer {
+  border-color: rgba(23, 23, 20, .2);
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.athletes-page > footer .brand-mark,
+.assessment-page > footer .brand-mark,
+.competitions-page > footer .brand-mark,
+.initiative-page > footer .brand-mark {
+  border-color: #9e1b32;
+  background: #9e1b32;
+  color: #fff7f7;
+}
+
+.athletes-page > footer > p,
+.athletes-page > footer .footer-contact,
+.athletes-page > footer .footer-location span,
+.athletes-page > footer .footer-location > div a:last-child,
+.athletes-page > footer .footer-instagram,
+.assessment-page > footer > p,
+.assessment-page > footer .footer-contact,
+.assessment-page > footer .footer-location span,
+.assessment-page > footer .footer-location > div a:last-child,
+.assessment-page > footer .footer-instagram,
+.competitions-page > footer > p,
+.competitions-page > footer .footer-contact,
+.competitions-page > footer .footer-location span,
+.competitions-page > footer .footer-location > div a:last-child,
+.competitions-page > footer .footer-instagram,
+.initiative-page > footer > p,
+.initiative-page > footer .footer-contact,
+.initiative-page > footer .footer-location span,
+.initiative-page > footer .footer-location > div a:last-child,
+.initiative-page > footer .footer-instagram,
+.athletes-page > footer .footer-center > p,
+.athletes-page > footer .footer-center nav a,
+.assessment-page > footer .footer-center > p,
+.assessment-page > footer .footer-center nav a,
+.competitions-page > footer .footer-center > p,
+.competitions-page > footer .footer-center nav a,
+.initiative-page > footer .footer-center > p,
+.initiative-page > footer .footer-center nav a {
+  color: #625e57;
+}
+
+.athletes-page > footer .footer-contact a:hover,
+.athletes-page > footer .footer-instagram svg,
+.assessment-page > footer .footer-contact a:hover,
+.assessment-page > footer .footer-instagram svg,
+.competitions-page > footer .footer-contact a:hover,
+.competitions-page > footer .footer-instagram svg,
+.initiative-page > footer .footer-contact a:hover,
+.initiative-page > footer .footer-instagram svg {
+  color: #8f1d2c;
+}

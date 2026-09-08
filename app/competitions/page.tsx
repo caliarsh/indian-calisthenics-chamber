@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: 'Competitions | Indian Calisthenics C
 export default function CompetitionsPage() {
   const competition = siteConfig.competitions[0];
 
-  return <main className="event-page"><SiteHeader />
+  return <main className="event-page competitions-page"><SiteHeader />
     <section className="event-page-hero event-page-hero-with-photo"><div><p className="eyebrow"><span /> Events at ICC</p><h1>Competitions.</h1><p>Competitive platforms built around strict standards, athletic performance, and a stronger Indian calisthenics community.</p></div><ImagePlaceholder brief={siteImageBriefs.competition[0]} /></section>
     <section className="section competition-section" id="iccwe-26">
       <div className="competition-mark" aria-hidden="true">ICCWE 26</div>
