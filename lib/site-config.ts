@@ -62,9 +62,7 @@ export interface AthleteProfile {
   name: string;
   initials: string;
   discipline: string;
-  level: string;
-  description: string;
-  status: 'Sample profile';
+  status: 'ICC athlete';
 }
 
 export type OnlineOfferCategory = 'Free Consultation' | 'Custom Plans' | 'Online PT' | 'Transformation';
@@ -356,40 +354,39 @@ export const coaches: readonly Coach[] = [
 
 export const athleteProfiles: readonly AthleteProfile[] = [
   {
-    id: 'aarav-menon',
-    name: 'Aarav Menon',
-    initials: 'AM',
-    discipline: 'Weighted Endurance',
-    level: 'L3 athlete track',
-    description: 'A disciplined athlete profile focused on repeatable strength, efficient movement, and composure across demanding endurance sets.',
-    status: 'Sample profile',
+    id: 'aakash',
+    name: 'Aakash',
+    initials: 'AA',
+    discipline: 'Freestyle · Static',
+    status: 'ICC athlete',
   },
   {
-    id: 'meera-rao',
-    name: 'Meera Rao',
-    initials: 'MR',
-    discipline: 'Static Strength',
-    level: 'L3 athlete track',
-    description: 'A technique-led athlete profile built around clean lines, patient progressions, and complete ownership of advanced static positions.',
-    status: 'Sample profile',
+    id: 'durga',
+    name: 'Durga',
+    initials: 'DU',
+    discipline: 'Static',
+    status: 'ICC athlete',
   },
   {
-    id: 'kabir-sharma',
-    name: 'Kabir Sharma',
-    initials: 'KS',
-    discipline: 'Streetlifting',
-    level: 'L3 athlete track',
-    description: 'A strength-focused athlete profile centred on precise weighted pull-ups and dips, smart loading, and competition-ready standards.',
-    status: 'Sample profile',
+    id: 'arsh',
+    name: 'Arsh',
+    initials: 'AR',
+    discipline: 'Weighted Endurance · Streetlifting · Static',
+    status: 'ICC athlete',
   },
   {
-    id: 'nisha-verma',
-    name: 'Nisha Verma',
-    initials: 'NV',
+    id: 'krishna',
+    name: 'Krishna',
+    initials: 'KR',
     discipline: 'Freestyle',
-    level: 'Advanced skill track',
-    description: 'A movement-driven athlete profile combining foundational control with confident transitions, creativity, and consistent skill practice.',
-    status: 'Sample profile',
+    status: 'ICC athlete',
+  },
+  {
+    id: 'samuel',
+    name: 'Samuel',
+    initials: 'SA',
+    discipline: 'Endurance',
+    status: 'ICC athlete',
   },
 ];
 

@@ -41,12 +41,12 @@ export default function AthletesPage() {
     <section className="athlete-roster section" id="profiles">
       <div className="section-heading">
         <div><p className="section-kicker">Athlete roster</p><h2>Built through<br /><em>the process.</em></h2></div>
-        <p>These temporary sample profiles demonstrate how verified ICC athlete stories will appear. Names, photographs, disciplines, and achievements can be replaced as approved information is supplied.</p>
+        <p>Meet athletes developed through ICC’s training culture across freestyle, statics, streetlifting, and endurance. More individual stories and achievements will be added as their profiles are completed.</p>
       </div>
       <div className="athlete-profile-grid">
         {athleteProfiles.map((athlete, index) => <article className="athlete-profile-card" key={athlete.id}>
           <div className="athlete-profile-portrait" aria-hidden="true"><span>{athlete.initials}</span><small>{String(index + 1).padStart(2, '0')}</small></div>
-          <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name}</h3><strong>{athlete.level}</strong><p>{athlete.description}</p></div>
+          <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name}</h3></div>
         </article>)}
       </div>
     </section>
