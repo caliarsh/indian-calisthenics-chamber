@@ -2284,3 +2284,88 @@ footer > p,
 .initiative-page > footer .footer-instagram svg {
   color: #8f1d2c;
 }
+
+/* Online coaching hero and frequency-led package pricing. */
+.online-hero-media,
+.online-hero-scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.online-hero-media img {
+  object-fit: cover;
+  object-position: 58% center;
+}
+
+.online-hero-scrim {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 9, .96) 0%, rgba(10, 10, 9, .88) 36%, rgba(10, 10, 9, .46) 64%, rgba(10, 10, 9, .2) 100%),
+    linear-gradient(0deg, rgba(10, 10, 9, .74) 0%, transparent 48%);
+}
+
+.online-hero-content {
+  max-width: 980px;
+}
+
+.online-hero h1 {
+  max-width: 1100px;
+  text-wrap: balance;
+}
+
+.online-offer-grid-5 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.online-monthly-rate {
+  margin: .45rem 0 0;
+  color: #8f1d2c;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.transformation-price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.transformation-price-row s {
+  color: rgba(255, 247, 247, .62);
+  font: 500 clamp(1.5rem, 2vw, 2.1rem)/1 var(--font-display);
+  text-decoration-color: #fff7f7;
+  text-decoration-thickness: 2px;
+}
+
+.transformation-offer > div > small {
+  color: #ffd1d9;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .online-hero-media img {
+    object-position: 64% center;
+  }
+
+  .online-hero-scrim {
+    background:
+      linear-gradient(0deg, rgba(10, 10, 9, .98) 0%, rgba(10, 10, 9, .86) 56%, rgba(10, 10, 9, .32) 100%),
+      linear-gradient(90deg, rgba(10, 10, 9, .66), rgba(10, 10, 9, .12));
+  }
+
+  .online-offer-grid-5 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  .online-offer-grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

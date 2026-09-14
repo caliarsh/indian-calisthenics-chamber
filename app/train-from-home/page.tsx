@@ -1,6 +1,7 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export anchors preserve fragment navigation */
 
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   ArrowDown,
   ArrowLeft,
@@ -39,6 +40,7 @@ function OfferCard({ offer }: { offer: (typeof onlineOffers)[number] }) {
       </div>
       <h3>{offer.name}</h3>
       <div className="online-price-row"><p className="online-price">{offer.price}</p>{offer.compareAtPrice && <s>{offer.compareAtPrice}</s>}</div>
+      {offer.monthlyPrice && <p className="online-monthly-rate">{offer.monthlyPrice}</p>}
       <p className="online-offer-description">{offer.description}</p>
       <ul>
         {offer.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}
@@ -56,12 +58,14 @@ export default function TrainFromHomePage() {
       <SiteHeader />
 
       <section className="online-hero" id="top">
-        <div className="online-hero-grid" aria-hidden="true" />
-        <div className="online-hero-mark" aria-hidden="true">ONLINE</div>
+        <div className="online-hero-media" aria-hidden="true">
+          <Image src="/online-coaching/online-hero.jpg" alt="" fill priority unoptimized sizes="100vw" />
+        </div>
+        <div className="online-hero-scrim" aria-hidden="true" />
         <div className="online-hero-content">
           <a className="back-link" href="/"><ArrowLeft aria-hidden="true" /> Back to the academy</a>
           <p className="eyebrow"><span /> Personalised ICC online coaching</p>
-          <h1>Train from home.<br /><em>Or your gym.</em></h1>
+          <h1>Learn calisthenics<br /><em>from anywhere.</em></h1>
           <p>Get a plan built for your level, equipment, and goal—then add the coach support you need to keep progressing.</p>
           <div className="hero-actions">
             <a className="button" href="/assessment?path=online">Take the free assessment <ArrowUpRight size={18} /></a>
@@ -69,9 +73,9 @@ export default function TrainFromHomePage() {
           </div>
         </div>
         <aside className="online-hero-summary" aria-label="How online coaching begins">
-          <span>Start free</span>
-          <strong>Assessment +<br />15-minute call</strong>
-          <p>No purchase before your coach recommendation.</p>
+          <span>Coaching without borders</span>
+          <strong>India to the<br />world</strong>
+          <p>ICC coaching has transformed athletes across India and in the United States, United Kingdom, Germany, and beyond.</p>
         </aside>
       </section>
 
@@ -129,7 +133,7 @@ export default function TrainFromHomePage() {
             <p>{transformation.description}</p>
           </div>
           <div className="transformation-offer">
-            <div><span>Complete coaching path</span><strong>{transformation.price}</strong></div>
+            <div><span>Complete coaching path</span><div className="transformation-price-row"><strong>{transformation.price}</strong>{transformation.compareAtPrice && <s>{transformation.compareAtPrice}</s>}</div>{transformation.monthlyPrice && <small>{transformation.monthlyPrice}</small>}</div>
             <ul>{transformation.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}</ul>
             <a className="button" href={`/book-trial?mode=Online&offer=${transformation.id}`}>Discuss transformation <ArrowUpRight aria-hidden="true" /></a>
           </div>
