@@ -53,6 +53,13 @@ export interface Coach {
   initials: string;
   role: string;
   description: string;
+  photo: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    focalPosition: string;
+  };
   instagram?: string;
   instagramUrl?: string;
 }
@@ -375,6 +382,13 @@ export const coaches: readonly Coach[] = [
     initials: 'A',
     role: 'Head Coach',
     description: 'Arsh is a national-level calisthenics athlete and Head Coach who has trained more than 500 athletes. He represented India at the 2025 WSWCF in Weighted Endurance and has won multiple national-level competitions across Static, Streetlifting, and Weighted Endurance.',
+    photo: {
+      src: '/coaches/arsh.jpg',
+      alt: 'Coach Arsh holding a pull-up bar during a weighted calisthenics event.',
+      width: 970,
+      height: 1621,
+      focalPosition: '50% 38%',
+    },
     instagram: '@cali.arsh',
     instagramUrl: 'https://www.instagram.com/cali.arsh/',
   },
@@ -383,6 +397,13 @@ export const coaches: readonly Coach[] = [
     initials: 'AB',
     role: 'Head Coach',
     description: 'Abhishek brings more than eight years of experience in calisthenics and has trained over 500 athletes and fitness enthusiasts, including more than 10 athletes who have competed and won at the national level. He specialises in freestyle, statics, weighted calisthenics, and endurance. His coaching builds strong foundations, develops advanced skills, and improves strength, control, endurance, and overall athletic performance through structured, personalised training.',
+    photo: {
+      src: '/coaches/abhishek.jpg',
+      alt: 'Coach Abhishek posing in clear natural water after outdoor training.',
+      width: 1086,
+      height: 1448,
+      focalPosition: '50% 42%',
+    },
     instagram: '@abhishek_icc',
     instagramUrl: 'https://www.instagram.com/abhishek_icc/',
   },

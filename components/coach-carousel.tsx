@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { AtSign, ChevronLeft, ChevronRight } from 'lucide-react';
 import { coaches } from '@/lib/site-config';
 
@@ -42,7 +43,9 @@ export function CoachCarousel() {
       <div className="coach-carousel-track" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {coaches.map((coach, index) => (
           <article className="coach-card" key={coach.name} aria-hidden={index !== activeIndex}>
-            <div className="coach-portrait" aria-hidden="true"><span>{coach.initials}</span></div>
+            <div className="coach-portrait">
+              <Image src={coach.photo.src} alt={coach.photo.alt} width={coach.photo.width} height={coach.photo.height} sizes="(max-width: 760px) 100vw, 36vw" style={{ objectPosition: coach.photo.focalPosition }} unoptimized />
+            </div>
             <div className="coach-card-body">
               <div className="coach-meta"><span>{coach.role}</span></div>
               <h3>{coach.name}</h3>
