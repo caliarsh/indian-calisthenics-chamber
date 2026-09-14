@@ -127,7 +127,7 @@ export interface WorkshopEvent {
   location: string;
   description: string;
   topics: readonly string[];
-  sourceUrl: string;
+  sourceUrl?: string;
 }
 
 export interface ImageBrief {
@@ -466,6 +466,7 @@ export const siteImageBriefs = {
     'weighted-calisthenics-hyderabad-2025': { label: 'Weighted calisthenics workshop', description: 'Arsh teaching or demonstrating weighted calisthenics at ICC Hyderabad on 1 June 2025.', orientation: 'Landscape', association: 'Workshop' },
     'freestyle-calisthenics-hyderabad-2025': { label: 'Freestyle workshop', description: 'Krishna Mishra teaching a freestyle foundation or athletes participating in the Hyderabad workshop.', orientation: 'Landscape', association: 'Workshop' },
     'sportexpo-india-2025': { label: 'SportExpo India showcase', description: 'Team ICC performing a clear calisthenics skill during the SportExpo India 2025 showcase.', orientation: 'Landscape', association: 'Workshop' },
+    'bengaluru-womens-day-workshop': { label: 'Women’s Day calisthenics workshop', description: 'Arsh with participants from the women’s calisthenics workshop at ICC Bengaluru.', orientation: 'Landscape', association: 'Workshop' },
   },
 } as const satisfies {
   online: Record<'home' | 'gym', ImageBrief>;
@@ -541,6 +542,50 @@ export const siteImages = {
   online: Record<'home' | 'gym', SiteImage>;
   locations: Record<Location['id'], SiteImage>;
   athletes: readonly SiteImage[];
+};
+
+export const workshopHeroImage: SiteImage = {
+  src: '/workshops/hyderabad-workshop-community.jpg',
+  alt: 'ICC athletes, workshop participants, and event partners together at an ICC Hyderabad workshop.',
+  caption: 'ICC Hyderabad · Workshop community',
+  width: 1448,
+  height: 1086,
+  focalPosition: '50% 50%',
+};
+
+export const workshopImages: Record<string, SiteImage> = {
+  'bengaluru-inauguration-workshop-2025': {
+    src: '/workshops/bengaluru-opening-workshop.jpg',
+    alt: 'A large group of athletes and coaches celebrating together during the ICC Bengaluru opening workshop.',
+    caption: 'ICC Bengaluru · Opening workshop',
+    width: 1448,
+    height: 1086,
+    focalPosition: '50% 52%',
+  },
+  'weighted-calisthenics-hyderabad-2025': {
+    src: '/workshops/hyderabad-arsh-workshop.jpg',
+    alt: 'Arsh and workshop participants celebrating together after a calisthenics session at ICC Hyderabad.',
+    caption: 'ICC Hyderabad · Workshop led by Arsh',
+    width: 1448,
+    height: 1086,
+    focalPosition: '50% 48%',
+  },
+  'freestyle-calisthenics-hyderabad-2025': {
+    src: '/workshops/hyderabad-krishan-workshop.jpg',
+    alt: 'Krishna Mishra and spotters helping an athlete practise an inverted calisthenics movement at ICC Hyderabad.',
+    caption: 'ICC Hyderabad · Workshop led by Krishna Mishra',
+    width: 1448,
+    height: 1086,
+    focalPosition: '50% 48%',
+  },
+  'bengaluru-womens-day-workshop': {
+    src: '/workshops/bengaluru-womens-day-workshop.jpg',
+    alt: 'Arsh with participants from the women’s calisthenics workshop at ICC Bengaluru.',
+    caption: 'ICC Bengaluru · Women’s Day workshop',
+    width: 1448,
+    height: 1086,
+    focalPosition: '50% 48%',
+  },
 };
 
 const bengaluruReviews: readonly Review[] = [
@@ -657,6 +702,17 @@ export const siteConfig = {
       description: 'A focused introduction to weighted calisthenics, led by Arsh and built for athletes ready to understand how to begin, progress, and develop strength with added load.',
       topics: ['Starting weighted calisthenics', 'Progression and strength development', 'Technique-led training'],
       sourceUrl: 'https://www.instagram.com/reel/DKRjnKIiiFL/',
+    },
+    {
+      id: 'bengaluru-womens-day-workshop',
+      name: 'Women’s Day Calisthenics Workshop',
+      format: 'Workshop',
+      ledBy: 'Arsh',
+      date: 'International Women’s Day',
+      time: 'Past workshop',
+      location: 'ICC Bengaluru',
+      description: 'A women-focused community session organised by Arsh to introduce bodyweight training, build confidence with foundational movements, and make calisthenics more approachable.',
+      topics: ['Calisthenics foundations', 'Bodyweight strength and movement', 'Supportive community training'],
     },
     {
       id: 'freestyle-calisthenics-hyderabad-2025',
