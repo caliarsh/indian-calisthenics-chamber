@@ -1,9 +1,9 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export links */
 import type { Metadata } from 'next';
 import { ArrowUpRight, CalendarDays, Check, Clock3, MapPin } from 'lucide-react';
-import { EditorialImage, ImagePlaceholder } from '@/components/editorial-photo';
+import { EditorialImage } from '@/components/editorial-photo';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
-import { siteConfig, siteImageBriefs, workshopHeroImage, workshopImages } from '@/lib/site-config';
+import { siteConfig, workshopHeroImage, workshopImages } from '@/lib/site-config';
 
 export const metadata: Metadata = { title: 'Workshops | Indian Calisthenics Chamber', description: 'Explore previous Indian Calisthenics Chamber workshops and live showcases.' };
 
@@ -13,9 +13,7 @@ export default function WorkshopsPage() {
     <section className="section workshops-section" id="past-events">
       <div className="section-heading"><div><p className="section-kicker">Past workshops and showcases</p><h2>Learn from<br /><em>the community.</em></h2></div><p>The details below come from published event descriptions and workshop information provided by ICC.</p></div>
       <div className="workshop-grid">{siteConfig.workshops.map(workshop => <article className="workshop-card" key={workshop.id}>
-        {workshopImages[workshop.id]
-          ? <EditorialImage {...workshopImages[workshop.id]} sizes="(max-width: 900px) 100vw, 50vw" />
-          : <ImagePlaceholder brief={siteImageBriefs.workshops[workshop.id as keyof typeof siteImageBriefs.workshops]} />}
+        <EditorialImage {...workshopImages[workshop.id]} sizes="(max-width: 900px) 100vw, 50vw" />
         <div className="workshop-card-top"><span>{workshop.format}</span><small>Past event</small></div>
         <h3>{workshop.name}</h3>
         <p className="workshop-lead">Led by <strong>{workshop.ledBy}</strong></p>

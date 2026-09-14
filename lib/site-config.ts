@@ -465,7 +465,6 @@ export const siteImageBriefs = {
     'bengaluru-inauguration-workshop-2025': { label: 'Bengaluru inauguration workshop', description: 'Wide community photograph from the free workshop and grand inauguration on 13 December 2025.', orientation: 'Landscape', association: 'Workshop' },
     'weighted-calisthenics-hyderabad-2025': { label: 'Weighted calisthenics workshop', description: 'Arsh teaching or demonstrating weighted calisthenics at ICC Hyderabad on 1 June 2025.', orientation: 'Landscape', association: 'Workshop' },
     'freestyle-calisthenics-hyderabad-2025': { label: 'Freestyle workshop', description: 'Krishna Mishra teaching a freestyle foundation or athletes participating in the Hyderabad workshop.', orientation: 'Landscape', association: 'Workshop' },
-    'sportexpo-india-2025': { label: 'SportExpo India showcase', description: 'Team ICC performing a clear calisthenics skill during the SportExpo India 2025 showcase.', orientation: 'Landscape', association: 'Workshop' },
     'bengaluru-womens-day-workshop': { label: 'Women’s Day calisthenics workshop', description: 'Arsh with participants from the women’s calisthenics workshop at ICC Bengaluru.', orientation: 'Landscape', association: 'Workshop' },
   },
 } as const satisfies {
@@ -725,18 +724,6 @@ export const siteConfig = {
       description: 'A focused introduction to weighted calisthenics, led by Arsh and built for athletes ready to understand how to begin, progress, and develop strength with added load.',
       topics: ['Starting weighted calisthenics', 'Progression and strength development', 'Technique-led training'],
       sourceUrl: 'https://www.instagram.com/reel/DKRjnKIiiFL/',
-    },
-    {
-      id: 'sportexpo-india-2025',
-      name: 'ICC at SportExpo India 2025',
-      format: 'ICC showcase',
-      ledBy: 'Team ICC',
-      date: '22–23 August 2025',
-      time: '5:00–6:00 PM',
-      location: 'HITEX, Hyderabad',
-      description: 'Team ICC presented calisthenics at SportExpo India 2025 through a live showcase of bodyweight strength, control, movement, and athletic discipline.',
-      topics: ['Bodyweight mastery', 'Strength and control', 'Live calisthenics demonstration'],
-      sourceUrl: 'https://www.instagram.com/reel/DNgHgaBTU8-/',
     },
   ] satisfies readonly WorkshopEvent[],
   locations: [
