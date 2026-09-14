@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { AthleteApplicationForm } from '@/components/community-forms';
 import { EditorialImage } from '@/components/editorial-photo';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
-import { athleteProfiles, siteImages } from '@/lib/site-config';
+import { siteImages } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Our Athletes | Indian Calisthenics Chamber',
@@ -17,6 +17,145 @@ const culture = [
   { icon: UsersRound, title: 'Grow together', copy: 'Athletes share the floor, exchange feedback, and learn to raise the quality of the room together.' },
   { icon: Medal, title: 'Prepare to perform', copy: 'Training develops the composure, consistency, and decision-making required on competitive platforms.' },
 ] as const;
+
+const hallOfFameAthletes = [
+  {
+    id: 'arsh',
+    name: 'Arsh',
+    discipline: 'Weighted Endurance · Street Lifting · Statics',
+    image: {
+      src: '/coaches/arsh.jpg',
+      alt: 'Arsh at a weighted calisthenics competition, holding the pull-up bar before an attempt.',
+      width: 970,
+      height: 1621,
+      position: '50% 34%',
+    },
+    featured: true,
+    achievements: [
+      {
+        label: '2026',
+        items: [
+          'Champion · Street Lifting · Ground Zero',
+          '2nd runner-up · Middleweight Statics',
+          'Head Judge · OG Bar Wars 1.0',
+        ],
+      },
+      {
+        label: '2025',
+        items: [
+          'Represented India · WSWCF Weighted Endurance Calisthenics World Championship · Bulgaria',
+          '1st runner-up · Weighted Endurance · WSWCF Qualifier organised by SISCA',
+          'Head Judge · OG Bar Wars 1.0',
+        ],
+      },
+      {
+        label: '2024',
+        items: ['2nd runner-up · Street Lifting · Battle of Nerve 2.0'],
+      },
+    ],
+  },
+  {
+    id: 'krishna',
+    name: 'Krishna',
+    discipline: 'Freestyle · Statics',
+    image: {
+      src: '/athletes/krishna.jpg',
+      alt: 'Krishna posing on an outdoor calisthenics structure.',
+      width: 854,
+      height: 1280,
+      position: '50% 42%',
+    },
+    featured: false,
+    achievements: [
+      {
+        label: '2026',
+        items: [
+          'Middleweight Freestyle Champion · Limitless',
+          'Middleweight Freestyle Champion · Calibre',
+          '1st runner-up · Statics · Calibre',
+        ],
+      },
+      {
+        label: '2025',
+        items: ['1st runner-up · Freestyle · Caligames 3.0'],
+      },
+    ],
+  },
+  {
+    id: 'durga',
+    name: 'Durga',
+    discipline: 'Statics · Freestyle · Endurance',
+    image: {
+      src: '/athletes/durga.jpg',
+      alt: 'Durga in a black-and-white full-body athlete portrait.',
+      width: 738,
+      height: 738,
+      position: '50% 50%',
+    },
+    featured: false,
+    achievements: [
+      {
+        label: '2024',
+        items: ['Freestyle Champion · KCA Battle of Nerve Intercity'],
+      },
+      {
+        label: 'Other titles',
+        items: [
+          '3rd place · Statics · KCA Battle of Nerve 2.0',
+          '1st place · Endurance · Raw Strength Calisthenics',
+          'Freestyle Champion · Raw Strength Calisthenics',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'aakash',
+    name: 'Aakash',
+    discipline: 'Freestyle · Statics',
+    image: {
+      src: '/athletes/aakash.jpg',
+      alt: 'Aakash holding a freestyle championship trophy on the competition podium.',
+      width: 523,
+      height: 1570,
+      position: '50% 34%',
+    },
+    featured: false,
+    achievements: [
+      {
+        label: '2026',
+        items: ['Lightweight Freestyle Champion · Calibre'],
+      },
+    ],
+  },
+  {
+    id: 'samuel',
+    name: 'Samuel',
+    discipline: 'Weighted Endurance',
+    image: {
+      src: '/athletes/samuel.jpg',
+      alt: 'Samuel in a dark athlete portrait with a circular light backdrop.',
+      width: 738,
+      height: 760,
+      position: '50% 50%',
+    },
+    featured: false,
+    achievements: [
+      {
+        label: 'Achievement',
+        items: ['1st runner-up · Weighted Endurance · OG Bar Wars'],
+      },
+    ],
+  },
+] as const;
+
+function AchievementList({ achievements }: { achievements: (typeof hallOfFameAthletes)[number]['achievements'] }) {
+  return <ol className="hall-achievement-list">
+    {achievements.map((group) => <li key={group.label}>
+      <strong>{group.label}</strong>
+      <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+    </li>)}
+  </ol>;
+}
 
 export default function AthletesPage() {
   return <main className="athletes-page">
@@ -51,23 +190,25 @@ export default function AthletesPage() {
     </section>
 
     <section className="hall-of-fame section" id="hall-of-fame">
-      <div className="section-heading hall-of-fame-heading"><div><p className="section-kicker">ICC Hall of Fame</p><h2>Earned on<br /><em>the platform.</em></h2></div><p>Recognising ICC athletes whose results reflect years of disciplined training, competitive courage, and high standards.</p></div>
+      <div className="section-heading hall-of-fame-heading"><div><p className="section-kicker">ICC Hall of Fame</p><h2>Earned on<br /><em>the platform.</em></h2></div><p>Five ICC athletes. One record of disciplined training, competitive courage, and high standards.</p></div>
       <article className="hall-of-fame-feature">
-        <figure><Image src="/coaches/arsh.jpg" alt="Arsh at a weighted calisthenics competition, holding the pull-up bar before an attempt." width={970} height={1621} sizes="(max-width: 900px) 100vw, 46vw" unoptimized /></figure>
-        <div className="hall-of-fame-copy"><div className="hall-of-fame-label"><Trophy aria-hidden="true" /><span>Hall of Fame · ICC athlete</span></div><h3>Arsh</h3><p>Weighted Endurance · Street Lifting · Static</p><ol>
-          <li><strong>2024</strong><div><span>3rd place</span><p>Street Lifting · Battle of Nerve 2.0</p></div></li>
-          <li><strong>2025</strong><div><span>1st runner-up</span><p>Weighted Endurance · WSWCF Qualifier organised by SISCA</p></div></li>
-          <li><strong>2026</strong><div><span>1st place</span><p>Street Lifting · Ground Zero</p></div></li>
-        </ol></div>
+        <figure><Image src={hallOfFameAthletes[0].image.src} alt={hallOfFameAthletes[0].image.alt} width={hallOfFameAthletes[0].image.width} height={hallOfFameAthletes[0].image.height} sizes="(max-width: 900px) 100vw, 46vw" style={{ objectPosition: hallOfFameAthletes[0].image.position }} unoptimized /></figure>
+        <div className="hall-of-fame-copy">
+          <div className="hall-of-fame-label"><Trophy aria-hidden="true" /><span>01 · Hall of Fame</span></div>
+          <h3>{hallOfFameAthletes[0].name}</h3>
+          <p>{hallOfFameAthletes[0].discipline}</p>
+          <AchievementList achievements={hallOfFameAthletes[0].achievements} />
+        </div>
       </article>
-    </section>
-
-    <section className="athlete-roster section" id="profiles">
-      <div className="section-heading"><div><p className="section-kicker">Our athletes</p><h2>Different disciplines.<br /><em>One standard.</em></h2></div><p>ICC athletes train across freestyle, statics, streetlifting, weighted endurance, and endurance.</p></div>
-      <div className="athlete-profile-grid athlete-profile-grid-secondary">
-        {athleteProfiles.slice(1).map((athlete, index) => <article className="athlete-profile-card" key={athlete.id}>
-          <div className="athlete-profile-portrait" aria-hidden="true"><span>{athlete.initials}</span><small>{String(index + 1).padStart(2, '0')}</small></div>
-          <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name}</h3></div>
+      <div className="hall-of-fame-grid">
+        {hallOfFameAthletes.slice(1).map((athlete, index) => <article className="hall-of-fame-card" key={athlete.id}>
+          <figure><Image src={athlete.image.src} alt={athlete.image.alt} width={athlete.image.width} height={athlete.image.height} sizes="(max-width: 900px) 100vw, 24vw" style={{ objectPosition: athlete.image.position }} unoptimized /></figure>
+          <div className="hall-of-fame-copy">
+            <div className="hall-of-fame-label"><Trophy aria-hidden="true" /><span>{String(index + 2).padStart(2, '0')} · Hall of Fame</span></div>
+            <h3>{athlete.name}</h3>
+            <p>{athlete.discipline}</p>
+            <AchievementList achievements={athlete.achievements} />
+          </div>
         </article>)}
       </div>
     </section>
