@@ -548,8 +548,8 @@ export const workshopHeroImage: SiteImage = {
   src: '/workshops/hyderabad-workshop-community.jpg',
   alt: 'ICC athletes, workshop participants, and event partners together at an ICC Hyderabad workshop.',
   caption: 'ICC Hyderabad · Workshop community',
-  width: 1448,
-  height: 1086,
+  width: 738,
+  height: 330,
   focalPosition: '50% 50%',
 };
 
@@ -566,8 +566,8 @@ export const workshopImages: Record<string, SiteImage> = {
     src: '/workshops/hyderabad-arsh-workshop.jpg',
     alt: 'Arsh and workshop participants celebrating together after a calisthenics session at ICC Hyderabad.',
     caption: 'ICC Hyderabad · Workshop led by Arsh',
-    width: 1448,
-    height: 1086,
+    width: 1600,
+    height: 560,
     focalPosition: '50% 48%',
   },
   'freestyle-calisthenics-hyderabad-2025': {
@@ -582,8 +582,8 @@ export const workshopImages: Record<string, SiteImage> = {
     src: '/workshops/bengaluru-womens-day-workshop.jpg',
     alt: 'Arsh with participants from the women’s calisthenics workshop at ICC Bengaluru.',
     caption: 'ICC Bengaluru · Women’s Day workshop',
-    width: 1448,
-    height: 1086,
+    width: 738,
+    height: 550,
     focalPosition: '50% 48%',
   },
 };
