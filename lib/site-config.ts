@@ -123,7 +123,6 @@ export interface WorkshopEvent {
   format: 'Workshop' | 'ICC showcase';
   ledBy: string;
   date: string;
-  time: string;
   location: string;
   description: string;
   topics: readonly string[];
@@ -544,43 +543,43 @@ export const siteImages = {
 };
 
 export const workshopHeroImage: SiteImage = {
-  src: '/workshops/hyderabad-workshop-community.jpg',
-  alt: 'ICC athletes, workshop participants, and event partners together at an ICC Hyderabad workshop.',
-  caption: 'ICC Hyderabad · Workshop community',
+  src: '/workshops/workshops-hero.jpg',
+  alt: 'A coach spotting an athlete during a calisthenics workshop at ICC while participants watch.',
+  caption: '',
   width: 738,
-  height: 330,
-  focalPosition: '50% 50%',
+  height: 1312,
+  focalPosition: '50% 58%',
 };
 
 export const workshopImages: Record<string, SiteImage> = {
   'bengaluru-inauguration-workshop-2025': {
     src: '/workshops/bengaluru-opening-workshop.jpg',
-    alt: 'A large group of athletes and coaches celebrating together during the ICC Bengaluru opening workshop.',
-    caption: 'ICC Bengaluru · Opening workshop',
+    alt: 'A large group of athletes and coaches celebrating together during an ICC opening workshop in Bengaluru.',
+    caption: 'ICC · Opening workshop',
     width: 738,
     height: 554,
     focalPosition: '50% 52%',
   },
   'weighted-calisthenics-hyderabad-2025': {
     src: '/workshops/hyderabad-arsh-workshop.jpg',
-    alt: 'Arsh and workshop participants celebrating together after a calisthenics session at ICC Hyderabad.',
-    caption: 'ICC Hyderabad · Workshop led by Arsh',
+    alt: 'Arsh and workshop participants celebrating together after an ICC calisthenics session in Hyderabad.',
+    caption: 'ICC · Workshop led by Arsh',
     width: 1600,
     height: 560,
     focalPosition: '50% 48%',
   },
   'freestyle-calisthenics-hyderabad-2025': {
     src: '/workshops/hyderabad-krishan-workshop.jpg',
-    alt: 'Krishna Mishra and spotters helping an athlete practise an inverted calisthenics movement at ICC Hyderabad.',
-    caption: 'ICC Hyderabad · Workshop led by Krishna Mishra',
+    alt: 'Krishna Mishra and spotters helping an athlete practise an inverted movement at an ICC workshop in Hyderabad.',
+    caption: 'ICC · Workshop led by Krishna Mishra',
     width: 1448,
     height: 1086,
     focalPosition: '50% 48%',
   },
   'bengaluru-womens-day-workshop': {
     src: '/workshops/bengaluru-womens-day-workshop.jpg',
-    alt: 'Arsh with participants from the women’s calisthenics workshop at ICC Bengaluru.',
-    caption: 'ICC Bengaluru · Women’s Day workshop',
+    alt: 'Arsh with participants from an ICC women’s calisthenics workshop in Bengaluru.',
+    caption: 'ICC · Women’s Day workshop',
     width: 738,
     height: 550,
     focalPosition: '50% 48%',
@@ -683,9 +682,8 @@ export const siteConfig = {
       name: 'Women’s Day Calisthenics Workshop',
       format: 'Workshop',
       ledBy: 'Arsh',
-      date: 'International Women’s Day',
-      time: 'Past workshop',
-      location: 'ICC Bengaluru',
+      date: '8 March 2026',
+      location: 'Bengaluru',
       description: 'A women-focused community session organised by Arsh to introduce bodyweight training, build confidence with foundational movements, and make calisthenics more approachable.',
       topics: ['Calisthenics foundations', 'Bodyweight strength and movement', 'Supportive community training'],
     },
@@ -695,8 +693,7 @@ export const siteConfig = {
       format: 'Workshop',
       ledBy: 'Krishna Mishra',
       date: '27 April 2025',
-      time: '5:00 PM onwards',
-      location: 'ICC Hyderabad',
+      location: 'Hyderabad',
       description: 'A beginner-friendly freestyle session designed to build the city’s calisthenics scene, followed by a jam session with athletes from Hyderabad.',
       topics: ['Starting freestyle from scratch', 'Foundation skills', 'Injury-prevention guidance'],
       sourceUrl: 'https://www.instagram.com/reel/DIwJLqTiNJC/',
@@ -707,8 +704,7 @@ export const siteConfig = {
       format: 'Workshop',
       ledBy: 'Abhishek, Arsh & Skyotic',
       date: '13 December 2025',
-      time: '8:30 AM',
-      location: 'ICC Bengaluru · Tenzee Multisports, Bannerghatta Road',
+      location: 'Bengaluru · Tenzee Multisports, Bannerghatta Road',
       description: 'ICC marked its Bengaluru grand inauguration with a free community workshop combining coached calisthenics, athletic showcases, and open challenges.',
       topics: ['Statics and freestyle showcase', 'Challenges and mini competitions', 'Community giveaways'],
       sourceUrl: 'https://www.instagram.com/reel/DSCwGuCiDu0/',
@@ -719,8 +715,7 @@ export const siteConfig = {
       format: 'Workshop',
       ledBy: 'Arsh',
       date: '1 June 2025',
-      time: '11:00 AM',
-      location: 'ICC Hyderabad · 100 Feet Road, Madhapur',
+      location: 'Hyderabad · 100 Feet Road, Madhapur',
       description: 'A focused introduction to weighted calisthenics, led by Arsh and built for athletes ready to understand how to begin, progress, and develop strength with added load.',
       topics: ['Starting weighted calisthenics', 'Progression and strength development', 'Technique-led training'],
       sourceUrl: 'https://www.instagram.com/reel/DKRjnKIiiFL/',

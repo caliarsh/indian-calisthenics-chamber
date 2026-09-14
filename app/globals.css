@@ -2285,6 +2285,49 @@ footer > p,
   color: #8f1d2c;
 }
 
+/* Keep the shared footer legible and consistent across every route. */
+footer,
+.home-page > footer,
+.athletes-page > footer,
+.assessment-page > footer,
+.competitions-page > footer,
+.initiative-page > footer {
+  border-color: rgba(255, 247, 247, .24);
+  background: #8f1d2c;
+  color: #fff7f7;
+}
+
+footer .brand-mark,
+.home-page > footer .brand-mark,
+.athletes-page > footer .brand-mark,
+.assessment-page > footer .brand-mark,
+.competitions-page > footer .brand-mark,
+.initiative-page > footer .brand-mark {
+  border-color: rgba(255, 247, 247, .55);
+  background: #fff7f7;
+  color: #8f1d2c;
+}
+
+footer .footer-center > p,
+footer .footer-center nav a,
+footer .footer-contact,
+footer .footer-contact a,
+footer .footer-location span,
+footer .footer-location > div a:last-child,
+footer .footer-instagram,
+.home-page > footer .footer-center > p,
+.home-page > footer .footer-center nav a,
+.home-page > footer .footer-contact,
+.home-page > footer .footer-contact a {
+  color: #fff7f7;
+}
+
+footer .footer-center nav a:hover,
+footer .footer-contact a:hover,
+footer .footer-instagram svg {
+  color: #fff7f7;
+}
+
 /* Online coaching hero and frequency-led package pricing. */
 .online-hero-media,
 .online-hero-scrim {

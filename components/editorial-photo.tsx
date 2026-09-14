@@ -12,15 +12,16 @@ export interface EditorialImageProps {
   focalPosition?: string;
   className?: string;
   sizes?: string;
+  showCaption?: boolean;
 }
 
-export function EditorialImage({ src, alt, caption, width, height, focalPosition = '50% 50%', className = '', sizes = '(max-width: 900px) 100vw, 50vw' }: EditorialImageProps) {
+export function EditorialImage({ src, alt, caption, width, height, focalPosition = '50% 50%', className = '', sizes = '(max-width: 900px) 100vw, 50vw', showCaption = true }: EditorialImageProps) {
   return (
     <figure className={`editorial-photo ${className}`.trim()} style={{ '--photo-focus': focalPosition } as CSSProperties}>
       <div className="editorial-photo-frame">
         <Image src={src} alt={alt} width={width} height={height} sizes={sizes} unoptimized />
       </div>
-      <figcaption><span aria-hidden="true" />{caption}</figcaption>
+      {showCaption && <figcaption><span aria-hidden="true" />{caption}</figcaption>}
     </figure>
   );
 }
