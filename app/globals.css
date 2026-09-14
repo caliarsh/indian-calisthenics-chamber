@@ -1081,8 +1081,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .hall-achievement-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,247,247,.24); }
 .hall-achievement-list > li { display: grid; grid-template-columns: 96px 1fr; gap: 1.25rem; padding: 1.35rem 0; border-bottom: 1px solid rgba(255,247,247,.24); }
 .hall-achievement-list > li > strong { color: #ffd1d9; font: 600 1.35rem var(--font-display); text-transform: uppercase; }
-.hall-achievement-list ul { display: grid; gap: .65rem; list-style: none; margin: 0; padding: 0; }
-.hall-achievement-list ul li { color: rgba(255,247,247,.82); line-height: 1.45; }
+.hall-achievement-list ul { display: grid; gap: .75rem; margin: 0; padding-left: 1.2rem; }
+.hall-achievement-list ul li { color: #fff7f7; font-size: 1rem; line-height: 1.55; padding-left: .2rem; }
+.hall-achievement-list ul li::marker { color: #ffd1d9; }
 .athletes-page > .athlete-roster { background: #e9e3d8; color: #171714; }
 .athletes-page > .athlete-roster .section-kicker,
 .athletes-page > .athlete-roster h2 em { color: #8f1d2c; }

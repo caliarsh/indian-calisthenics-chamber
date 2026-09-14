@@ -35,22 +35,22 @@ const hallOfFameAthletes = [
       {
         label: '2026',
         items: [
-          'Champion · Street Lifting · Ground Zero',
-          '2nd runner-up · Middleweight Statics',
-          'Head Judge · OG Bar Wars 1.0',
+          'Won 1st place in Street Lifting at Ground Zero.',
+          'Finished 2nd runner-up in the Middleweight Statics category.',
+          'Served as Head Judge at OG Bar Wars 1.0.',
         ],
       },
       {
         label: '2025',
         items: [
-          'Represented India · WSWCF Weighted Endurance Calisthenics World Championship · Bulgaria',
-          '1st runner-up · Weighted Endurance · WSWCF Qualifier organised by SISCA',
-          'Head Judge · OG Bar Wars 1.0',
+          'Represented India at the WSWCF Weighted Endurance Calisthenics World Championship in Bulgaria.',
+          'Finished 1st runner-up in Weighted Endurance at the WSWCF Qualifier organised by SISCA.',
+          'Served as Head Judge at OG Bar Wars 1.0.',
         ],
       },
       {
         label: '2024',
-        items: ['2nd runner-up · Street Lifting · Battle of Nerve 2.0'],
+        items: ['Finished 2nd runner-up in Street Lifting at Battle of Nerve 2.0.'],
       },
     ],
   },
@@ -70,14 +70,14 @@ const hallOfFameAthletes = [
       {
         label: '2026',
         items: [
-          'Middleweight Freestyle Champion · Limitless',
-          'Middleweight Freestyle Champion · Calibre',
-          '1st runner-up · Statics · Calibre',
+          'Won 1st place in Middleweight Freestyle at Limitless.',
+          'Won 1st place in Middleweight Freestyle at Calibre.',
+          'Finished 1st runner-up in Statics at Calibre.',
         ],
       },
       {
         label: '2025',
-        items: ['1st runner-up · Freestyle · Caligames 3.0'],
+        items: ['Finished 1st runner-up in Freestyle at Caligames 3.0.'],
       },
     ],
   },
@@ -95,16 +95,19 @@ const hallOfFameAthletes = [
     featured: false,
     achievements: [
       {
-        label: '2024',
-        items: ['Freestyle Champion · KCA Battle of Nerve Intercity'],
+        label: '2026',
+        items: [
+          'Won 1st place in Endurance at Raw Strength Calisthenics.',
+          'Won 1st place in Freestyle at Raw Strength Calisthenics.',
+        ],
       },
       {
-        label: 'Other titles',
-        items: [
-          '3rd place · Statics · KCA Battle of Nerve 2.0',
-          '1st place · Endurance · Raw Strength Calisthenics',
-          'Freestyle Champion · Raw Strength Calisthenics',
-        ],
+        label: '2025',
+        items: ['Finished 1st runner-up in Statics at KCA Battle of Nerve 2.0.'],
+      },
+      {
+        label: '2024',
+        items: ['Won 1st place in Freestyle at KCA Battle of Nerve.'],
       },
     ],
   },
@@ -123,7 +126,7 @@ const hallOfFameAthletes = [
     achievements: [
       {
         label: '2026',
-        items: ['Lightweight Freestyle Champion · Calibre'],
+        items: ['Won 1st place in Lightweight Freestyle at Calibre.'],
       },
     ],
   },
@@ -141,8 +144,8 @@ const hallOfFameAthletes = [
     featured: false,
     achievements: [
       {
-        label: 'Achievement',
-        items: ['1st runner-up · Weighted Endurance · OG Bar Wars'],
+        label: '2025',
+        items: ['Finished 1st runner-up in Weighted Endurance at OG Bar Wars.'],
       },
     ],
   },
