@@ -120,7 +120,7 @@ const hallOfFameAthletes = [
       alt: 'Aakash holding a freestyle championship trophy on the competition podium.',
       width: 523,
       height: 1570,
-      position: '50% 34%',
+      position: '50% 8%',
     },
     featured: false,
     achievements: [
@@ -204,7 +204,7 @@ export default function AthletesPage() {
         </div>
       </article>
       <div className="hall-of-fame-grid">
-        {hallOfFameAthletes.slice(1).map((athlete, index) => <article className="hall-of-fame-card" key={athlete.id}>
+        {hallOfFameAthletes.slice(1).map((athlete, index) => <article className={`hall-of-fame-card hall-of-fame-card--${athlete.id}`} key={athlete.id}>
           <figure><Image src={athlete.image.src} alt={athlete.image.alt} width={athlete.image.width} height={athlete.image.height} sizes="(max-width: 900px) 100vw, 24vw" style={{ objectPosition: athlete.image.position }} unoptimized /></figure>
           <div className="hall-of-fame-copy">
             <div className="hall-of-fame-label"><Trophy aria-hidden="true" /><span>{String(index + 2).padStart(2, '0')} · Hall of Fame</span></div>

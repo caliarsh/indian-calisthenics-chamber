@@ -1071,6 +1071,8 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .hall-of-fame-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
 .hall-of-fame-card { display: flex; min-width: 0; flex-direction: column; border: 1px solid rgba(255,247,247,.28); background: #791527; }
 .hall-of-fame-card figure { height: clamp(440px,48vw,650px); margin: 0; overflow: hidden; border-bottom: 1px solid rgba(255,247,247,.28); background: #5f111f; }
+.hall-of-fame-card--samuel figure { background: #fff; }
+.hall-of-fame-card--samuel figure img { clip-path: circle(33% at 50% 52%); transform: scale(1.42); }
 .hall-of-fame-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem,5vw,5rem); }
 .hall-of-fame-card .hall-of-fame-copy { flex: 1; justify-content: flex-start; padding: clamp(1.75rem,3.5vw,3rem); }
 .hall-of-fame-label { display: flex; align-items: center; gap: .65rem; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
