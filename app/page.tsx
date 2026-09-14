@@ -4,7 +4,6 @@ import {
   ArrowDown,
   ArrowUpRight,
   Building2,
-  CalendarRange,
   ClipboardCheck,
   GraduationCap,
   HandHeart,
@@ -94,11 +93,10 @@ export default function Home() {
 
       <section className="section events-preview-section" id="events">
         <div className="section-heading">
-          <div><p className="section-kicker">Competitions / Workshops</p><h2>Beyond daily<br /><em>training.</em></h2></div>
-          <p>Explore the competitions, workshops, and showcases that bring the wider ICC community together.</p>
+          <div><p className="section-kicker">Workshops</p><h2>Learn beyond<br /><em>daily training.</em></h2></div>
+          <p>Explore workshops and showcases that bring athletes, coaches, and the wider ICC community together.</p>
         </div>
-        <div className="events-preview-grid">
-          <a href="/competitions"><CalendarRange aria-hidden="true" /><span>Competition archive</span><h3>Competitions</h3><p>Look back at ICCWE 26 and find announcements for upcoming competitive events.</p><strong>Explore competitions <ArrowUpRight /></strong></a>
+        <div className="events-preview-grid events-preview-grid-single">
           <a href="/workshops"><Presentation aria-hidden="true" /><span>Learning and showcases</span><h3>Workshops</h3><p>Discover previous skill workshops and live ICC demonstrations across the community.</p><strong>Explore workshops <ArrowUpRight /></strong></a>
         </div>
       </section>

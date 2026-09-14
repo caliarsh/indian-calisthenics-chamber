@@ -15,14 +15,16 @@ export default function TrainerInternshipPage() {
     <SiteHeader />
     <section className="initiative-hero" id="top">
       <div><p className="eyebrow"><span /> Six months · Bengaluru or Hyderabad</p><h1>Become a<br /><em>certified trainer.</em></h1><p>Become an ICC-certified calisthenics trainer through theory, supervised practice, and feedback inside an ICC training environment. Learn how to assess, program, coach, and progress athletes responsibly.</p><div className="hero-actions"><a className="button" href="#apply">Apply for the internship <ArrowUpRight aria-hidden="true" /></a><a className="text-link" href="#curriculum">View curriculum</a></div></div>
-      <aside aria-label="Program summary"><span>ICC trainer internship</span><strong>{trainerInternship.duration}</strong><p>Practical learning in Bengaluru and Hyderabad</p></aside>
+      <aside aria-label="Program summary"><span>ICC internship</span><strong>{trainerInternship.duration}</strong><p>Practical learning in Bengaluru and Hyderabad</p><div className="internship-hero-steps" aria-label="Program stages"><span>Learn</span><span>Assist</span><span>Coach</span></div></aside>
     </section>
 
     <section className="initiative-facts" aria-label="Internship highlights"><span><Clock3 aria-hidden="true" /> Six-month pathway</span><span><MapPin aria-hidden="true" /> Two ICC locations</span><span><UsersRound aria-hidden="true" /> Supervised floor practice</span><span><Award aria-hidden="true" /> ICC completion assessment</span></section>
 
+    <div className="internship-ribbon" aria-hidden="true"><div><span>Learn the system</span><i /> <span>Coach real movement</span><i /> <span>Build athlete trust</span><i /> <span>Learn the system</span><i /> <span>Coach real movement</span><i /> <span>Build athlete trust</span></div></div>
+
     <section className="section initiative-intro">
       <div><p className="section-kicker">Learn the work behind the title</p><h2>Theory meets<br /><em>the training floor.</em></h2></div>
-      <div><p>The internship is designed for calisthenics athletes, fitness trainers, students, and serious enthusiasts who want to understand coaching—not just collect exercises. Interns learn to observe movement, communicate clearly, build suitable progressions, and make responsible training decisions.</p><p>Sessions combine guided theory with practical observation and supervised coaching. Cohort dates, weekly attendance requirements, and fees are confirmed with the selected branch during the application process.</p></div>
+      <div className="internship-intro-copy"><p>The internship is designed for calisthenics athletes, fitness trainers, students, and serious enthusiasts who want to understand coaching—not just collect exercises. Interns learn to observe movement, communicate clearly, build suitable progressions, and make responsible training decisions.</p><p>Sessions combine guided theory with practical observation and supervised coaching. Cohort dates, weekly attendance requirements, and fees are confirmed during the application process.</p><div className="internship-outcomes"><span><strong>Observe</strong> live coaching decisions</span><span><strong>Practise</strong> cueing and programming</span><span><strong>Lead</strong> supervised sessions</span></div></div>
     </section>
 
     <section className="section curriculum-section" id="curriculum">

@@ -1,6 +1,7 @@
 /* oxlint-disable next/no-html-link-for-pages -- static-export links */
 import type { Metadata } from 'next';
-import { ArrowUpRight, BadgeCheck, BedDouble, Medal, Plane, Target, TicketCheck, UsersRound } from 'lucide-react';
+import { ArrowUpRight, BadgeCheck, BedDouble, Medal, Plane, Target, TicketCheck, Trophy, UsersRound } from 'lucide-react';
+import Image from 'next/image';
 import { AthleteApplicationForm } from '@/components/community-forms';
 import { EditorialImage } from '@/components/editorial-photo';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
@@ -25,7 +26,7 @@ export default function AthletesPage() {
       <p className="eyebrow"><span /> Built inside the chamber</p>
       <h1>Our<br /><em>Athletes.</em></h1>
       <p>ICC has an athlete-rich culture built through ambitious training, shared standards, and years of disciplined work. The academy has helped produce national-level athletes across multiple calisthenics disciplines while continuing to develop the next generation.</p>
-      <div className="hero-actions"><a className="button" href="#apply">Apply to be an ICC athlete <ArrowUpRight aria-hidden="true" /></a><a className="text-link" href="#profiles">Meet the athlete culture</a></div>
+      <div className="hero-actions"><a className="button" href="#apply">Apply to be an ICC athlete <ArrowUpRight aria-hidden="true" /></a><a className="text-link" href="#hall-of-fame">View the Hall of Fame</a></div>
     </section>
 
     <section className="athlete-culture section" aria-labelledby="athlete-culture-title">
@@ -49,20 +50,23 @@ export default function AthletesPage() {
       </div>
     </section>
 
+    <section className="hall-of-fame section" id="hall-of-fame">
+      <div className="section-heading hall-of-fame-heading"><div><p className="section-kicker">ICC Hall of Fame</p><h2>Earned on<br /><em>the platform.</em></h2></div><p>Recognising ICC athletes whose results reflect years of disciplined training, competitive courage, and high standards.</p></div>
+      <article className="hall-of-fame-feature">
+        <figure><Image src="/coaches/arsh.jpg" alt="Arsh at a weighted calisthenics competition, holding the pull-up bar before an attempt." width={970} height={1621} sizes="(max-width: 900px) 100vw, 46vw" unoptimized /></figure>
+        <div className="hall-of-fame-copy"><div className="hall-of-fame-label"><Trophy aria-hidden="true" /><span>Hall of Fame · ICC athlete</span></div><h3>Arsh</h3><p>Weighted Endurance · Street Lifting · Static</p><ol>
+          <li><strong>2024</strong><div><span>3rd place</span><p>Street Lifting · Battle of Nerve 2.0</p></div></li>
+          <li><strong>2025</strong><div><span>1st runner-up</span><p>Weighted Endurance · WSWCF Qualifier organised by SISCA</p></div></li>
+          <li><strong>2026</strong><div><span>1st place</span><p>Street Lifting · Ground Zero</p></div></li>
+        </ol></div>
+      </article>
+    </section>
+
     <section className="athlete-roster section" id="profiles">
-      <div className="section-heading">
-        <div><p className="section-kicker">Athlete roster</p><h2>Built through<br /><em>the process.</em></h2></div>
-        <p>Meet athletes developed through ICC’s training culture across freestyle, statics, streetlifting, and endurance. More individual stories and achievements will be added as their profiles are completed.</p>
-      </div>
-      <div className="athlete-profile-grid athlete-profile-grid-featured">
-        {athleteProfiles.slice(0, 2).map((athlete, index) => <article className="athlete-profile-card" key={athlete.id}>
-          <div className="athlete-profile-portrait" aria-hidden="true"><span>{athlete.initials}</span><small>{String(index + 1).padStart(2, '0')}</small></div>
-          <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name}</h3></div>
-        </article>)}
-      </div>
+      <div className="section-heading"><div><p className="section-kicker">Our athletes</p><h2>Different disciplines.<br /><em>One standard.</em></h2></div><p>ICC athletes train across freestyle, statics, streetlifting, weighted endurance, and endurance.</p></div>
       <div className="athlete-profile-grid athlete-profile-grid-secondary">
-        {athleteProfiles.slice(2).map((athlete, index) => <article className="athlete-profile-card" key={athlete.id}>
-          <div className="athlete-profile-portrait" aria-hidden="true"><span>{athlete.initials}</span><small>{String(index + 3).padStart(2, '0')}</small></div>
+        {athleteProfiles.slice(1).map((athlete, index) => <article className="athlete-profile-card" key={athlete.id}>
+          <div className="athlete-profile-portrait" aria-hidden="true"><span>{athlete.initials}</span><small>{String(index + 1).padStart(2, '0')}</small></div>
           <div className="athlete-profile-copy"><div className="athlete-profile-meta"><span>{athlete.discipline}</span><small>{athlete.status}</small></div><h3>{athlete.name}</h3></div>
         </article>)}
       </div>

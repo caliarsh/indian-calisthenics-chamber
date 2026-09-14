@@ -552,6 +552,8 @@ button, input, select, textarea { font: inherit; }
 .events-preview-grid p { max-width: 520px; margin: 0; color: #aaa69d; line-height: 1.7; }
 .events-preview-grid strong { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .5rem; margin-top: auto; padding-top: 2rem; color: #d7546a; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 .events-preview-grid strong svg { width: 16px; }
+.events-preview-grid-single { grid-template-columns: minmax(0, 1fr); }
+.events-preview-grid-single > a { min-height: 360px; }
 .home-assessment, .offline-assessment, .online-final-cta { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(2rem, 5vw, 5rem); background: #e9e3d8; color: #171714; }
 .home-assessment > svg, .offline-assessment > svg { width: 46px; height: 46px; color: #8f1d2c; stroke-width: 1.35; }
 .home-assessment h2, .offline-assessment h2, .online-final-cta h2 { margin: 0; font: 600 clamp(3.8rem, 7vw, 7rem)/.86 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; }
@@ -910,6 +912,8 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .initiative-hero aside span { color: #ffd1d9; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .initiative-hero aside strong { margin: auto 0 1.25rem; font: 600 clamp(5rem,8vw,8rem)/.8 var(--font-display); text-transform: uppercase; }
 .initiative-hero aside p { margin: 0; color: rgba(255,247,247,.76); line-height: 1.6; }
+.internship-hero-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 2rem; background: rgba(255,247,247,.28); }
+.internship-hero-steps span { padding: .8rem .45rem; background: #791527; color: #fff7f7; text-align: center; }
 .support-initiative-hero { background: radial-gradient(circle at 82% 28%, rgba(255,247,247,.12), transparent 31%), #9e1b32; color: #fff7f7; }
 .support-initiative-hero .eyebrow,
 .support-initiative-hero > div > p:not(.eyebrow) { color: rgba(255,247,247,.82); }
@@ -921,6 +925,11 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .initiative-facts { min-height: 94px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem clamp(2rem,5vw,5rem); padding: 1.4rem clamp(1.25rem,6.5vw,7rem); border-block: 1px solid rgba(23,23,20,.2); background: #f7f1e7; }
 .initiative-facts span { display: inline-flex; align-items: center; gap: .55rem; color: #4f4b45; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .initiative-facts svg { width: 18px; color: #9e1b32; }
+.internship-ribbon { overflow: hidden; border-bottom: 1px solid rgba(255,247,247,.2); background: #791527; color: #fff7f7; }
+.internship-ribbon > div { display: flex; width: max-content; align-items: center; gap: 1.4rem; padding: 1rem 0; animation: internship-ribbon 24s linear infinite; }
+.internship-ribbon span { font: 600 clamp(1.4rem,2.5vw,2.4rem)/1 var(--font-display); letter-spacing: .03em; text-transform: uppercase; }
+.internship-ribbon i { width: 7px; height: 7px; flex: 0 0 auto; transform: rotate(45deg); background: #ffd1d9; }
+@keyframes internship-ribbon { to { transform: translateX(-50%); } }
 .initiative-intro { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: clamp(3rem,8vw,8rem); background: #e9e3d8; }
 .initiative-intro h2,
 .internship-path h2,
@@ -933,6 +942,9 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .application-copy h2 em,
 .athlete-support-section h2 em { color: #9e1b32; font-style: normal; }
 .initiative-intro > div:last-child p { max-width: 720px; margin: 0 0 1.4rem; color: #5d5a54; font-size: 1.02rem; line-height: 1.8; }
+.internship-outcomes { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; border-top: 1px solid rgba(23,23,20,.22); border-left: 1px solid rgba(23,23,20,.22); }
+.internship-outcomes span { min-height: 150px; padding: 1.35rem; border-right: 1px solid rgba(23,23,20,.22); border-bottom: 1px solid rgba(23,23,20,.22); color: #5d5a54; line-height: 1.5; }
+.internship-outcomes strong { display: block; margin-bottom: 1.5rem; color: #8f1d2c; font: 600 1.5rem/1 var(--font-display); text-transform: uppercase; }
 
 .curriculum-section,
 .impact-section { background: #9e1b32; color: #fff7f7; }
@@ -946,6 +958,10 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .impact-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid rgba(255,247,247,.22); border-left: 1px solid rgba(255,247,247,.22); }
 .curriculum-grid article,
 .impact-grid article { min-height: 390px; display: flex; flex-direction: column; padding: clamp(1.6rem,3vw,3rem); border-right: 1px solid rgba(255,247,247,.22); border-bottom: 1px solid rgba(255,247,247,.22); background: rgba(105,14,32,.27); }
+.internship-page .curriculum-grid article { position: relative; overflow: hidden; transition: transform .24s ease, background .24s ease; }
+.internship-page .curriculum-grid article:nth-child(even) { background: rgba(255,247,247,.07); }
+.internship-page .curriculum-grid article:hover { z-index: 1; transform: translateY(-7px); background: rgba(105,14,32,.55); }
+.internship-page .curriculum-grid article > span { font-size: clamp(2.8rem,5vw,5rem); opacity: .28; }
 .curriculum-grid article > span,
 .impact-grid article > span { color: #ffd1d9; font: 600 .72rem var(--font-display); }
 .curriculum-grid svg,
@@ -971,6 +987,8 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .funding-process h3 { margin: 0 0 .65rem; font: 600 clamp(1.9rem,3vw,2.8rem)/1 var(--font-display); text-transform: uppercase; }
 .internship-path li p,
 .funding-process li p { margin: 0; color: #5d5a54; line-height: 1.65; }
+.internship-page .internship-path li { position: relative; padding: 2.4rem 1.5rem 2.4rem 0; transition: padding-left .22s ease, background .22s ease; }
+.internship-page .internship-path li:hover { padding-left: 1.25rem; background: rgba(158,27,50,.05); }
 .funding-process li { grid-template-columns: 48px 1fr; }
 
 .application-section { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); padding: 0; background: #9e1b32; color: #fff7f7; }
@@ -1023,6 +1041,7 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .initiative-hero h1 { font-size: clamp(4.2rem,20vw,6.5rem); }
   .initiative-hero aside { min-height: 280px; }
   .initiative-facts { align-items: flex-start; justify-content: flex-start; flex-direction: column; }
+  .internship-outcomes { grid-template-columns: 1fr; }
   .curriculum-grid article,
   .impact-grid article { min-height: 340px; }
   .internship-path li { grid-template-columns: 1fr; gap: .7rem; }
@@ -1034,6 +1053,41 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 @media (prefers-reduced-motion: reduce) {
   .community-pathways-grid > a { transition: none; }
   .community-pathways-grid > a:hover { transform: none; }
+  .internship-ribbon > div { animation: none; }
+  .internship-page .curriculum-grid article,
+  .internship-page .internship-path li { transition: none; }
+  .internship-page .curriculum-grid article:hover { transform: none; }
+}
+
+.hall-of-fame { background: #8f1d2c; color: #fff7f7; }
+.hall-of-fame .section-kicker,
+.hall-of-fame h2 em,
+.hall-of-fame-label { color: #ffd1d9; }
+.hall-of-fame-heading > p { color: rgba(255,247,247,.78); }
+.hall-of-fame-feature { display: grid; grid-template-columns: minmax(300px,.82fr) minmax(0,1.18fr); border: 1px solid rgba(255,247,247,.28); background: #791527; }
+.hall-of-fame-feature figure { min-height: 680px; margin: 0; overflow: hidden; border-right: 1px solid rgba(255,247,247,.28); }
+.hall-of-fame-feature figure img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 34%; }
+.hall-of-fame-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem,5vw,5rem); }
+.hall-of-fame-label { display: flex; align-items: center; gap: .65rem; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.hall-of-fame-label svg { width: 24px; }
+.hall-of-fame-copy > h3 { margin: 1.5rem 0 .5rem; font: 600 clamp(5rem,10vw,10rem)/.75 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; }
+.hall-of-fame-copy > p { margin: 0 0 2rem; color: rgba(255,247,247,.75); font-size: .76rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.hall-of-fame-copy ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,247,247,.24); }
+.hall-of-fame-copy li { display: grid; grid-template-columns: 84px 1fr; gap: 1.25rem; padding: 1.45rem 0; border-bottom: 1px solid rgba(255,247,247,.24); }
+.hall-of-fame-copy li > strong { color: #ffd1d9; font: 600 1.4rem var(--font-display); }
+.hall-of-fame-copy li span { display: block; margin-bottom: .35rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.hall-of-fame-copy li p { margin: 0; color: rgba(255,247,247,.75); line-height: 1.5; }
+.athletes-page > .athlete-roster { background: #e9e3d8; color: #171714; }
+.athletes-page > .athlete-roster .section-kicker,
+.athletes-page > .athlete-roster h2 em { color: #8f1d2c; }
+.athletes-page > .athlete-roster h2 { color: #171714; }
+.athletes-page > .athlete-roster .section-heading > p { color: #5d5a54; }
+.athletes-page > .athlete-roster .athlete-profile-grid,
+.athletes-page > .athlete-roster .athlete-profile-card { border-color: rgba(23,23,20,.2); }
+
+@media (max-width: 900px) {
+  .hall-of-fame-feature { grid-template-columns: 1fr; }
+  .hall-of-fame-feature figure { min-height: 620px; border-right: 0; border-bottom: 1px solid rgba(255,247,247,.28); }
 }
 
 @media (min-width: 761px) and (max-width: 1050px) {
@@ -2422,4 +2476,43 @@ footer .footer-instagram svg {
   .online-offer-grid-5 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* Athlete Hall of Fame and roster rhythm. Kept last so page-wide colour rules do not override it. */
+.hall-of-fame {
+  background: #8f1d2c;
+  color: #fff7f7;
+}
+
+.hall-of-fame .section-kicker,
+.hall-of-fame h2 em,
+.hall-of-fame-label {
+  color: #ffd1d9;
+}
+
+.hall-of-fame h2 {
+  color: #fff7f7;
+}
+
+.hall-of-fame .hall-of-fame-heading > p {
+  color: rgba(255, 247, 247, .78);
+}
+
+.athletes-page > .athlete-roster {
+  border-color: rgba(23, 23, 20, .2);
+  background: #e9e3d8;
+  color: #171714;
+}
+
+.athletes-page > .athlete-roster .section-kicker,
+.athletes-page > .athlete-roster h2 em {
+  color: #8f1d2c;
+}
+
+.athletes-page > .athlete-roster h2 {
+  color: #171714;
+}
+
+.athletes-page > .athlete-roster .section-heading > p {
+  color: #5d5a54;
 }
