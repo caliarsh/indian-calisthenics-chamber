@@ -128,7 +128,6 @@ export default function TrainFromHomePage() {
         <section className="transformation-section section" id="transformation" aria-labelledby="transformation-title">
           <div className="transformation-number" aria-hidden="true">12</div>
           <div className="transformation-copy">
-            <p className="section-kicker">{transformation.duration} · {transformation.badge}</p>
             <h2 id="transformation-title">Full<br /><em>Transformation.</em></h2>
             <p>{transformation.description}</p>
           </div>
