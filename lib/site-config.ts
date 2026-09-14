@@ -347,7 +347,7 @@ export const onlineOffers: readonly OnlineOffer[] = [
     price: '₹32,000',
     compareAtPrice: '₹37,000',
     duration: '12 weeks',
-    monthlyPrice: '₹10,667/month',
+    monthlyPrice: '₹32,000/month',
     badge: 'Save ₹5,000 · 12-week coaching',
     description: 'The complete ICC online coaching path for clients ready to align training, nutrition, and live guidance.',
     inclusions: ['Fitness assessment', 'Workout and diet plans', 'Twelve 60-minute PT sessions', 'Twelve weeks of structured support'],

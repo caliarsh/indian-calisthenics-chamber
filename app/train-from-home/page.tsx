@@ -125,7 +125,7 @@ export default function TrainFromHomePage() {
       })}
 
       {transformation && (
-        <section className="transformation-section section" aria-labelledby="transformation-title">
+        <section className="transformation-section section" id="transformation" aria-labelledby="transformation-title">
           <div className="transformation-number" aria-hidden="true">12</div>
           <div className="transformation-copy">
             <p className="section-kicker">{transformation.duration} · {transformation.badge}</p>
@@ -133,7 +133,7 @@ export default function TrainFromHomePage() {
             <p>{transformation.description}</p>
           </div>
           <div className="transformation-offer">
-            <div><span>Complete coaching path</span><div className="transformation-price-row"><strong>{transformation.price}</strong>{transformation.compareAtPrice && <s>{transformation.compareAtPrice}</s>}</div>{transformation.monthlyPrice && <small>{transformation.monthlyPrice}</small>}</div>
+            <div><span>Complete coaching path</span><div className="transformation-price-row"><div className="transformation-price-main"><strong>{transformation.price}</strong><small>/month</small></div>{transformation.compareAtPrice && <s>{transformation.compareAtPrice}/month</s>}</div></div>
             <ul>{transformation.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}</ul>
             <a className="button" href={`/book-trial?mode=Online&offer=${transformation.id}`}>Discuss transformation <ArrowUpRight aria-hidden="true" /></a>
           </div>
