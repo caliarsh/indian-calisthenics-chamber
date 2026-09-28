@@ -1,9 +1,8 @@
 'use client';
 
 import { ArrowUpRight, MapPin } from 'lucide-react';
-import { EditorialImage } from '@/components/editorial-photo';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { siteConfig, siteImages } from '@/lib/site-config';
+import { siteConfig } from '@/lib/site-config';
 
 function slug(value: string) {
   return value.replaceAll(' ', '-').toLowerCase();
@@ -25,8 +24,6 @@ export function ScheduleExplorer() {
             <div><span>Training base</span><strong>{location.area}</strong>{location.address !== location.area && <small>{location.address}</small>}</div>
             <ArrowUpRight className="location-arrow" aria-hidden="true" />
           </a>
-
-          <EditorialImage {...siteImages.locations[location.id]} className="location-editorial-photo" sizes="(max-width: 900px) 100vw, 86vw" />
 
           <div className="schedule-groups">
             {location.schedule.map((group) => (
@@ -58,11 +55,6 @@ export function ScheduleExplorer() {
         </TabsContent>
       ))}
 
-      <aside className="online-pt-card" aria-label="Online personal training schedule">
-        <div><span>Train from anywhere</span><strong>{siteConfig.onlinePersonalTraining.name}</strong><small>{siteConfig.onlinePersonalTraining.days} · By appointment</small></div>
-        <strong>{siteConfig.onlinePersonalTraining.time}</strong>
-        <span className="schedule-level">{siteConfig.onlinePersonalTraining.level}</span>
-      </aside>
     </Tabs>
   );
 }

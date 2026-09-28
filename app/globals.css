@@ -284,11 +284,6 @@ button, input, select, textarea { font: inherit; }
 .schedule-level { justify-self: end; padding: .45rem .75rem; border: 1px solid rgba(158,27,50,.65); color: #d7546a; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .schedule-group-personal-training .schedule-row { grid-template-columns: 1fr auto; }
 .schedule-group-personal-training .schedule-level { grid-column: 1 / -1; justify-self: start; }
-.online-pt-card { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 1.25rem; margin-top: 1.25rem; padding: 1.5rem; border: 1px solid rgba(158,27,50,.65); background: rgba(158,27,50,.1); }
-.online-pt-card > div { display: flex; flex-direction: column; gap: .3rem; }
-.online-pt-card > div span, .online-pt-card > div small { color: #8f8b84; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.online-pt-card > div strong { font: 600 1.6rem var(--font-display); text-transform: uppercase; }
-.online-pt-card > strong { white-space: nowrap; font: 600 1.4rem var(--font-display); }
 .placeholder-note { margin: 1.1rem 0 0; color: #75716b; font-size: .75rem; }
 
 .trial-section { display: grid; grid-template-columns: .86fr 1.14fr; min-height: 820px; background: var(--primary); color: #fff7f7; }
@@ -687,9 +682,6 @@ button, input, select, textarea { font: inherit; }
 .offline-contacts > article > div { display: flex; flex-wrap: wrap; gap: .8rem 1.25rem; margin-top: .5rem; }
 .offline-contacts > article > div a { display: inline-flex; align-items: center; gap: .45rem; color: #d7546a; font-size: .7rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .offline-contacts > article > div svg { width: 15px; }
-.location-editorial-photo { margin: 1.5rem 0; }
-.location-editorial-photo .editorial-photo-frame { height: clamp(300px, 38vw, 540px); }
-.location-editorial-photo img { object-fit: cover; }
 
 .athlete-photo-story { background: #e9e3d8; color: #171714; }
 .athlete-photo-story-heading .section-kicker,
@@ -788,8 +780,6 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
   .schedule-period { padding-inline: 1rem; }
   .schedule-row { grid-template-columns: 1fr auto; }
   .schedule-level { grid-column: 1 / -1; justify-self: start; }
-  .online-pt-card { grid-template-columns: 1fr; }
-  .online-pt-card .schedule-level { grid-column: auto; }
   .rating-summary { min-width: 0; width: 100%; }
   .reviews-tab-list { width: 100%; }
   .reviews-tab-trigger { min-width: 0; }
