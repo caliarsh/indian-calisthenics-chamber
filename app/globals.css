@@ -935,8 +935,19 @@ footer > p { color: #85817a; font: 500 .8rem var(--font-display); letter-spacing
 .home-card-with-photo:hover .home-card-photo img { transform: scale(1.035); }
 .home-card-photo-online img { object-position: 68% 50%; }
 .home-card-photo-offline img { object-position: 50% 46%; }
-.home-card-photo-workshops { aspect-ratio: 16 / 7; }
-.home-card-photo-workshops img { object-position: 50% 58%; }
+.home-card-photo-workshops {
+  aspect-ratio: 16 / 9;
+  padding: clamp(.75rem, 1.6vw, 1.4rem);
+  background: linear-gradient(135deg, #681020, #901a30 58%, #681020);
+}
+.home-card-photo-workshops::after {
+  background: radial-gradient(circle at 50% 50%, transparent 48%, rgba(27, 4, 9, .24));
+}
+.home-card-photo-workshops img {
+  object-fit: contain;
+  object-position: center;
+}
+.home-card-with-photo:hover .home-card-photo-workshops img { transform: none; }
 .home-card-photo-athletes img { object-position: 50% 42%; }
 
 .initiative-page { background: #e9e3d8; color: #171714; }
@@ -2031,7 +2042,7 @@ footer > p,
   .home-card-photo,
   .home-card-photo-workshops { aspect-ratio: 4 / 3; }
   .home-card-photo-online img { object-position: 66% 50%; }
-  .home-card-photo-workshops img { object-position: 50% 55%; }
+  .home-card-photo-workshops img { object-position: center; }
 
   .home-page > .hero {
     background: transparent;

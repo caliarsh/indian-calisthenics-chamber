@@ -44,7 +44,7 @@ export function OfflineLocationGallery({ placement = 'offline' }: { placement?: 
           <h2 id={`${placement}-gallery-title`}>{placement === 'home' ? <>This is ICC.<br /><em>In motion.</em></> : <>Training in<br /><em>motion.</em></>}</h2>
         </div>
         <div className="offline-gallery-intro">
-          <p>{placement === 'home' ? 'A look inside the coaching, skill practice, equipment, and community that shape everyday training at ICC.' : 'Explore 52 selected moments from ICC training floors, workshops, and coached skill sessions in Bengaluru and Hyderabad.'}</p>
+          <p>{placement === 'home' ? 'A look inside the coaching, skill practice, equipment, and community that shape everyday training at ICC.' : `Explore ${selectedOfflineGalleryImages.length} selected moments from ICC training floors, workshops, and coached skill sessions in Bengaluru and Hyderabad.`}</p>
           <div className="offline-gallery-controls" aria-label="Training gallery controls">
             <button type="button" onClick={() => move(-1)} aria-label="Show previous training photo"><ChevronLeft aria-hidden="true" /></button>
             <button type="button" onClick={() => move(1)} aria-label="Show next training photo"><ChevronRight aria-hidden="true" /></button>
@@ -63,9 +63,10 @@ export function OfflineLocationGallery({ placement = 'offline' }: { placement?: 
           if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
         }}
       >
-        {selectedOfflineGalleryImages.map((image) => {
+        {selectedOfflineGalleryImages.map((image, index) => {
           const location = siteConfig.locations.find((item) => item.id === image.locationId)!;
           const locationLabel = image.locationId === 'bengaluru' ? 'BLR' : 'HYD';
+          const imageLabel = placement === 'home' ? String(index + 1) : locationLabel;
           return (
             <figure className="offline-gallery-card" key={image.src}>
               <div className="offline-gallery-image">
@@ -77,10 +78,10 @@ export function OfflineLocationGallery({ placement = 'offline' }: { placement?: 
                   sizes="(max-width: 640px) 78vw, (max-width: 1000px) 44vw, 29vw"
                   style={{ objectPosition: image.focalPosition }}
                 />
-                <span aria-hidden="true">{locationLabel}</span>
+                <span aria-hidden="true">{imageLabel}</span>
               </div>
               <figcaption>
-                <div><strong>{image.caption}</strong><span>{locationLabel} · ICC</span></div>
+                <div><strong>{image.caption}</strong><span>{placement === 'home' ? `ICC training photo ${index + 1}` : `${locationLabel} · ICC`}</span></div>
                 <a href={location.mapsUrl} target="_blank" rel="noreferrer" aria-label={`View ${location.name} photos on Google Maps`}>Google Maps <ExternalLink aria-hidden="true" /></a>
               </figcaption>
             </figure>
