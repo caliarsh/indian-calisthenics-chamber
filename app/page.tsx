@@ -14,6 +14,7 @@ import {
 import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { CoachCarousel } from '@/components/coach-carousel';
+import { OfflineLocationGallery } from '@/components/offline-location-gallery';
 import { siteImages, workshopHeroImage } from '@/lib/site-config';
 
 const method = [
@@ -101,6 +102,8 @@ export default function Home() {
           <a className="home-card-with-photo" href="/workshops"><figure className="home-card-photo home-card-photo-workshops"><Image src={workshopHeroImage.src} width={workshopHeroImage.width} height={workshopHeroImage.height} alt={workshopHeroImage.alt} unoptimized sizes="(max-width: 760px) 100vw, 86vw" /></figure><Presentation aria-hidden="true" /><span>Learning and showcases</span><h3>Workshops</h3><p>Discover previous skill workshops and live ICC demonstrations across the community.</p><strong>Explore workshops <ArrowUpRight /></strong></a>
         </div>
       </section>
+
+      <OfflineLocationGallery placement="home" />
 
       <section className="section community-pathways-section" id="community-pathways">
         <div className="section-heading"><div><p className="section-kicker">Grow with the community</p><h2>More ways to<br /><em>build the sport.</em></h2></div><p>Develop as a trainer, pursue the ICC athlete pathway, or help create more opportunities for calisthenics across India.</p></div>
