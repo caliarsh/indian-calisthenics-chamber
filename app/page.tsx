@@ -15,7 +15,7 @@ import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { CoachCarousel } from '@/components/coach-carousel';
 import { OfflineLocationGallery } from '@/components/offline-location-gallery';
-import { siteImages, workshopHeroImage } from '@/lib/site-config';
+import { siteImages, workshopImages } from '@/lib/site-config';
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -85,7 +85,7 @@ export default function Home() {
           <p>Explore workshops and showcases that bring athletes, coaches, and the wider ICC community together.</p>
         </div>
         <div className="events-preview-grid events-preview-grid-single">
-          <a className="home-card-with-photo" href="/workshops"><figure className="home-card-photo home-card-photo-workshops"><Image src={workshopHeroImage.src} width={workshopHeroImage.width} height={workshopHeroImage.height} alt={workshopHeroImage.alt} unoptimized sizes="(max-width: 760px) 100vw, 86vw" /></figure><Presentation aria-hidden="true" /><span>Learning and showcases</span><h3>Workshops</h3><p>Discover previous skill workshops and live ICC demonstrations across the community.</p><strong>Explore workshops <ArrowUpRight /></strong></a>
+          <a className="home-card-with-photo" href="/workshops"><figure className="home-card-photo home-card-photo-workshops">{Object.values(workshopImages).map(image => <span className="home-workshop-photo" key={image.src}><Image src={image.src} width={image.width} height={image.height} alt={image.alt} unoptimized sizes="(max-width: 760px) 50vw, 22vw" style={{ objectPosition: image.focalPosition }} /></span>)}</figure><Presentation aria-hidden="true" /><span>Learning and showcases</span><h3>Workshops</h3><p>Discover previous skill workshops and live ICC demonstrations across the community.</p><strong>Explore workshops <ArrowUpRight /></strong></a>
         </div>
       </section>
 
