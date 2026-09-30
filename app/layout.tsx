@@ -19,6 +19,11 @@ const sans = Manrope({
 export const metadata: Metadata = {
   title: 'Indian Calisthenics Chamber | Train With Purpose',
   description: 'Progressive calisthenics coaching for every level. Build strength, control, and skills with Indian Calisthenics Chamber.',
+  icons: {
+    icon: [{ url: '/icc-favicon-96.png', type: 'image/png', sizes: '96x96' }],
+    shortcut: '/icc-favicon-96.png',
+    apple: [{ url: '/icc-apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
