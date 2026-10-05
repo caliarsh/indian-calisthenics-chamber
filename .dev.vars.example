@@ -11,4 +11,5 @@ ZOHO_SUB_PIPELINE=Training Enquiries
 ZOHO_INITIAL_STAGE=New Enquiry
 ZOHO_OWNER_MAP_JSON={"online":"","bengaluru":"","hyderabad":""}
 ZOHO_FIELD_MAPPING_JSON={"submissionId":"Website_Submission_ID"}
-
+GOOGLE_SHEETS_WEBHOOK_URL=
+GOOGLE_SHEETS_WEBHOOK_SECRET=

@@ -6,17 +6,15 @@ import {
   ArrowDown,
   ArrowLeft,
   ArrowUpRight,
-  Check,
-  Dumbbell,
-  Home,
 } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
-import { EditorialImage } from '@/components/editorial-photo';
-import { onlineOffers, siteImages, type OnlineOfferCategory } from '@/lib/site-config';
+import { OnlinePricingExplorer } from '@/components/online-pricing-explorer';
 
 export const metadata: Metadata = {
-  title: 'Train From Home or Your Gym | Indian Calisthenics Chamber',
-  description: 'Personalised online calisthenics workout plans, diet plans, and live PT from Indian Calisthenics Chamber. Start with a free assessment and consultation.',
+  title: 'Online Calisthenics Coaching in India | ICC',
+  description: 'Personalised online calisthenics coaching in India and worldwide. Train at home or your gym with custom plans, live PT, and coach support from ICC.',
+  alternates: { canonical: '/train-from-home' },
+  openGraph: { title: 'Online Calisthenics Coaching in India | ICC', description: 'Custom calisthenics plans and live online PT for your home or gym.', url: '/train-from-home', images: ['/online-coaching/online-hero.jpg'] },
 };
 
 const steps = [
@@ -26,33 +24,7 @@ const steps = [
   { number: '04', title: 'Train', copy: 'Follow your plan at home or in your gym with the agreed level of coach support.' },
 ];
 
-const offerSections: { category: OnlineOfferCategory; id: string; kicker: string; title: string; copy: string }[] = [
-  { category: 'Custom Plans', id: 'plans', kicker: 'Plans with four weeks of support', title: 'A plan built around you.', copy: 'Weekly check-ins and adjustments keep your training or nutrition plan useful after day one.' },
-  { category: 'Online PT', id: 'pt', kicker: 'Live one-to-one coaching', title: 'Technique needs feedback.', copy: 'Every session is 60 minutes and scheduled with your coach. Larger packs lower the per-session rate.' },
-];
-
-function OfferCard({ offer }: { offer: (typeof onlineOffers)[number] }) {
-  return (
-    <article className="online-offer-card">
-      <div className="online-offer-top">
-        <span>{offer.duration}</span>
-        {offer.badge && <strong>{offer.badge}</strong>}
-      </div>
-      <h3>{offer.name}</h3>
-      <div className="online-price-row"><p className="online-price">{offer.price}</p>{offer.compareAtPrice && <s>{offer.compareAtPrice}</s>}</div>
-      {offer.monthlyPrice && <p className="online-monthly-rate">{offer.monthlyPrice}</p>}
-      <p className="online-offer-description">{offer.description}</p>
-      <ul>
-        {offer.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}
-      </ul>
-      <a href={`/book-trial?mode=Online&offer=${offer.id}`}>Discuss this plan <ArrowUpRight aria-hidden="true" /></a>
-    </article>
-  );
-}
-
 export default function TrainFromHomePage() {
-  const transformation = onlineOffers.find((offer) => offer.category === 'Transformation');
-
   return (
     <main className="online-page">
       <SiteHeader />
@@ -66,10 +38,8 @@ export default function TrainFromHomePage() {
           <a className="back-link" href="/"><ArrowLeft aria-hidden="true" /> Back to the academy</a>
           <p className="eyebrow"><span /> Personalised ICC online coaching</p>
           <h1>Learn calisthenics<br /><em>from anywhere.</em></h1>
-          <p>Get a plan built for your level, equipment, and goal—then add the coach support you need to keep progressing.</p>
           <div className="hero-actions">
-            <a className="button" href="/assessment?path=online">Take the free assessment <ArrowUpRight size={18} /></a>
-            <a className="text-link" href="#plans">Explore coaching options <ArrowDown size={17} /></a>
+            <a className="button" href="#plans">View plans &amp; pricing <ArrowDown size={17} /></a>
           </div>
         </div>
         <aside className="online-hero-summary" aria-label="How online coaching begins">
@@ -79,30 +49,15 @@ export default function TrainFromHomePage() {
         </aside>
       </section>
 
-      <section className="online-audience section" aria-labelledby="training-anywhere-title">
-        <div className="online-section-heading">
-          <p className="section-kicker">Your space. Your program.</p>
-          <h2 id="training-anywhere-title">Built for where<br /><em>you train.</em></h2>
-        </div>
-        <div className="audience-grid">
-          <article className="audience-photo-card">
-            <EditorialImage {...siteImages.online.home} />
-            <div className="audience-card-copy"><Home aria-hidden="true" /><span>01</span><h3>Home training</h3>
-            <p>Start with bodyweight and the equipment you already have. Your plan adapts to your space instead of assuming a full gym.</p></div>
-          </article>
-          <article className="audience-photo-card">
-            <EditorialImage {...siteImages.online.gym} />
-            <div className="audience-card-copy"><Dumbbell aria-hidden="true" /><span>02</span><h3>Your gym</h3>
-            <p>Use the bars, weights, rings, and machines available to build calisthenics strength with a clear progression plan.</p></div>
-          </article>
-        </div>
+      <section className="online-offers online-pricing-section section" id="plans" aria-labelledby="online-pricing-title">
+        <div className="online-section-heading offer-heading"><div><p className="section-kicker">Online coaching prices</p><h2 id="online-pricing-title">Choose your <em>plan.</em></h2></div></div>
+        <OnlinePricingExplorer />
       </section>
 
       <section className="online-process section" id="process" aria-labelledby="online-process-title">
         <div className="online-section-heading">
           <p className="section-kicker">How it works</p>
-          <h2 id="online-process-title">Start free.<br /><em>Choose clearly.</em></h2>
-          <p>Assessment comes before payment, so the offer is matched to your current level and the support you actually need.</p>
+          <h2 id="online-process-title">Start free. <em>Train clearly.</em></h2>
         </div>
         <ol>
           {steps.map((step) => (
@@ -111,40 +66,7 @@ export default function TrainFromHomePage() {
         </ol>
       </section>
 
-      {offerSections.map((section) => {
-        const offers = onlineOffers.filter((offer) => offer.category === section.category);
-        return (
-          <section className="online-offers section" id={section.id} key={section.category} aria-labelledby={`${section.id}-title`}>
-            <div className="online-section-heading offer-heading">
-              <div><p className="section-kicker">{section.kicker}</p><h2 id={`${section.id}-title`}>{section.title}</h2></div>
-              <p>{section.copy}</p>
-            </div>
-            <div className={`online-offer-grid online-offer-grid-${offers.length}`}>{offers.map((offer) => <OfferCard offer={offer} key={offer.id} />)}</div>
-          </section>
-        );
-      })}
-
-      {transformation && (
-        <section className="transformation-section section" id="transformation" aria-labelledby="transformation-title">
-          <div className="transformation-number" aria-hidden="true">12</div>
-          <div className="transformation-copy">
-            <h2 id="transformation-title">Full<br /><em>Transformation.</em></h2>
-            <p>{transformation.description}</p>
-          </div>
-          <div className="transformation-offer">
-            <div><span>Complete coaching path</span><div className="transformation-price-row"><div className="transformation-price-main"><strong>{transformation.price}</strong><small>/month</small></div>{transformation.compareAtPrice && <s>{transformation.compareAtPrice}/month</s>}</div></div>
-            <ul>{transformation.inclusions.map((inclusion) => <li key={inclusion}><Check aria-hidden="true" /> {inclusion}</li>)}</ul>
-            <a className="button" href={`/book-trial?mode=Online&offer=${transformation.id}`}>Discuss transformation <ArrowUpRight aria-hidden="true" /></a>
-          </div>
-        </section>
-      )}
-
       <section className="online-final-cta section"><div><p className="section-kicker">Free assessment + consultation</p><h2>Find your<br /><em>next step.</em></h2><p>Tell us your level, setup, and goal on the dedicated booking page. Select a date and time for a free 15-minute call before we recommend an offer.</p></div><div className="hero-actions"><a className="button" href="/book-trial?mode=Online">Book a free consultation <ArrowUpRight /></a><a className="text-link" href="/assessment?path=online">Take the assessment first</a></div></section>
-
-      <section className="online-disclaimer">
-        <span>Before you begin</span>
-        <p>The ICC assessment is an indicative training placement tool, not a medical assessment. Diet plans provide general coaching guidance and are not medical nutrition treatment. Speak with a qualified healthcare professional about medical conditions or dietary restrictions.</p>
-      </section>
 
       <SiteFooter />
     </main>

@@ -1,6 +1,5 @@
 'use client';
 
-import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { siteConfig } from '@/lib/site-config';
 
@@ -19,17 +18,11 @@ export function ScheduleExplorer() {
 
       {siteConfig.locations.map((location) => (
         <TabsContent className="location-tab-content" value={location.id} key={location.id}>
-          <a className="location-card" href={location.mapsUrl} target="_blank" rel="noreferrer" aria-label={`Open the ${location.name} ICC training base in Google Maps`}>
-            <MapPin aria-hidden="true" />
-            <div><span>Training base</span><strong>{location.area}</strong>{location.address !== location.area && <small>{location.address}</small>}</div>
-            <ArrowUpRight className="location-arrow" aria-hidden="true" />
-          </a>
-
           <div className="schedule-groups">
             {location.schedule.map((group) => (
               <article className={`schedule-group schedule-group-${slug(group.category)}`} key={group.category}>
                 <header className="schedule-group-heading">
-                  <h3>{group.category}</h3>
+                  <div><h3>{group.category}</h3><small>Monday to Friday</small></div>
                   <span>{group.modeLabel}</span>
                 </header>
                 {group.periods.map((period) => {
@@ -40,7 +33,6 @@ export function ScheduleExplorer() {
                       <div className="schedule-list">
                         {period.sessions.map((session) => (
                           <div className="schedule-row" key={`${session.mode}-${session.time}-${session.name}`}>
-                            <span className="schedule-days">{session.name}<small>{session.days} · {session.mode}</small></span>
                             <strong>{session.time}</strong>
                             <span className="schedule-level">{session.level}</span>
                           </div>

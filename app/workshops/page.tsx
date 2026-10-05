@@ -5,7 +5,7 @@ import { EditorialImage } from '@/components/editorial-photo';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { siteConfig, workshopHeroImage, workshopImages } from '@/lib/site-config';
 
-export const metadata: Metadata = { title: 'Workshops | Indian Calisthenics Chamber', description: 'Explore previous Indian Calisthenics Chamber workshops and live showcases.' };
+export const metadata: Metadata = { title: 'Calisthenics Workshops | Indian Calisthenics Chamber', description: 'Explore previous Indian Calisthenics Chamber workshops and live showcases in Bengaluru and Hyderabad.', alternates: { canonical: '/workshops' } };
 
 export default function WorkshopsPage() {
   return <main className="event-page"><SiteHeader />

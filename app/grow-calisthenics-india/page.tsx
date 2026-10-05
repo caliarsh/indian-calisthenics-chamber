@@ -8,6 +8,7 @@ import { supportInitiatives } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Grow Calisthenics in India | Indian Calisthenics Chamber',
   description: 'Support ICC athletes, community workshops, and competition opportunities that grow calisthenics across India.',
+  alternates: { canonical: '/grow-calisthenics-india' },
 };
 
 export default function GrowCalisthenicsPage() {

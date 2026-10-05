@@ -6,6 +6,7 @@ import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 export const metadata: Metadata = {
   title: 'Privacy Notice | Indian Calisthenics Chamber',
   description: 'How Indian Calisthenics Chamber uses and protects enquiry and member information.',
+  alternates: { canonical: '/privacy' },
 };
 
 export default function PrivacyPage() {
@@ -23,4 +24,3 @@ export default function PrivacyPage() {
     <SiteFooter />
   </main>;
 }
-

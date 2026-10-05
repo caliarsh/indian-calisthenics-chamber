@@ -8,6 +8,7 @@ import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 export const metadata: Metadata = {
   title: 'Fitness Assessment | Indian Calisthenics Chamber',
   description: 'Complete the ICC strength, endurance, mobility, and flexibility assessment to find your indicative training level.',
+  alternates: { canonical: '/assessment' },
 };
 
 export default function AssessmentPage() {

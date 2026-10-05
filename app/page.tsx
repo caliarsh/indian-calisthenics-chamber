@@ -15,7 +15,35 @@ import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { CoachCarousel } from '@/components/coach-carousel';
 import { OfflineLocationGallery } from '@/components/offline-location-gallery';
+import { JsonLd } from '@/components/seo-json-ld';
 import { siteImages, workshopImages } from '@/lib/site-config';
+
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://indiancalisthenicschamber.com/#organization',
+      name: 'Indian Calisthenics Chamber',
+      alternateName: 'ICC',
+      url: 'https://indiancalisthenicschamber.com/',
+      logo: 'https://indiancalisthenicschamber.com/icc-favicon-96.png',
+      sameAs: ['https://www.instagram.com/icc.bangalore/', 'https://www.instagram.com/icc_hyderabad/'],
+      contactPoint: [
+        { '@type': 'ContactPoint', telephone: '+91-99028-28888', contactType: 'customer service', areaServed: 'IN' },
+        { '@type': 'ContactPoint', telephone: '+91-93190-45223', contactType: 'customer service', areaServed: 'IN' },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://indiancalisthenicschamber.com/#website',
+      url: 'https://indiancalisthenicschamber.com/',
+      name: 'Indian Calisthenics Chamber',
+      publisher: { '@id': 'https://indiancalisthenicschamber.com/#organization' },
+      inLanguage: 'en-IN',
+    },
+  ],
+};
 
 const method = [
   { number: '01', title: 'Assess', copy: 'We understand your movement, strength, training history, and goal.' },
@@ -36,6 +64,7 @@ const arshTrainingImages = [
 export default function Home() {
   return (
     <main className="home-page">
+      <JsonLd data={homeStructuredData} />
       <SiteHeader />
 
       <section className="hero" id="top">
@@ -69,7 +98,6 @@ export default function Home() {
             <p className="section-kicker">Choose your path</p>
             <h2>Train where<br />you are. <em>Grow.</em></h2>
           </div>
-          <p>Choose live online coaching or train with us in person. Every program is matched to your current level and next goal.</p>
         </div>
         <div className="training-path-grid">
           <a className="home-card-with-photo" href="/train-from-home"><figure className="home-card-photo home-card-photo-online"><Image src="/online-coaching/online-hero.jpg" width={1672} height={941} alt="Athlete following an ICC online calisthenics session on gymnastic rings" unoptimized sizes="(max-width: 760px) 100vw, 50vw" /></figure><Wifi aria-hidden="true" /><span>01 · Anywhere in India</span><h3>Train Online</h3><p>Personalised plans, online PT, and transformation coaching for your home or gym.</p><strong>Explore online training <ArrowUpRight /></strong></a>
@@ -82,7 +110,6 @@ export default function Home() {
       <section className="section events-preview-section" id="events">
         <div className="section-heading">
           <div><p className="section-kicker">Workshops</p><h2>Learn beyond<br /><em>daily training.</em></h2></div>
-          <p>Explore workshops and showcases that bring athletes, coaches, and the wider ICC community together.</p>
         </div>
         <div className="events-preview-grid events-preview-grid-single">
           <a className="home-card-with-photo" href="/workshops"><figure className="home-card-photo home-card-photo-workshops">{Object.values(workshopImages).map(image => <span className="home-workshop-photo" key={image.src}><Image src={image.src} width={image.width} height={image.height} alt={image.alt} unoptimized sizes="(max-width: 760px) 50vw, 22vw" style={{ objectPosition: image.focalPosition }} /></span>)}</figure><Presentation aria-hidden="true" /><span>Learning and showcases</span><h3>Workshops</h3><p>Discover previous skill workshops and live ICC demonstrations across the community.</p><strong>Explore workshops <ArrowUpRight /></strong></a>
@@ -95,7 +122,6 @@ export default function Home() {
             <p className="section-kicker">Meet the coaches</p>
             <h2>Guidance that<br /><em>moves you.</em></h2>
           </div>
-          <p>Clear feedback, patient progressions, and coaching that respects where every athlete begins.</p>
         </div>
         <figure className="coach-team-photo">
           <Image src="/icc-coaches.jpeg" width={1280} height={900} alt="ICC coaches and athletes posing together inside the training facility" unoptimized sizes="(max-width: 760px) 100vw, 88vw" />
@@ -110,7 +136,7 @@ export default function Home() {
       </section>
 
       <section className="section community-pathways-section" id="community-pathways">
-        <div className="section-heading"><div><p className="section-kicker">Grow with the community</p><h2>More ways to<br /><em>build the sport.</em></h2></div><p>Develop as a trainer, pursue the ICC athlete pathway, or help create more opportunities for calisthenics across India.</p></div>
+        <div className="section-heading"><div><p className="section-kicker">Grow with the community</p><h2>More ways to<br /><em>build the sport.</em></h2></div></div>
         <div className="community-pathways-grid"><a href="/trainer-internship"><GraduationCap aria-hidden="true" /><span>Six-month program</span><h3>Trainer Internship</h3><p>Learn theory, programming, assessment, and practical coaching in Bengaluru or Hyderabad.</p><strong>Explore the internship <ArrowUpRight /></strong></a><a className="home-card-with-photo" href="/athletes#apply"><figure className="home-card-photo home-card-photo-athletes"><Image src={siteImages.athletes[1].src} width={siteImages.athletes[1].width} height={siteImages.athletes[1].height} alt={siteImages.athletes[1].alt} unoptimized sizes="(max-width: 760px) 100vw, 33vw" /></figure><Medal aria-hidden="true" /><span>Competitive pathway</span><h3>Become an ICC Athlete</h3><p>Apply to represent ICC and receive approved competition, travel, and stay support.</p><strong>View athlete pathway <ArrowUpRight /></strong></a><a href="/grow-calisthenics-india"><HandHeart aria-hidden="true" /><span>Support the movement</span><h3>Grow Calisthenics in India</h3><p>Back athletes, free workshops, and competition opportunities that expand the culture.</p><strong>See how to help <ArrowUpRight /></strong></a></div>
       </section>
 

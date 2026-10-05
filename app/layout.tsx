@@ -17,8 +17,25 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://indiancalisthenicschamber.com'),
   title: 'Indian Calisthenics Chamber | Train With Purpose',
   description: 'Progressive calisthenics coaching for every level. Build strength, control, and skills with Indian Calisthenics Chamber.',
+  applicationName: 'Indian Calisthenics Chamber',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Indian Calisthenics Chamber',
+    title: 'Indian Calisthenics Chamber | Train With Purpose',
+    description: 'Progressive calisthenics coaching in Bengaluru, Hyderabad, and online across India.',
+    url: '/',
+    images: [{ url: '/icc-community-hero.jpeg', width: 1280, height: 1177, alt: 'The Indian Calisthenics Chamber community' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Indian Calisthenics Chamber | Train With Purpose',
+    description: 'Progressive calisthenics coaching in Bengaluru, Hyderabad, and online across India.',
+    images: ['/icc-community-hero.jpeg'],
+  },
   icons: {
     icon: [
       { url: '/icc-monogram.svg', type: 'image/svg+xml' },

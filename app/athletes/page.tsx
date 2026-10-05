@@ -10,6 +10,7 @@ import { siteImages } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Our Athletes | Indian Calisthenics Chamber',
   description: 'Meet the athlete culture developed at Indian Calisthenics Chamber across strength, skills, and competition preparation.',
+  alternates: { canonical: '/athletes' },
 };
 
 const culture = [

@@ -5,7 +5,7 @@ import { ImagePlaceholder } from '@/components/editorial-photo';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { siteConfig, siteImageBriefs } from '@/lib/site-config';
 
-export const metadata: Metadata = { title: 'Competitions | Indian Calisthenics Chamber', description: 'Explore past Indian Calisthenics Chamber competitions and future event announcements.' };
+export const metadata: Metadata = { title: 'Competitions | Indian Calisthenics Chamber', description: 'Explore past Indian Calisthenics Chamber competitions and future event announcements.', alternates: { canonical: '/competitions' } };
 
 export default function CompetitionsPage() {
   const competition = siteConfig.competitions[0];

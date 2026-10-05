@@ -8,6 +8,7 @@ import { trainerInternship } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'ICC Trainer Internship | Indian Calisthenics Chamber',
   description: 'Apply for ICC’s six-month practical calisthenics trainer internship in Bengaluru or Hyderabad.',
+  alternates: { canonical: '/trainer-internship' },
 };
 
 export default function TrainerInternshipPage() {

@@ -101,6 +101,9 @@ export interface OfflineOffer {
   compareAtPrice?: string;
   discount?: string;
   bonus?: string;
+  monthlyEquivalent?: string;
+  highlight?: string;
+  featured?: boolean;
 }
 
 export interface Review {
@@ -361,17 +364,19 @@ export const onlineOffers: readonly OnlineOffer[] = [
 ];
 
 export const offlineOffers: readonly OfflineOffer[] = [
-  { id: 'offline-group-monthly', category: 'Group Classes', name: '1 Month', price: '₹6,000', billingPeriod: '1 month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Level-matched progressions', 'Monday to Friday batches'] },
-  { id: 'offline-group-quarterly', category: 'Group Classes', name: '3 Months', price: '₹15,000', compareAtPrice: '₹18,000', discount: '16.7% off', bonus: 'Freeze for 1 week', billingPeriod: '3 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Save ₹3,000 against monthly pricing', 'Freeze membership for up to one week', 'Monday to Friday batches'] },
-  { id: 'offline-group-half-year', category: 'Group Classes', name: '6 Months', price: '₹27,000', compareAtPrice: '₹36,000', discount: '25% off', bonus: 'Freeze for 2 weeks', billingPeriod: '6 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Save ₹9,000 against monthly pricing', 'Freeze membership for up to two weeks', 'Free diet plan'] },
-  { id: 'offline-group-yearly', category: 'Group Classes', name: '12 Months', price: '₹48,000', compareAtPrice: '₹72,000', discount: '33.3% off', bonus: 'Freeze for 1 month', billingPeriod: '12 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Save ₹24,000 against monthly pricing', 'Freeze membership for up to one month', 'Free diet plan'] },
+  { id: 'offline-group-monthly', category: 'Group Classes', name: '1 Month', price: '₹6,000', monthlyEquivalent: '₹6,000/month', billingPeriod: '1 month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Level-matched progressions', 'Monday to Friday batches'] },
+  { id: 'offline-group-quarterly', category: 'Group Classes', name: '3 Months', price: '₹15,000', compareAtPrice: '₹18,000', discount: '16.7% off', bonus: 'Freeze for 1 week', monthlyEquivalent: '₹5,000/month', billingPeriod: '3 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Save ₹3,000 against monthly pricing', 'Freeze membership for up to one week', 'Monday to Friday batches'] },
+  { id: 'offline-group-half-year', category: 'Group Classes', name: '6 Months', price: '₹27,000', compareAtPrice: '₹36,000', discount: '25% off', bonus: 'Freeze for 2 weeks', monthlyEquivalent: '₹4,500/month', highlight: 'Most Bought', billingPeriod: '6 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Save ₹9,000 against monthly pricing', 'Freeze membership for up to two weeks', 'Personalised diet plan included'] },
+  { id: 'offline-group-yearly', category: 'Group Classes', name: '12 Months', price: '₹48,000', compareAtPrice: '₹72,000', discount: '33.3% off', bonus: 'Freeze for 1 month', monthlyEquivalent: '₹4,000/month', highlight: 'Most Valued', featured: true, billingPeriod: '12 months', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Coach-led group sessions', 'Save ₹24,000 against monthly pricing', 'Freeze membership for up to one month', 'Personalised diet plan included'] },
   { id: 'athlete-batch-monthly', category: 'Athlete Batch', name: 'Athlete Batch', price: '₹7,000', billingPeriod: '1 month', levels: 'L3 or coach-approved', locationIds: ['bengaluru'], inclusions: ['Performance-focused training', 'Monday to Friday at 5:00 PM', 'Bengaluru only'] },
   ...(['Arsh', 'Abhishek'] as const).flatMap((trainer) => [
     { id: `offline-pt-${trainer.toLowerCase()}-single`, category: 'Personal Training' as const, name: 'Single Session', price: '₹3,000', billingPeriod: '1 session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['One-to-one coaching', 'Flexible appointment', `Train with ${trainer}`], trainer },
+    { id: `offline-pt-${trainer.toLowerCase()}-8-monthly`, category: 'Personal Training' as const, name: '8 Sessions', price: '₹22,000', compareAtPrice: '₹24,000', discount: 'Save ₹2,000', bonus: '1 session free', billingPeriod: '8 sessions per month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Eight one-to-one sessions each month', 'One session included free', 'Two coached sessions each week', `Train with ${trainer}`], trainer },
     { id: `offline-pt-${trainer.toLowerCase()}-12`, category: 'Personal Training' as const, name: '12 Sessions', price: '₹30,000', compareAtPrice: '₹36,000', discount: '16.7% off', bonus: '2 sessions free', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Pay for 10 sessions and train for 12', 'Flexible appointments', `Train with ${trainer}`], trainer },
     { id: `offline-pt-${trainer.toLowerCase()}-15`, category: 'Personal Training' as const, name: '15 Sessions', price: '₹36,000', compareAtPrice: '₹45,000', discount: '20% off', bonus: '3 sessions free', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'] as const, inclusions: ['Pay for 12 sessions and train for 15', 'Flexible appointments', `Train with ${trainer}`], trainer },
   ]),
   { id: 'offline-pt-other-single', category: 'Personal Training', name: 'Single Session', price: '₹2,000', billingPeriod: '1 session', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['One-to-one coaching', 'Flexible appointment', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
+  { id: 'offline-pt-other-8-monthly', category: 'Personal Training', name: '8 Sessions', price: '₹14,000', compareAtPrice: '₹16,000', discount: 'Save ₹2,000', bonus: '1 session free', billingPeriod: '8 sessions per month', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Eight one-to-one sessions each month', 'One session included free', 'Two coached sessions each week', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
   { id: 'offline-pt-other-12', category: 'Personal Training', name: '12 Sessions', price: '₹20,000', compareAtPrice: '₹24,000', discount: '16.7% off', bonus: '2 sessions free', billingPeriod: '12 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Pay for 10 sessions and train for 12', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
   { id: 'offline-pt-other-15', category: 'Personal Training', name: '15 Sessions', price: '₹24,000', compareAtPrice: '₹30,000', discount: '20% off', bonus: '3 sessions free', billingPeriod: '15 sessions', levels: 'L1 · L2 · L3', locationIds: ['bengaluru', 'hyderabad'], inclusions: ['Pay for 12 sessions and train for 15', 'Flexible appointments', 'Train with another ICC coach'], trainer: 'Other ICC coach' },
 ];
@@ -1528,21 +1533,9 @@ export const siteConfig = {
             {
               timeOfDay: 'Evening',
               sessions: [
-                { name: 'Athlete Batch', mode: 'Offline', days: 'Monday to Friday', time: '5:00 PM', level: 'Athlete Batch' },
+                { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '5:00 PM', level: 'L1 · L2 · L3' },
                 { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:00 PM', level: 'L1 · L2 · L3' },
                 { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:00 PM', level: 'L1 · L2 · L3' },
-              ],
-            },
-          ],
-        },
-        {
-          category: 'Personal Training',
-          modeLabel: 'Offline',
-          periods: [
-            {
-              timeOfDay: 'By appointment',
-              sessions: [
-                { name: 'Offline PT', mode: 'Offline', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
               ],
             },
           ],
@@ -1579,18 +1572,6 @@ export const siteConfig = {
               sessions: [
                 { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '6:30 PM', level: 'L1 · L2 · L3' },
                 { name: 'Group Class', mode: 'Offline', days: 'Monday to Friday', time: '7:30 PM', level: 'L1 · L2 · L3' },
-              ],
-            },
-          ],
-        },
-        {
-          category: 'Personal Training',
-          modeLabel: 'Offline',
-          periods: [
-            {
-              timeOfDay: 'By appointment',
-              sessions: [
-                { name: 'Offline PT', mode: 'Offline', days: 'Monday to Friday', time: 'Flexible timing', level: 'L1 · L2 · L3' },
               ],
             },
           ],
