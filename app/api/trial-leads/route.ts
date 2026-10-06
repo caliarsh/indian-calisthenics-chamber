@@ -63,8 +63,8 @@ export async function POST(request: Request) {
   try {
     const response = await fetch(runtime.GOOGLE_SHEETS_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), redirect: 'follow' });
     if (!response.ok) throw new Error(`Google Sheets webhook returned ${response.status}`);
-    const result = await response.json().catch(() => ({ success: false })) as { success?: boolean };
-    if (!result.success) throw new Error('Google Sheets webhook rejected submission');
+    const result = await response.text();
+    if (!result.includes('ICC_WEBHOOK_SUCCESS_TRUE')) throw new Error('Google Sheets webhook rejected submission');
     return json({ success: true }, 201);
   } catch (error) {
     console.error('Trial lead submission failed', error instanceof Error ? error.message : 'Unknown error');

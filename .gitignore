@@ -35,6 +35,8 @@ yarn-error.log*
 
 # deployment and generated files
 .vercel
+.clasp.json
+/scripts/google-apps-script/
 next-env.d.ts
 /dist/
 /.wrangler/
