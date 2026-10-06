@@ -3630,8 +3630,11 @@ footer .footer-instagram svg {
 .form-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .trial-form-success { display: grid; min-height: 360px; place-content: center; justify-items: center; padding: 3rem; text-align: center; }
 .trial-form-success svg { width: 46px; height: 46px; color: #8f1d2c; }
-.trial-form-success h2 { margin: 1.25rem 0 .75rem; font: 600 clamp(3rem, 6vw, 5rem)/.9 var(--font-display); text-transform: uppercase; }
+.trial-form-success > span { margin-top: 1rem; color: #8f1d2c; font-size: .7rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.trial-form-success h2 { margin: .8rem 0 .75rem; font: 600 clamp(3rem, 6vw, 5rem)/.9 var(--font-display); text-transform: uppercase; }
 .trial-form-success p { max-width: 460px; margin: 0; color: #5d5a54; line-height: 1.7; }
+.trial-form-success .text-link { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1.5rem; color: #8f1d2c; font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.trial-form-success .text-link svg { width: 15px; height: 15px; }
 
 @media (max-width: 480px) {
   .trial-phone-row { grid-template-columns: 138px minmax(0, 1fr); gap: .65rem; }

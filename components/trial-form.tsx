@@ -36,6 +36,7 @@ export function TrialForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
   const [country, setCountry] = useState<CountryCode>('IN');
+  const [submittedName, setSubmittedName] = useState('');
 
   async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -65,6 +66,7 @@ export function TrialForm() {
         setSubmitState('idle');
         return;
       }
+      setSubmittedName(name);
       formElement.reset();
       setCountry('IN');
       setSubmitState('saved');
@@ -75,7 +77,13 @@ export function TrialForm() {
   }
 
   if (submitState === 'saved') {
-    return <output className="trial-form-success"><CheckCircle2 aria-hidden="true" /><h2>Thank you.</h2><p>Your details have been received. The ICC team will contact you shortly.</p></output>;
+    return <output className="trial-form-success">
+      <CheckCircle2 aria-hidden="true" />
+      <span>Request received</span>
+      <h2>You&apos;re all set.</h2>
+      <p>Thanks{submittedName ? `, ${submittedName}` : ''}. Your callback request has been saved. The ICC team will contact you shortly and help you choose the right way to train.</p>
+      <Link className="text-link" href="/">Return to the homepage <ArrowUpRight aria-hidden="true" /></Link>
+    </output>;
   }
 
   return <form className="trial-form trial-form-short" onSubmit={handleSubmit} noValidate>
